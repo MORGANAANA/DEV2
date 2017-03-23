@@ -85,7 +85,7 @@ angular.module('app.routes', [])
     controller: 'criarForumCtrl'
   })
 
-$urlRouterProvider.otherwise('/page12')
+$urlRouterProvider.otherwise('/livroSelecionado')
 
 
 

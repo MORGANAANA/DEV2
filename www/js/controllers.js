@@ -29,14 +29,15 @@ function ($scope, $stateParams) {
 .controller ('aHoraDaEstrelaCtrl', ['$scope', '$stateParams',
 function ($scope, $stateParams) {
   var infoLivro =[
+  {
     nomeAutorx:"Clarisse Lispector"
     dataPublicacao:"1977"
     genero:"Romance"
     universisadesNoAno:"UFRGS,Ufpel"
     enredo:"DGFDSJFGDSKHFKJDSHFDSFDSFDSFDSFDSFDSF"
-
-  ]
-  $scope.pefgaIfoLivro = infoLivro; 
+  }
+ ]
+  $scope.pefgaIfoLivro = infoLivro;
 }])
 
 .controller('universidadesCtrl', ['$scope', '$stateParams',
