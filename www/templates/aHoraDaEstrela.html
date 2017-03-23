@@ -1,13 +1,16 @@
 <ion-view title="A Hora da Estrela" id="page6" style="background-color:#2E7A8B;">
-  <ion-content padding="true" class="has-header">
-    <h1 id="aHoraDaEstrela-heading2" style="color:#000000;" class="titulo-livro"></h1>
+//mozão que conversa com os js
+  <ion-content padding="true" class="has-header" ng-app="app.controllers">
+
+    <h1 class="titulo-livro">{{tituloLivro}}</h1>
+
     <div class="list card" id="aHoraDaEstrela-card22">
       <ion-item class="item-icon-left dark" id="aHoraDaEstrela-list-item14">
         <i class="icon ion-ios-bookmarks"></i>A Hora da Estrela</ion-item>
       <div class=" item item-image">
         <img src="img/KgimKk58RMSTYpLneqSE_A_Hora_da_Estrela.jpg" style="display:block;width:100%;height:auto;">
       </div>
-      <div class="item item-body" id="aHoraDaEstrela-list-item-container4">
+  <!--    <div class="item item-body" id="aHoraDaEstrela-list-item-container4">
         <div id="aHoraDaEstrela-markdown5" class="show-list-numbers-and-dots info-livro">
           <p style="margin-top:0px;color:#000000;">
             <strong>Autorx:</strong> Clarisse Lispector
@@ -19,7 +22,15 @@
             <strong>Enredo:</strong> O narrador conta a história de Macabéa, jovem alagoana de 19 anos que vive no Rio de Janeiro. Órfã, mal se lembrava dos pais, que morreram quando ela era ainda criança. Foi criada por uma tia muito religiosa e moralista, cheia
             de superstições e tabus, os quais ela passou para a sobrinha.</p>
         </div>
-      </div>
+      </div> -->
+      //WORK WORK WORK WORK WORK
+      <ion-list class="info_livro" ng-controller ="aHoraDaEstrelaCtrl">
+        <ion-item class="item_info_livro">
+          <p class ="txt_list_info_livro">Autorx:</p>
+          <p class="label_info_livro"> {{pefgaIfoLivro}} </p>
+        </ion-item>
+      </ion-list>
+
     </div>
     <div class="item item-body" id="aHoraDaEstrela-list-item-container5">
       <h1 id="aHoraDaEstrela-heading3" style="color:#F36868;font-weight:600;text-align:center;" class="titulo_forun">Questões</h1>
