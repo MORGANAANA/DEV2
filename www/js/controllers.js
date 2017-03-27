@@ -25,19 +25,26 @@ function ($scope, $stateParams) {
 
 }])
 
-//WORK WORK WORK WORK WORK
-.controller ('aHoraDaEstrelaCtrl', ['$scope', '$stateParams',
-function ($scope, $stateParams) {
-  var infoLivro =[
-  {
-    nomeAutorx:"Clarisse Lispector"
-    dataPublicacao:"1977"
-    genero:"Romance"
-    universisadesNoAno:"UFRGS,Ufpel"
-    enredo:"DGFDSJFGDSKHFKJDSHFDSFDSFDSFDSFDSFDSF"
+
+.controller ('livroCtrl', ['$scope', '$http',
+function ($scope, $http) {
+
+  $scope.livro = "";
+
+  var url = 'ttp://localhost:7002/livro';
+
+  $scope.pegaLivro = function(){
+    $http.post(url)
+      .success(function(data){
+        console.log('funcionou');
+        $scope.livro = data;
+      })
+
+      .error(function(data){
+        console.log('funcionou');
+        $scope.livro = data;
+      })
   }
- ]
-  $scope.pefgaIfoLivro = infoLivro;
 }])
 
 .controller('universidadesCtrl', ['$scope', '$stateParams',
