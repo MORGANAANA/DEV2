@@ -55,9 +55,9 @@ angular.module('app.routes', [])
     controller: 'marcarEncontroCtrl'
   })
 
-  .state('questEs', {
+  .state('questoes', {
     url: '/questoes_ufrgs',
-    templateUrl: 'templates/questEs.html',
+    templateUrl: 'templates/questoes.html',
     controller: 'questEsCtrl'
   })
 
