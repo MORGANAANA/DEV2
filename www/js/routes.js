@@ -31,11 +31,11 @@ angular.module('app.routes', [])
     controller: 'listaDeLivrosCtrl'
   })
 
-  .state('aHoraDaEstrela', {
-    url: '/livroSelecionado',
-    templateUrl: 'templates/aHoraDaEstrela.html',
-    controller: 'aHoraDaEstrelaCtrl'
-  })
+    .state('horaEstrela', {
+      url: '/livroSelecionado',
+      templateUrl: 'templates/horaEstrela.html',
+      controller: 'livroCtrl'
+    })
 
   .state('universidades', {
     url: '/universidades',
@@ -59,12 +59,6 @@ angular.module('app.routes', [])
     url: '/questoes_ufrgs',
     templateUrl: 'templates/questEs.html',
     controller: 'questEsCtrl'
-  })
-
-  .state('questEs2', {
-    url: '/questoes2',
-    templateUrl: 'templates/questEs2.html',
-    controller: 'questEs2Ctrl'
   })
 
   .state('encontroLocal', {
