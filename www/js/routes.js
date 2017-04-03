@@ -26,13 +26,13 @@ angular.module('app.routes', [])
   })
 
   .state('listaDeLivros', {
-    url: '/listaLivros',
+    url: '/listaDeLivros',
     templateUrl: 'templates/listaDeLivros.html',
-    controller: 'listaDeLivrosCtrl'
+    controller: 'livroCtrl'
   })
 
     .state('horaEstrela', {
-      url: '/livroSelecionado',
+      url: '/horaEstrela',
       templateUrl: 'templates/horaEstrela.html',
       controller: 'livroCtrl'
     })
@@ -79,7 +79,7 @@ angular.module('app.routes', [])
     controller: 'criarForumCtrl'
   })
 
-$urlRouterProvider.otherwise('/livroSelecionado')
+$urlRouterProvider.otherwise('/inicial')
 
 
 
