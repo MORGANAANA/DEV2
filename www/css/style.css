@@ -1,1 +1,25 @@
-/* Empty. Add your own CSS if you like */
+/*CONFIGURAÇÕES TELA SIMULADO */
+
+.simulado_enunciado_font{
+  font-size: 15px !important;
+  white-space: initial !important;
+  color:#000;
+}
+
+
+.lst_questoes_simulado{
+
+}
+.simulado_txt_alternativa {
+  color:#202320;
+  white-space: initial !important;
+}
+
+.lst_questoes_simulado{
+  margin-bottom: 50px;
+}
+
+
+
+
+/*CONFIGURAÇÕES TELA .... */
