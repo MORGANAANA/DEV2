@@ -1,10 +1,18 @@
-<ion-view title="Inicial" id="page4">
+<ion-view title="Inicial" id="page4" ng-app="app.controllers" >
   <ion-content padding="true" style="background: url(img/bg_menu.jpg) no-repeat center;background-size:cover;" class="has-header">
-    <a ui-sref="universidades" id="inicial-button9" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">UNIVERSIDADES</a>
-    <a ui-sref="listaDeLivros" id="inicial-button10" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">List_livros</a>
+    <div ng-controller="questoesCtrl">
+      <a ui-sref="universidades" ng-click="buscaListaUniversidades()" id="inicial-button9" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">UNIVERSIDADES</a>
+    </div>
+    <div ng-controller="livroCtrl">
+      <a ui-sref="listaDeLivros" ng-click="buscaListaLivros()" id="inicial-button10" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">List_livros</a>
+    </div>
     <a ui-sref="aHoraDaEstrela" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">Info_livros</a>
     <a ui-sref="anLiseDosPersonagens" id="inicial-button16" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">foruns</a>
     <a ui-sref="marcarEncontro" id="inicial-button31" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">MarcarEncontros</a>
-    <a ui-sref="questEs" id="inicial-button30" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">Lista_Questoes</a>
-  </ion-content>
+    <div ng-controller="questoesCtrl">
+      <a ui-sref="questoes" ng-click="buscaListaQuestoes()" id="inicial-button30" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">Lista_Questoes</a>
+    </div>
+
+
+
 </ion-view>

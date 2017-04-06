@@ -1,16 +1,12 @@
 <ion-view title="Universidades" id="page7">
-  <ion-content padding="true" style="background: url(img/bg_lista_universidades.png) no-repeat center;background-size:cover;" class="has-header">
-    <ion-list id="universidades-list7">
-      <ion-item class="item-icon-left dark" id="universidades-list-item10" ui-sref="listaDeLivros">
-        <i class="icon ion-university"></i>Ifac</ion-item>
-      <ion-item class="item-icon-left dark" id="universidades-list-item11">
-        <i class="icon ion-university"></i>Ufac</ion-item>
-      <ion-item class="item-icon-left dark" id="universidades-list-item13">
-        <i class="icon ion-university"></i>Ufal</ion-item>
-      <ion-item class="item-icon-left dark" id="universidades-list-item15">
-        <i class="icon ion-university"></i>Ifal</ion-item>
-      <ion-item class="item-icon-left dark" id="universidades-list-item12">
-        <i class="icon ion-university"></i>Ifal</ion-item>
+  <ion-content padding="true" style="background: url(img/bg_lista_universidades.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="questoesCtrl">
+    <ion-list ng-repeat="universidades in service.listaUniversidades" id="universidades-list7" ng-controller="livroCtrl">
+      <ion-item ng-click="buscaListaLivrosPorUniversidade(universidades._id)" class="item-icon-left dark" id="universidades-list-item10" ui-sref="listaDeLivros">
+
+        <i class="icon ion-university"></i>{{universidades._id}}
+
+      </ion-item>
+
     </ion-list>
     <div class="spacer" style="width: 300px; height: 166px;"></div>
     <div id="universidades-button-bar3" class="button-bar">

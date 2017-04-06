@@ -1,35 +1,35 @@
-<ion-view title="A Hora da Estrela" id="page6" style="background-color:#2E7A8B;">
-  //mozão que conversa com os js
+<ion-view title="Livro" id="page6" style="background-color:#2E7A8B;">
+
   <ion-content padding="true" class="has-header" ng-app="app.controllers">
 
     <h1 class="titulo-livro">{{tituloLivro}}</h1>
 
     <div class="list card" id="aHoraDaEstrela-card22">
       <ion-item class="item-icon-left dark" id="aHoraDaEstrela-list-item14">
-        <i class="icon ion-ios-bookmarks"></i>A Hora da Estrela</ion-item>
+        <i class="icon ion-ios-bookmarks"></i>{{service.livro.titulo}}</ion-item>
       <div class=" item item-image">
-        <img src="img/capa_livro_hora_da_estrela.jpg" style="display:block;width:100%;height:auto;">
+        <!--<img src="img/capa_livro_hora_da_estrela.jpg" style="display:block;width:100%;height:auto;">-->
       </div>
 
 
       <ion-list class="info_livro" ng-controller ="livroCtrl">
 
         <ion-item class="item_info_livro">
-          <p class ="txt_list_info_livro">Autorx:</p>
-          <p class="label_info_livro"> {{pefgaIfoLivro.nomeAutorx}} </p>
+          <p class ="txt_list_info_livro">Autor:</p>
+          <p class="label_info_livro"> {{service.livro.autor}} </p>
         </ion-item>
         <ion-item class="item_info_livro">
           <p class ="txt_list_info_livro">Primeira Publicação:</p>
-          <p class="label_info_livro"> {{pefgaIfoLivro.dataPublicacao}} </p>
+          <p class="label_info_livro"> {{service.livro.ano}} </p>
         </ion-item>
-        <ion-item class="item_info_livro">
-          <p class ="txt_list_info_livro">Universidades 2017:</p>
-          <p class="label_info_livro"> {{pefgaIfoLivro.universisadesNoAno}} </p>
-        </ion-item>
+        <!-- <ion-item class="item_info_livro">
+           <p class ="txt_list_info_livro">Universidades 2017:</p>
+           <p class="label_info_livro"> {{service.livro.obrigatoria}} </p>
+         </ion-item>-->
 
         <ion-item class="item_info_livro">
           <p class ="txt_list_info_livro">Enredo:</p>
-          <p class="label_info_livro"> {{pefgaIfoLivro.enredo}} </p>
+          <p class="label_info_livro"> {{service.livro.descricao}} </p>
         </ion-item>
       </ion-list>
     </div>

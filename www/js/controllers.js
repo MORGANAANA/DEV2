@@ -20,10 +20,13 @@ angular.module('app.controllers', [])
 
 
 
+
   // Controle do livro.
 
-  .controller ('livroCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+  .controller ('livroCtrl', ['$scope', '$http','livroService',
+    function ($scope, $http,livroService) {
+
+      $scope.service = livroService;
 
       // ao executar buscaLivro(idDoLivro) preenche esta variavel com o livro.
       $scope.livro = "";
@@ -36,11 +39,12 @@ angular.module('app.controllers', [])
 
       // busca o livro referente ao id no banco e preenche a variavel indicada.
       $scope.buscaLivro = function(id){
-        var url = 'http://localhost:7002/livro/'+id;
+        var url = 'http://localhost:7001/livro/'+id;
         $http.get(url)
           .success(function(data){
             console.log('funcionou');
             $scope.livro = data;
+            livroService.setLivro(data);
           })
 
           .error(function(data){
@@ -52,13 +56,14 @@ angular.module('app.controllers', [])
       // busca a lista contendo todos livros e preenche a variavel indicada.
       $scope.buscaListaLivros = function(){
 
-        var url = 'http://localhost:7002/livros';
+        var url = 'http://localhost:7001/livros';
 
         $http.get(url)
 
           .success(function(data){
             console.log("funcionou");
             $scope.listaLivros = data;
+            livroService.setListaLivros(data);
           })
 
           .error(function(data){
@@ -67,10 +72,36 @@ angular.module('app.controllers', [])
           })
       };
 
+
+      //busca uma lista de livros filtrando por universidade.
+      $scope.buscaListaLivrosPorUniversidade = function(universidade){
+
+        var url = 'http://localhost:7001/livros/'+universidade;
+        var cont = [];
+
+        $http.get(url)
+
+          .success(function(data){
+            console.log("funcionou");
+
+            for(I=0;I<data.length;I++){
+              cont.push(data[I].livro);
+            }
+
+            livroService.setListaLivros(cont);
+          })
+
+          .error(function(){
+            console.log("nao funcionou");
+          })
+
+      };
+
+
       // deleta o livro referente ao id passado por parametro
       $scope.deletaLivro = function(id){
 
-        var url = 'http://localhost:7002/livro/'+id;
+        var url = 'http://localhost:7001/livro/'+id;
 
         $http.delete(url)
 
@@ -92,7 +123,7 @@ angular.module('app.controllers', [])
           console.log("O objeto livroAAdicionar nao esta preenchido");
         }else{
 
-          var url = 'http://localhost:7002/livro';
+          var url = 'http://localhost:7001/livro';
 
           $http.post(url,$scope.livroAAdicionar)
 
@@ -105,6 +136,7 @@ angular.module('app.controllers', [])
             })
         }
       }
+
 
 
     }])
@@ -128,8 +160,10 @@ angular.module('app.controllers', [])
     }])
 
   // controle referente as questoes
-  .controller('questoesCtrl', ['$scope', '$http',
-    function ($scope, $http) {
+  .controller('questoesCtrl', ['$scope', '$http','questaoService',
+    function ($scope, $http, questaoService) {
+
+      $scope.service = questaoService;
 
       // variavel que contem a questao a ser adicionada no banco com o metodo adicionaQuestao.
       $scope.questaoAAdicionar = "x";
@@ -147,7 +181,7 @@ angular.module('app.controllers', [])
           console.log("O objeto livroAAdicionar nao esta preenchido.");
         }else{
 
-          var url = 'http://localhost:7002/questao';
+          var url = 'http://localhost:7001/questao';
 
           $http.post(url,$scope.questaoAAdicionar)
 
@@ -164,13 +198,15 @@ angular.module('app.controllers', [])
       // funcao que preenche a variavel listaQuestoes com todas as questoes presentes no banco.
       $scope.buscaListaQuestoes = function(){
 
-        var url = "http://localhost:7002/questoes";
+        var url = "http://localhost:7001/questoes";
 
         $http.get(url)
 
           .success(function(data){
             $scope.listaQuestoes = data;
+            questaoService.setListaQuestoes(data);
             console.log("questoes listadas com sucesso");
+
           })
 
           .error(function(data){
@@ -183,7 +219,7 @@ angular.module('app.controllers', [])
       // busca no banco e adiciona na variavel questao a questao referente ao id passado por parametro.
       $scope.buscaQuestao = function(id){
 
-        var url = "http://localhost:7002/questao/"+id;
+        var url = "http://localhost:7001/questao/"+id;
 
         $http.get(url)
           .success(function(data){
@@ -202,7 +238,7 @@ angular.module('app.controllers', [])
       // deleta a questao referente ao id enviado.
       $scope.deletaQuestao = function(id){
 
-        var url = "http://localhost:7002/questao/"+id;
+        var url = "http://localhost:7001/questao/"+id;
 
         $http.delete(url)
 
@@ -214,6 +250,22 @@ angular.module('app.controllers', [])
             console.log("erro ao deletar questao");
           })
 
+      }
+
+      // busca a lista de todas universidades presentes no banco e numero de questoes.
+      $scope.buscaListaUniversidades = function(){
+        var url = "http://localhost:7001/universidades";
+
+        $http.get(url)
+
+          .success(function(data){
+            console.log("universidades listadas com sucesso");
+            questaoService.setListaUniversidades(data);
+          })
+
+          .error(function(){
+            console.log("erro ao listar universidades");
+          })
       }
 
     }])

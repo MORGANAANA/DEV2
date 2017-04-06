@@ -1,31 +1,28 @@
 <ion-view title="Lista de Livros" id="page5" style="background-color:#B3B38B;">
-  <ion-content padding="true" style="background: url(img/bg_lista_livros.jpg) no-repeat center;background-size:cover;" class="has-header">
-    <h3 id="listaDeLivros-heading1" style="color:#3A3636;font-weight:400;">Ufac -Lista de Livros 2017</h3>
+  <script>
+    document.ready(function(){
+      $scope.buscaListaLivros();
+    });
+  </script>
+  <ion-content padding="true" style="background: url(img/bg_lista_livros.jpg) no-repeat center;background-size:cover;" class="has-header"  ng-controller="livroCtrl">
+
+    <h3 id="listaDeLivros-heading1" style="color:#3A3636;font-weight:400;">Lista de Livros</h3>
     <div class="spacer" style="width: 300px; height: 44px;"></div>
-    <ion-list id="listaDeLivros-list5">
-      <ion-item class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="horaEstrela">
-        <img src="img/capa_livro_hora_da_estrela.jpg">
-        <h2>A Hora da Estrela</h2>
-        <p>Clarisse Lispector </p>
+    <ion-list ng-repeat="livros in service.listaLivros" id="listaDeLivros-list5">
+
+      <ion-item  class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="horaEstrela" ng-click="buscaLivro(livros._id)" >
+        <!--<img src="img/capa_livro_hora_da_estrela.jpg">-->
+
+        <h2>{{livros.titulo}}</h2>
+        <p>{{livros.autor}}</p>
+        <p>{{livros.ano}}</p>
+
       </ion-item>
+      <div class="spacer" style="width: 300px; height: 16px;">
+
+      </div>
     </ion-list>
-    <div class="spacer" style="width: 300px; height: 16px;"></div>
-    <ion-list id="listaDeLivros-list6">
-      <ion-item class="item-thumbnail-left" id="listaDeLivros-list-item7">
-        <img src="img/capa_amor_de_pedro_por_joao.jpg">
-        <h2>O Amor de Pedro por João</h2>
-        <p>Tabajara Ruas</p>
-      </ion-item>
-    </ion-list>
-    <div class="spacer" style="width: 300px; height: 16px;"></div>
-    <ion-list id="listaDeLivros-list4">
-      <ion-item class="item-thumbnail-left" id="listaDeLivros-list-item9">
-        <img src="img/capa_danc_tango_poa.jpg">
-        <h2>Dançando Tango em Porto Alegre</h2>
-        <p>Sergio Faraco</p>
-      </ion-item>
-    </ion-list>
-    <div class="spacer" style="width: 300px; height: 16px;"></div>
+
     <div id="listaDeLivros-button-bar1" class="button-bar">
       <button id="listaDeLivros-button12" class="button button-dark  button-block">1</button>
       <button id="listaDeLivros-button13" class="button button-dark  button-block">2</button>

@@ -56,9 +56,9 @@ angular.module('app.routes', [])
   })
 
   .state('questoes', {
-    url: '/questoes_ufrgs',
+    url: '/questoes',
     templateUrl: 'templates/questoes.html',
-    controller: 'questEsCtrl'
+    controller: 'questoesCtrl'
   })
 
   .state('encontroLocal', {
