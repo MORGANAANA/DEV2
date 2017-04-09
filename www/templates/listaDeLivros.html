@@ -11,7 +11,7 @@
     <ion-list ng-repeat="livros in service.listaLivros" id="listaDeLivros-list5">
 
       <ion-item  class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="horaEstrela" ng-click="buscaLivro(livros._id)" >
-        <!--<img src="img/capa_livro_hora_da_estrela.jpg">-->
+        -<img src="{{livros.imagem}}">
 
         <h2>{{livros.titulo}}</h2>
         <p>{{livros.autor}}</p>

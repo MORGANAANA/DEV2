@@ -4,15 +4,15 @@
 
     <h1 class="titulo-livro">{{tituloLivro}}</h1>
 
-    <div class="list card" id="aHoraDaEstrela-card22">
+    <div class="list card" id="aHoraDaEstrela-card22"  ng-controller ="livroCtrl">
       <ion-item class="item-icon-left dark" id="aHoraDaEstrela-list-item14">
         <i class="icon ion-ios-bookmarks"></i>{{service.livro.titulo}}</ion-item>
       <div class=" item item-image">
-        <!--<img src="img/capa_livro_hora_da_estrela.jpg" style="display:block;width:100%;height:auto;">-->
+        <img src="{{service.livro.imagem}}" style="display:block;width:100%;height:auto;">
       </div>
 
 
-      <ion-list class="info_livro" ng-controller ="livroCtrl">
+      <ion-list class="info_livro" >
 
         <ion-item class="item_info_livro">
           <p class ="txt_list_info_livro">Autor:</p>
