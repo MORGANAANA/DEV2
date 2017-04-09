@@ -233,6 +233,22 @@ angular.module('app.controllers', [])
           })
 
       };
+      $scope.buscaResposta = function(id){
+
+        var url = "http://localhost:7001/Resposta/"+id;
+
+        $http.get(url)
+          .success(function(data){
+            $scope.resposta = data;
+            console.log("resposta buscada com sucesso");
+          })
+
+          .error(function(data){
+            $scope.resposta = data;
+            console.log("Erro ao buscar questao");
+          })
+
+      };
 
 
       // deleta a questao referente ao id enviado.
