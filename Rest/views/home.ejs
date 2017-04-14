@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <title>API REST</title>
+</head>
+<body>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="/workshops/mongodb">Livro</a></li>
+    <li><a href="/workshops">Questão</a></li>
+    <li><a href="/workshops">Tópico</a></li>
+</ul>
+<nav class="nav">
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">API Rest</a>
+        <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Rotas<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="http://www.restinga.ifrs.edu.br/site/" target="_blank">Sobre</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="http://www.restinga.ifrs.edu.br/site/">Sobre</a></li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Rotas</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="/workshops/mongodb">Livro(s)</a></li>
+                                <li><a href="/workshops">Questão(ões)</a></li>
+                                <li><a href="/workshops">Tópico(s)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="row">
+    <div class="col s8 offset-s2"><div class="alert alert-success" role="alert">
+            Seja Bem-Vindo(a) a Página Rest Mais lindona do Mundo! :D
+        </div></div>
+
+    <!--documentação para Rotas de Livros-->
+
+    <div class="col s8 offset-s2">
+        <h4>Operações Para Livro(s):</h4>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/livro/:id</div>
+                <div class="collapsible-body">
+                        <pre>
+                            {
+                                nome: mathias,
+                                idade: 21
+                            }
+                        </pre>
+                    </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">DELETE</span>/livro/:id</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">POST</span>/livro</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/livros</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/livros/:universidade</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--documentação para Rotas de Questões-->
+
+    <div class="col s8 offset-s2">
+        <h4>Operações Para Questão(ões):</h4>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/questoes/livro/:livro</div>
+                <div class="collapsible-body">
+                        <pre>
+                            {
+                                nome: mathias,
+                                idade: 21
+                            }
+                        </pre>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">POST</span>/questao</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/questoes</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/questao/:id</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">DELETE</span>/questao/:id</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/universidades</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+<script>
+    (function($){
+        $(function(){
+
+            $('.button-collapse').sideNav();
+
+        }); // end of document ready
+    })(jQuery); // end of jQuery name space
+</script>
+<style>
+    .alert {
+
+        /*border: 10px;*/
+        margin-top: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+
+    .nav-wrapper{
+        background-color:#000;
+    }
+</style>
+</body>
+</html>
