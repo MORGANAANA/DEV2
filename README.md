@@ -5,15 +5,18 @@ Esse é o repositório principal do trabalho de Desenvolvimento de Sistemas 2.
 # Responsáveis
 
 Professor(res) Responsável(veis):
-    1.Régio Michelin
+
+    1. Régio Michelin
 
 Grupo de Desenvolvimento:
+
     1. Adriel Domagalski
     2. Gabriel Portal
     3. Mathias Gheno
     4. Morgana Goulart
 
 Instituição(ões):
+
     1. Instituto Federal de Ciências e Técnologias do Rio Grande do Sul Campus Restinga
 
 # Sobre o Projeto
@@ -30,6 +33,14 @@ O foco do projeto é o desenvolvimento de uma aplicação Mobile. Essa aplicaç�
         1.2: Servidor REST que fornece os dados para o Mobile.
         1.3: Principais Tecnologias: Node.JS, MongoDB, Express, Winston.
 
+# Dependências Necessárias
+
+Para o funcionamento do projeto você ter instalado no seu sistema operacional tais dependências:
+
+    1. MongoDB
+    2. Ionic
+    3. Cordova
+    4. Node.JS
 
 # Instalando Dependências Necessárias (GNU/Linux)
 
@@ -75,8 +86,41 @@ O foco do projeto é o desenvolvimento de uma aplicação Mobile. Essa aplicaç�
    > sudo npm install -g ionic cordova
 
 
+# Instalando dependências necessário no windows
 
-# Rodando o Servidor Rest (GNU/Linux - Ubuntu)
+    1. Instalando o MongoDB
+
+        1.1 Faça o download em https://www.mongodb.com/download-center#community escolha a plataforma windows
+
+        1.2. Faça a instalação do executável normalmente
+    
+        1.3. Copie o caminhdo do arquivo mongod.exe dentro da pasta de instalação do MongoDB ( Meu Computador > Arquivos de Programa > mongodb > server > 3.4 > bin > mongod.exe )
+    
+        1.4. Em 'Editar as Variáveis de Ambiente por Conta Própria' no Painel de Controle crie um 'novo', onde 'nomde da variavel' é: mongod e 'valor da variavel' é o endereço copiado no ultimo passo
+    
+        1.5. Abra o CMD ( WINDOWS + R > cmd > ENTER) e digite mongod
+    
+        1.6. Abra outro CMD e digite mongo
+        
+        1.7 [Observação]: Você não precisa utilizar o CMD para concluir a execução, basta executar o mongod.exe e o mongo.exe toda a vez que for utilizar o MongoDB
+    
+    2. Instalando o Node.JS
+    
+        2.1: Acesse https://nodejs.org/en/download/ e faça o download do .msi de instalação do node.js
+        
+        2.2: Avance os passos de instalação normalmente
+        
+        2.3: teste o sucesso de instação no CMD
+        
+   > node -v 
+   
+    3. Instalando o Ionic e o Cordova
+    
+        3.1 No CMD digite:
+        
+   > npm install ionic cordova -g 
+
+# Rodando o Servidor Rest (GNU/Linux - Ubuntu & Windows )
 
     1. Baixe o projeto:
 
@@ -97,7 +141,6 @@ O foco do projeto é o desenvolvimento de uma aplicação Mobile. Essa aplicaç�
     4. Rode o servidor
 
    > node index.js
-
 
 
 
