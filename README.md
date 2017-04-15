@@ -175,7 +175,15 @@ Exemplo:
 
    > node index.js
 
+# Rodando o Mobile (GNU/Linux - Ubuntu & Windows)
 
-
+    1. Entre na pasta Mobile
+    
+   > cd Mobile
+   
+    2. Rode o Ionic
+    
+   > ionic serve --lab
+   
 
 
