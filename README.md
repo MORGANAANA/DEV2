@@ -15,9 +15,9 @@ Grupo de Desenvolvimento:
     3. Mathias Gheno
     4. Morgana Goulart
 
-Instituição(ões):
+Instituição(ões) Responsável(eis):
 
-    1. Instituto Federal de Ciências e Técnologias do Rio Grande do Sul Campus Restinga
+    1. Instituto Federal de Educação Ciência e Tecnologia do Rio Grande do Sul, Campus Restinga
 
 # Sobre o Projeto
 
@@ -86,39 +86,72 @@ Para o funcionamento do projeto você ter instalado no seu sistema operacional t
    > sudo npm install -g ionic cordova
 
 
-# Instalando dependências necessário no windows
+# Instalando dependências necessárias no Windows
 
-    1. Instalando o MongoDB
+1. Instalando o MongoDB
 
-        1.1 Faça o download em https://www.mongodb.com/download-center#community escolha a plataforma windows
+    1.1 Faça o download em https://www.mongodb.com/download-center#community escolha a plataforma windows
 
-        1.2. Faça a instalação do executável normalmente
+    1.2. Faça a instalação do executável normalmente
+
+    1.3. Copie o caminhdo do arquivo mongod.exe dentro da pasta de instalação do MongoDB ( Meu Computador > Arquivos de Programa > mongodb > server > 3.4 > bin > mongod.exe )
+
+    1.4. Em 'Editar as Variáveis de Ambiente por Conta Própria' no Painel de Controle crie um 'novo', onde 'nomde da variavel' é: mongod e 'valor da variavel' é o endereço copiado no ultimo passo
+
+    1.5. Abra o CMD ( WINDOWS + R > cmd > ENTER) e digite mongod
+
+    1.6. Abra outro CMD e digite mongo
     
-        1.3. Copie o caminhdo do arquivo mongod.exe dentro da pasta de instalação do MongoDB ( Meu Computador > Arquivos de Programa > mongodb > server > 3.4 > bin > mongod.exe )
+    1.7 **[Observação]**: Você não precisa utilizar o CMD para concluir a execução, basta executar o mongod.exe e o mongo.exe toda a vez que for utilizar o MongoDB
+
+2. Instalando o Node.JS
+
+    2.1: Acesse https://nodejs.org/en/download/ e faça o download do .msi de instalação do node.js
     
-        1.4. Em 'Editar as Variáveis de Ambiente por Conta Própria' no Painel de Controle crie um 'novo', onde 'nomde da variavel' é: mongod e 'valor da variavel' é o endereço copiado no ultimo passo
+    2.2: Avance os passos de instalação normalmente
     
-        1.5. Abra o CMD ( WINDOWS + R > cmd > ENTER) e digite mongod
-    
-        1.6. Abra outro CMD e digite mongo
+    2.3: teste o sucesso de instação no CMD
         
-        1.7 [Observação]: Você não precisa utilizar o CMD para concluir a execução, basta executar o mongod.exe e o mongo.exe toda a vez que for utilizar o MongoDB
-    
-    2. Instalando o Node.JS
-    
-        2.1: Acesse https://nodejs.org/en/download/ e faça o download do .msi de instalação do node.js
-        
-        2.2: Avance os passos de instalação normalmente
-        
-        2.3: teste o sucesso de instação no CMD
-        
-   > node -v 
+> node -v 
    
-    3. Instalando o Ionic e o Cordova
-    
-        3.1 No CMD digite:
+3. Instalando o Ionic e o Cordova
+
+    3.1 No CMD digite:
         
-   > npm install ionic cordova -g 
+> npm install ionic cordova -g 
+   
+   
+# Adicionando dados no MongoDB (GNU/LINUX - Ubuntu & Windows)
+
+    1. Inicie o mongod (O servidor)
+    
+   > mongod
+   
+    2. Entre na pasta Rest/Dados
+    
+   > cd Rest/Dados
+   
+    3. Dentro da pasta execute o comando mongoimport
+    
+   > mongoimport --db app_livro --collection livro -drop --file livro.json 
+   
+   > mongoimport --db app_livro --collection questao --drop --file questao.json 
+
+Se o windows não reconhecer o comando mongoimport você terá que fazer um caminho diferente
+
+    1. copie os arquivo de Rest/dados para o C:\do Windows
+    2. Acesse a pasta /bin no diretório de instalação do MongoDB
+    3. No CMD execute
+    
+   > mongoimport --db app_livro --collection livro -drop --file **[caminhdoDoArquivo.json]**
+      
+   > mongoimport --db app_livro --collection questao --drop --file **[CaminhoDoArquivo.json]**
+   
+Exemplo:
+
+   > mongoimport --db app_livro --collection questao --drop --file C:\livro.json
+   
+   > mongoimport --db app_livro --collection questao --drop --file C:\questao.json
 
 # Rodando o Servidor Rest (GNU/Linux - Ubuntu & Windows )
 
