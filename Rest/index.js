@@ -33,11 +33,17 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 
+app.use(function(req, res, next){
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+    next();
+})
+
 // LIVROS
 
 //Pegar um livro pelo ID
 app.get('/livro/:id', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -64,7 +70,6 @@ app.get('/livro/:id', function (req, res) {
 
 // Pegar todos os livros
 app.get('/livros', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     var id = new objectId(req.params.id);
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
         if(err){
@@ -85,7 +90,6 @@ app.get('/livros', function (req, res) {
 
 // Deletar um arquivo pelo ID
 app.delete('/livro/:id', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -111,7 +115,6 @@ app.delete('/livro/:id', function (req, res) {
 
 // Adicionar um livro no banco, Body Raw JSON!
 app.post('/livro', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     var meuLivro = req.body;
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -153,7 +156,6 @@ app.post('/livro', function (req, res) {
 
 // Listagem de livros Por Universidade
 app.get('/livros/:universidade', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
         if(err){
             res.status(500).send('ocorreu um erro de conexão: ' + err);
@@ -194,7 +196,6 @@ app.get('/livros/:universidade', function (req, res) {
 
 // Questões de um livro agrupado por universidade
 app.get('/questoes/livro/:livro', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
         if(err){
             winston.error('ocorreu um erro de conexão ', {erro:err});
@@ -223,7 +224,6 @@ app.get('/questoes/livro/:livro', function (req, res) {
 
 // Adicionar uma questao no banco
 app.post('/questao',function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
    // res.send('está funcionando');
 
     var questao = req.body;
@@ -265,7 +265,6 @@ app.post('/questao',function (req, res) {
 
 //Pegar todos as questões
 app.get('/questoes', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
    mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
        if(err){
            winston.error('ocorreu um erro de conexão ', {erro:err});
@@ -284,7 +283,6 @@ app.get('/questoes', function (req, res) {
 
 //Pegar uma questão por ID
 app.get('/questao/:id', function (req, res){
-    res.setHeader("Access-Control-Allow-Origin", "*");
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -311,7 +309,6 @@ app.get('/questao/:id', function (req, res){
 
 // Deletar um questão por ID
 app.delete('/questao/:id', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -337,7 +334,6 @@ app.delete('/questao/:id', function (req, res) {
 
 // listagem de UNIVERSIDADES
 app.get('/universidades', function (req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
         if(err){
             winston.error('ocorreu um erro de conexão ', {erro:err});
@@ -351,7 +347,32 @@ app.get('/universidades', function (req, res) {
                     res.status(500).send('erro de busca' + err);
                 }
                 res.status(201).json(docs);
-                console.log('dados da query: ' + docs);
+                // console.log('dados da query: ' + docs);
+            });
+        }
+    });
+});
+
+//Listagem de questões por Universidade Com limite
+app.get('/simulado/universidade/:universidade/quantidade/:quantidade', function (req, res) {
+
+    var universidade = req.params.universidade;
+    var quantidade = parseInt(req.params.quantidade);
+
+    mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        if(err){
+            winston.error('ocorreu um erro de conexão ', {erro:err});
+            res.status(500).send('ocorreu um erro de conexão: ' + err);
+        } else {
+            var query = {
+                universidade:{'$regex' : '^' + universidade +'$', '$options' : 'i'}
+            }
+            db.collection('questao').find(query).limit(quantidade).toArray(function(err, docs) {
+                if(err){
+                    winston.error('ocorreu um erro de busca', {erro: err});
+                    res.status(500).send('erro de busca' + err);
+                }
+                res.status(201).json(docs);
             });
         }
     });
