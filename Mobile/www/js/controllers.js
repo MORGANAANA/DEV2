@@ -39,7 +39,7 @@ angular.module('app.controllers', [])
 
       // busca o livro referente ao id no banco e preenche a variavel indicada.
       $scope.buscaLivro = function(id){
-        var url = 'http://localhost:7001/livro/'+id;
+        var url = 'http://localhost:7001/livro/id/'+id;
         $http.get(url)
           .success(function(data){
             console.log('funcionou');
@@ -76,7 +76,7 @@ angular.module('app.controllers', [])
       //busca uma lista de livros filtrando por universidade.
       $scope.buscaListaLivrosPorUniversidade = function(universidade){
 
-        var url = 'http://localhost:7001/livros/'+universidade;
+        var url = 'http://localhost:7001/livros/universidade/'+universidade;
         var cont = [];
 
         $http.get(url)
@@ -101,7 +101,7 @@ angular.module('app.controllers', [])
       // deleta o livro referente ao id passado por parametro
       $scope.deletaLivro = function(id){
 
-        var url = 'http://localhost:7001/livro/'+id;
+        var url = 'http://localhost:7001/livro/id/'+id;
 
         $http.delete(url)
 
@@ -219,7 +219,7 @@ angular.module('app.controllers', [])
       // busca no banco e adiciona na variavel questao a questao referente ao id passado por parametro.
       $scope.buscaQuestao = function(id){
 
-        var url = "http://localhost:7001/questao/"+id;
+        var url = "http://localhost:7001/questao/id/"+id;
 
         $http.get(url)
           .success(function(data){
@@ -235,7 +235,7 @@ angular.module('app.controllers', [])
       };
       $scope.buscaResposta = function(id){
 
-        var url = "http://localhost:7001/Resposta/"+id;
+        var url = "http://localhost:7001/Resposta/id/"+id;
 
         $http.get(url)
           .success(function(data){
@@ -254,7 +254,7 @@ angular.module('app.controllers', [])
       // deleta a questao referente ao id enviado.
       $scope.deletaQuestao = function(id){
 
-        var url = "http://localhost:7001/questao/"+id;
+        var url = "http://localhost:7001/questao/id/"+id;
 
         $http.delete(url)
 
@@ -310,4 +310,3 @@ angular.module('app.controllers', [])
 
 
     }])
-
