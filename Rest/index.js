@@ -9,7 +9,8 @@ var winston = require('winston');
 var bb = require('express-busboy-custom');
 var fs = require('fs');
 var ip = require('os').networkInterfaces().lo[0].address;
-var porta = 7001;
+var argv = require('yargs').argv;
+var porta = argv.porta ? argv.porta : 7001;
 
 var logger = new (winston.Logger)({
     transports: [
@@ -43,7 +44,7 @@ app.use(function(req, res, next){
 // LIVROS
 
 //Pegar um livro pelo ID
-app.get('/livro/:id', function (req, res) {
+app.get('/livro/id/:id', function (req, res) {
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -89,7 +90,7 @@ app.get('/livros', function (req, res) {
 });
 
 // Deletar um arquivo pelo ID
-app.delete('/livro/:id', function (req, res) {
+app.delete('/livro/id/:id', function (req, res) {
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -155,7 +156,7 @@ app.post('/livro', function (req, res) {
 });
 
 // Listagem de livros Por Universidade
-app.get('/livros/:universidade', function (req, res) {
+app.get('/livros/universidade/:universidade', function (req, res) {
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
         if(err){
             res.status(500).send('ocorreu um erro de conexão: ' + err);
@@ -282,7 +283,7 @@ app.get('/questoes', function (req, res) {
 });
 
 //Pegar uma questão por ID
-app.get('/questao/:id', function (req, res){
+app.get('/questao/id/:id', function (req, res){
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -308,7 +309,7 @@ app.get('/questao/:id', function (req, res){
 });
 
 // Deletar um questão por ID
-app.delete('/questao/:id', function (req, res) {
+app.delete('/questao/id/:id', function (req, res) {
     var id = new objectId(req.params.id);
 
     mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
