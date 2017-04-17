@@ -129,7 +129,7 @@ Para o funcionamento do projeto você ter instalado no seu sistema operacional t
    
     2. Entre na pasta Rest/Dados
     
-   > cd Rest/Dados
+   > cd Rest/dados
    
     3. Dentro da pasta execute o comando mongoimport
     
