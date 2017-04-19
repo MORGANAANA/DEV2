@@ -379,6 +379,14 @@ app.get('/simulado/universidade/:universidade/quantidade/:quantidade', function 
     });
 });
 
+//app.post("/simulado/resultados",function(req,res){
+//    var resultados = req.body;
+//
+//   res.status(201).send("sucesso");
+//
+//   console.log(resultados);
+//});
+
 app.get('/', function (req, res) {
    res.render('../views/home.ejs');
 });

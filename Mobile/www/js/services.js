@@ -21,6 +21,20 @@ angular.module('app.services', [])
 
   }])
 
+  .service('simuladoService',[function(){
+
+    this.resultado = "";
+
+    this.setResultado = function(res){
+      this.resultado = res;
+    }
+
+    this.getResultado = function(){
+      return this.resultado;
+    }
+
+  }])
+
   .service('livroService', [function(){
 
 
