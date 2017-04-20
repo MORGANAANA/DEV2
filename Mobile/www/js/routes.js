@@ -79,6 +79,12 @@ angular.module('app.routes', [])
     controller: 'criarForumCtrl'
   })
 
+  .state('gerarSimulado', {
+  url: '/gerarSimulado',
+  templateUrl: 'templates/gerarSimulado.html',
+  controller: 'gerarSimuladoCtrl'
+})
+
 $urlRouterProvider.otherwise('/inicial')
 
 
