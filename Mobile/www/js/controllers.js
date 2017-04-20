@@ -288,6 +288,21 @@ angular.module('app.controllers', [])
           })
       }
 
+      //função para buscar simulado no banco
+      $scope.buscarSimulado = function(){
+        var url = "http://localhost:7001/simulado";
+
+        $http.get(url)
+          .success(function(data){
+            console.log("Simulado pego com sucesso");
+
+          })
+          .error(function(){
+            console.log("Erro ao buscar simulado");
+          })
+
+      }
+
     }])
 
 
