@@ -23,6 +23,8 @@ angular.module('app.services', [])
 
   .service('simuladoService',[function(){
 
+    this.simulado ="";
+
     this.resultado = "";
 
     this.setResultado = function(res){

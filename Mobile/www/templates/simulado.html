@@ -1,70 +1,24 @@
 <ion-view title="Simulado" id="page14" style="background-color:#10454d">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header" ng-controller="simuladoCtrl">
 
 
-          <ion-list class="lst_questinoes_simulado">
+          <ion-list class="lst_questinoes_simulado" ng-repeat="simulado in service.simulado">
             <ion-item class="simulado_enunciado_item">
-              <h3 class ="simulado_enunciado_font">(UFRGS 2015)Assinale a questão cujas obras sejam todas de autoria de Clarice Lispector:</h3>
+              <h3 class ="simulado_enunciado_font">{{simulado.questao}}</h3>
             </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>A)</strong>Perto do coração selvagem, Laços de família, O lustre e A hora da estrela.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>B)</strong> Perto do coração selvagem, A hora da estrela, As meninas e Oito contos de amor.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>C)</strong>O lustre, Laços de família, A estrutura da bolha de sabão e Verão no aquário.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>D)</strong>Como nasceram as estrelas, Um sopro de vida, A vida íntima de Laura e Pomba enamorada, ou, Uma história de amor: e outros contos escolhidos.</p>
-            </ion-item>
+            <ion-list ng-repeat="alternativa in simulado.alternativas">
+              <ion-item class="simulado_item">
+              <p class="simulado_txt_alternativa"><strong>{{alternativa}}</strong></p>
+              </ion-item>
+
           </ion-list>
 
 
 
             <div class="spacer" style="width: 300px; height: 25px;"></div>
 
-          <ion-list class="lst_questoes_simulado">
-            <ion-item class="simulado_enunciado_item">
-              <h3 class ="simulado_enunciado_font">(UFRGS 2015)Assinale a questão cujas obras sejam todas de autoria de Clarice Lispector:</h3>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>A)</strong>Perto do coração selvagem, Laços de família, O lustre e A hora da estrela.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>B)</strong> Perto do coração selvagem, A hora da estrela, As meninas e Oito contos de amor.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>C)</strong>O lustre, Laços de família, A estrutura da bolha de sabão e Verão no aquário.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>D)</strong>Como nasceram as estrelas, Um sopro de vida, A vida íntima de Laura e Pomba enamorada, ou, Uma história de amor: e outros contos escolhidos.</p>
-            </ion-item>
-          </ion-list>
 
-          <div class="spacer" style="width: 300px; height: 25px;"></div>
 
-          <ion-list class="lst_questoes_simulado" >
-            <ion-item class="simulado_enunciado_item">
-              <h3 class ="simulado_enunciado_font">(UFRGS 2015)Assinale a questão cujas obras sejam todas de autoria de Clarice Lispector:</h3>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>A)</strong>Perto do coração selvagem, Laços de família, O lustre e A hora da estrela.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>B)</strong> Perto do coração selvagem, A hora da estrela, As meninas e Oito contos de amor.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>C)</strong>O lustre, Laços de família, A estrutura da bolha de sabão e Verão no aquário.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>D)</strong>Como nasceram as estrelas, Um sopro de vida, A vida íntima de Laura e Pomba enamorada, ou, Uma história de amor: e outros contos escolhidos.</p>
-            </ion-item>
-          </ion-list>
-
-          <div class="spacer" style="width: 300px; height: 40px;"></div>
-
-          <a ui-sref="simulado" id="aHoraDaEstrela-button34" class="button button-balanced  button-block icon-right ion-play">Verificar Respostas</a>
 
 
 
@@ -75,4 +29,7 @@
 
 
   </ion-content>
+
+    <a ui-sref="simulado" id="aHoraDaEstrela-button34" class="button button-balanced  button-block icon-right ion-play">Verificar Respostas</a>
+
 </ion-view>

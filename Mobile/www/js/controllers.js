@@ -26,7 +26,11 @@ angular.module('app.controllers', [])
   .controller ('livroCtrl', ['$scope', '$http','livroService',
     function ($scope, $http,livroService) {
 
-      var urlServer = "localhost:7001";
+
+
+
+
+      var urlServer = "192.168.1.173:7001";
 
       $scope.service = livroService;
 
@@ -165,7 +169,10 @@ angular.module('app.controllers', [])
   .controller('questoesCtrl', ['$scope', '$http','questaoService',
     function ($scope, $http, questaoService) {
 
-      var urlServer = "localhost:7001";
+
+
+
+      var urlServer = "192.168.1.173:7001";
 
       $scope.service = questaoService;
 
@@ -237,6 +244,7 @@ angular.module('app.controllers', [])
           })
 
       };
+
       $scope.buscaResposta = function(id){
 
         var url = 'http://'+urlServer+'/Resposta/id/'+id;
@@ -288,20 +296,9 @@ angular.module('app.controllers', [])
           })
       }
 
-      //função para buscar simulado no banco
-      $scope.buscarSimulado = function(){
-        var url = "http://localhost:7001/simulado";
 
-        $http.get(url)
-          .success(function(data){
-            console.log("Simulado pego com sucesso");
 
-          })
-          .error(function(){
-            console.log("Erro ao buscar simulado");
-          })
 
-      }
 
     }])
 
@@ -319,9 +316,44 @@ angular.module('app.controllers', [])
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
     function ($scope,$http,simuladoService) {
 
-      var urlServer = "localhost:7001";
+      var urlServer = "192.168.1.173:7001";
+
+      $scope.showSelectValue = function(mySelect) {
+          $scope.universidade = mySelect;
+          console.log(mySelect);
+      }
+
+      $scope.universidade = "";
+
+      $scope.nQuestoes = "";
+
+      // $scope.setUniversidade = function(u){
+      //   $scope.universidade = u;
+      // }
+
+      $scope.setnQuestoes = function(n){
+        $scope.nQuestoes = n;
+      }
+
+      $scope.service = simuladoService;
 
       $scope.simuladoResultado = "";
+
+      $scope.fazerSimulado = function(){
+
+        var universidade = $scope.universidade;
+
+        console.log(universidade);
+
+        var numeroQuestoes = $scope.nQuestoes;
+
+        $scope.buscarSimulado(universidade,numeroQuestoes);
+
+        console.log("universidade: "+universidade+"   n questoes:  "+numeroQuestoes);
+
+
+
+      }
 
       $scope.enviaResultado = function(){
 
@@ -339,6 +371,20 @@ angular.module('app.controllers', [])
 
       }
 
+      //função para buscar simulado no banco
+      $scope.buscarSimulado = function(universidade, quantidade){
+        var url = "http://"+urlServer+"/simulado/universidade/"+universidade+"/quantidade/"+quantidade;
+
+        $http.get(url)
+          .success(function(data){
+            console.log("Simulado pego com sucesso");
+            simuladoService.simulado = data;
+          })
+          .error(function(){
+            console.log("Erro ao buscar simulado");
+          })
+
+      }
 
 
     }])
@@ -358,4 +404,3 @@ function ($scope, $stateParams) {
 
 
 }])
- 
