@@ -10,36 +10,20 @@
         <span class="input-label">Universidade</span>
 
 
-          <!-- <ion-radio id="radioUniversidadeId" name="radioUniversidade" ng-click="setUniversidade(universidade._id)">{{universidade._id}}</ion-radio> -->
-
-          <!-- <ion-item>
-            <ion-label>Gender</ion-label>
-            <ion-select [(ngModel)]="universidade._id">
-              <ion-option ng-repeat="universidade in service.listaUniversidades" value="universidade._id" selected="true">{{universidade._id}}</ion-option>
-            </ion-select>
-          </ion-item> -->
-
-          <select ng-model="mySelect" ng-change="showSelectValue(mySelect)">
+          <!--<select ng-model="mySelect" ng-change="showSelectValue(mySelect)">
               <option ng-repeat="universidade in service.listaUniversidades" >{{universidade._id}}</option>
-          </select>
+          </select> -->
 
-        <!--
+
         <select id="selectUniversidade">
           <option value="ufrgs" ng-repeat="universidade in service.listaUniversidades" > {{universidade._id}}</option>
-        </select> -->
-
-      </label>
-
-      <div class="spacer" style="width: 300px; height: 28px;" ></div>
-      <label class="item item-select" id="gerarSimulado-select9" name="select_livro">
-        <span class="input-label">Livro</span>
-        <select>
-          <option>livro 1</option>
-          <option>livro 2</option>
-          <option>livro 3</option>
         </select>
+
       </label>
+
     </form>
+
+
     <form id="gerarSimulado-form25" class="list">
       <div class="spacer" style="width: 300px; height: 18px;"></div>
       <ion-radio id="gerarSimulado-radio5" name="simulado_num_questoes" ng-click="setnQuestoes(10)">10 Questões</ion-radio>
