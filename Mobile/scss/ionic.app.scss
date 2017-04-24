@@ -18,6 +18,31 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+$dark: #fff !default;
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.alinhamentoTXT {
+    white-space: initial !important;
+    font-size: 14px;
+    color: #666;
+}
+
+.item_errado {
+  @extend.alinhamentoTXT;
+  color: #8e0f0f !important;
+  font-style: oblique;
+}
+
+.item_correto{
+  @extend.alinhamentoTXT;
+  color:#fff;
+  background-color:2f5a29;
+}
+
+.item_selecionado{
+  @extend.alinhamentoTXT;
+  color:#fff;
+  background-color:2e6796;
+}
