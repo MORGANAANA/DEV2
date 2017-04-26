@@ -43,6 +43,11 @@ angular.module('app.controllers', [])
       // ao executar adicionaLivro()  ele adiciona o livro presente nesta variavel.
       $scope.livroAAdicionar = "x";
 
+      //$scope.poema = function(){
+    //	  alert("A distinção entre presente, passado e futuro é apenas uma ilusao, teimosamente persistente!");
+      //}
+      
+      
       // busca o livro referente ao id no banco e preenche a variavel indicada.
       $scope.buscaLivro = function(id){
         var url = 'http://'+urlServer+'/livro/id/'+id;
@@ -339,6 +344,75 @@ angular.module('app.controllers', [])
 
       $scope.simuladoResultado = "";
 
+      $scope.setSimuladoResposta = function(idQuestao, alternativa){
+    	 
+    	  var respostas = {idQuestao:idQuestao,alternativa:alternativa,estado:'na'};
+    	  
+    	  //console.log("idquestao: "+respostas.idQuestao+"   alternativa escolhida: "+respostas.alternativa);
+    	  
+    	  // adiciona o valor da nova alternativa.
+    		  simuladoService.respostasSimulado.push(respostas);
+    		  // verifica se ja nao foi marcada uma opção na mesma questao e exclui a opção marcada anteriormente.
+	    	  for(var I=simuladoService.respostasSimulado.length -1;I>=0;I--){
+	    		  if(simuladoService.respostasSimulado[I].idQuestao == respostas.idQuestao && simuladoService.respostasSimulado[I].alternativa != respostas.alternativa ){
+	    			  simuladoService.respostasSimulado.splice(I,1);
+	    			  //console.log("entrou");
+	    			  break;
+	    		  }
+	    	  }
+    	  
+    	  
+    	  
+    	 
+    	  
+    	  //var stri = angular.toJson(simuladoService.respostasSimulado);
+    	  
+    	  //console.log("         tudo: "+stri);
+    	  
+      }
+      
+      $scope.verificarRespostas = function(){
+    	  var respostaUsuario = simuladoService.respostasSimulado;
+    	  var questoes = simuladoService.simulado;
+    	  var nAcerto=0;
+    	  var nQuestoes=0;
+    	  
+    	 /* //filtra a resposta usuario para manter apenas a ultima alternativa marcada.
+    	  for(var I2=0;I2<respostaUsuario.length;I2++){
+	    	  for(var I=0;I<I2;I++){
+	    		  if(respostaUsuario[I].idQuestao == respostaUsuario[I2].idQuestao && I2!=I){
+	    			  respostaUsuario.splice(I);
+	    			  I2--;
+	    		  }
+	    	  }
+    	  }
+    	  */
+    	  //atualiza o resposta usuario apensa com valores validos.
+    	  //simuladoService.respostasSimulado = respostaUsuario;
+    	  
+    	  
+    	  //verifica se o usuario acertou a resposta e marca na variavel estado.
+    	  for(var I=0;I<respostaUsuario.length;I++){
+    		  for(var I2=0;I2<questoes.length;I2++){
+    			  if(respostaUsuario[I].idQuestao == questoes[I2]._id){
+    				  nQuestoes++;
+    				  if(respostaUsuario[I].alternativa == questoes[I2].resposta){
+    					  respostaUsuario[I].estado = "certo";
+    					  nAcerto++;
+    				  }else{
+    					  respostaUsuario[I].estado = questoes[I2].resposta;
+    					  
+    				  }
+    			  }
+    		  }
+    	  }
+    	  
+    	  simuladoService.respostasSimulado = respostaUsuario;
+    	  
+    	  alert("acertou "+nAcerto+" questoes em "+nQuestoes+" questoes");
+    	  
+      }
+      
       $scope.fazerSimulado = function(){
 
         var universidade = $scope.universidade;
@@ -350,8 +424,6 @@ angular.module('app.controllers', [])
         $scope.buscarSimulado(universidade,numeroQuestoes);
 
         console.log("universidade: "+universidade+"   n questoes:  "+numeroQuestoes);
-
-
 
       }
 
