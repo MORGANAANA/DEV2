@@ -41,10 +41,12 @@ white-space: initial !important;
   background-color: #2f5a29;
   font-size: 14px !important;
   white-space: initial !important;
-
-
 }
 
+.button.button-positive-marcarEncontro{
+  background-color: #489c99 ;
+
+}
 
 
 /*CONFIGURAÇÕES TELA .... */
