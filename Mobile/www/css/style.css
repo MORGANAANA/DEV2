@@ -1,5 +1,6 @@
 /*CONFIGURAÇÕES TELA SIMULADO */
 
+
 .simulado_enunciado_font{
   font-size: 15px !important;
   white-space: initial !important;
@@ -19,7 +20,33 @@
   margin-bottom: 50px;
 }
 
+.item_selecionado{
+  color: #fff;
+  background-color: #2e6796;
+  font-size: 14px !important;
+white-space: initial !important;
 
+}
+
+.item_errado {
+  color: #8e0f0f;
+  font-style: oblique;
+  font-size: 14px !important;
+ white-space: initial !important;
+
+  }
+
+.item_correto{
+  color: #fff;
+  background-color: #2f5a29;
+  font-size: 14px !important;
+  white-space: initial !important;
+}
+
+.button.button-positive-marcarEncontro{
+  background-color: #489c99 ;
+
+}
 
 
 /*CONFIGURAÇÕES TELA .... */
