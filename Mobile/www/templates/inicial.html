@@ -12,13 +12,25 @@
 
     <a ui-sref="criarForum" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">CRIAR forum</a>
 
-    <a ui-sref="simulado" id="inicial-button14" style="font-weight:300;font-size:15px;" class="button button-balanced button-large">SIMULADO</a>
+
+    <!--<a ui-sref="simulado" id="inicial-button14" style="font-weight:300;font-size:15px;" class="button button-balanced button-large">SIMULADO</a>-->
+
+
+    <div ng-controller="questoesCtrl">
+      <a ng-click="buscaListaUniversidades()" ui-sref="gerarSimulado" id="inicial-button37" style="border-radius:60px 60px 60px 60px;" class="button button-energized  button-block">gerar simulado</a>
+    </div>
 
 
     <div ng-controller="questoesCtrl">
       <a ui-sref="questoes" ng-click="buscaListaQuestoes()" id="inicial-button30" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">Lista_Questoes</a>
     </div>
 
+    <div ng-controller="MyController">
+
+      <button class="button button-balanced button-large" ng-click="Mostra()"  style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" >Abre Modal</button>
+
+
+    </div>
 
 
 </ion-view>

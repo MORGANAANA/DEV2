@@ -1,116 +1,38 @@
 <ion-view title="Simulado" id="page14" style="background-color:#10454d">
-  <ion-content padding="true" style="background: url(img/bg_simulado.jpg) no-repeat center;background-size:cover;" class="has-header">
 
-    <div>
-      <img src="img/banner_simulado.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
-    </div>
-    <div class="spacer" style="width: 300px; height: 44px;"></div>
-    <ion-list class="lst_questinoes_simulado ">
-      <ion-item class="simulado_enunciado_item">
-        <h3 class ="simulado_enunciado_font">Sou um enunciado para ilustrar as Classes CSS </h3>
-      </ion-item>
+  \\class="item_selecionado"
+  \\class="item_errado"
+  \\class="item_correto"
 
+    <ion-content padding="true" class="has-header" ng-controller="simuladoCtrl">
 
+      <ion-list class="lst_questinoes_simulado" ng-repeat="simulado in service.simulado">
 
-      <ion-item class="item_selecionado">
-        <strong>A)</strong> SOU UM ITEM SELECIONADO PELO USUÁRIO.</p>
-      </ion-item>
+        <form id="gerarSimulado-form25" class="list">
+          <div class="spacer" style="width: 300px; height: 18px;"></div>
 
-      <ion-item class="simulado_item">
-        <strong>B)</strong> Item Comum.</p>
-      </ion-item>
+          <ion-item class="simulado_enunciado_item">
+            <h3 class ="simulado_enunciado_font">{{simulado.questao}}</h3>
+          </ion-item>
 
-      <ion-item class="item_errado">
-        <strong>C)</strong>Sou um item incorreto, após a correção eu sou apresentado Assim para o usuário
-      </ion-item>
+          <ion-radio class="simulado_item" ng-repeat="alternativa in simulado.alternativas" id="gerarSimulado-radio5"
+                     name="simulado_num_questoes" ng-click="setSimuladoResposta(simulado._id,alternativa)">
+            {{alternativa}}
+          </ion-radio>
 
-      <ion-item class="simulado_item">
-        <strong>D)</strong> Item Comum.</p>
-      </ion-item>
+        </form>
 
 
-      <ion-item class="item_correto">
-        <strong>E)</strong>Sou a opção correta.
-      </ion-item>
-    </ion-list>
+      </ion-list>
 
-    <div class="spacer" style="width: 300px; height: 25px;"></div>
+      <div class="spacer" style="width: 300px; height: 25px;"></div>
+
+
+      <a ng-click="verificarRespostas()" ui-sref="simulado" id="aHoraDaEstrela-button34"
+         class="button button-balanced  button-block icon-right ion-play">Verificar Respostas</a>
+    </ion-content>
 
 
 
 
-
-          <ion-list class="lst_questinoes_simulado">
-            <ion-item class="simulado_enunciado_item">
-              <h3 class ="simulado_enunciado_font">(UFRGS 2015)Assinale a questão cujas obras sejam todas de autoria de Clarice Lispector:</h3>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>A)</strong>Perto do coração selvagem, Laços de família, O lustre e A hora da estrela.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>B)</strong> Perto do coração selvagem, A hora da estrela, As meninas e Oito contos de amor.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>C)</strong>O lustre, Laços de família, A estrutura da bolha de sabão e Verão no aquário.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>D)</strong>Como nasceram as estrelas, Um sopro de vida, A vida íntima de Laura e Pomba enamorada, ou, Uma história de amor: e outros contos escolhidos.</p>
-            </ion-item>
-          </ion-list>
-
-
-
-            <div class="spacer" style="width: 300px; height: 25px;"></div>
-
-          <ion-list class="lst_questoes_simulado">
-            <ion-item class="simulado_enunciado_item">
-              <h3 class ="simulado_enunciado_font">(UFRGS 2015)Assinale a questão cujas obras sejam todas de autoria de Clarice Lispector:</h3>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>A)</strong>Perto do coração selvagem, Laços de família, O lustre e A hora da estrela.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>B)</strong> Perto do coração selvagem, A hora da estrela, As meninas e Oito contos de amor.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>C)</strong>O lustre, Laços de família, A estrutura da bolha de sabão e Verão no aquário.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>D)</strong>Como nasceram as estrelas, Um sopro de vida, A vida íntima de Laura e Pomba enamorada, ou, Uma história de amor: e outros contos escolhidos.</p>
-            </ion-item>
-          </ion-list>
-
-          <div class="spacer" style="width: 300px; height: 25px;"></div>
-
-          <ion-list class="lst_questoes_simulado" >
-            <ion-item class="simulado_enunciado_item">
-              <h3 class ="simulado_enunciado_font">(UFRGS 2015)Assinale a questão cujas obras sejam todas de autoria de Clarice Lispector:</h3>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>A)</strong>Perto do coração selvagem, Laços de família, O lustre e A hora da estrela.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>B)</strong> Perto do coração selvagem, A hora da estrela, As meninas e Oito contos de amor.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>C)</strong>O lustre, Laços de família, A estrutura da bolha de sabão e Verão no aquário.</p>
-            </ion-item>
-            <ion-item class="simulado_item">
-            <p class="simulado_txt_alternativa"><strong>D)</strong>Como nasceram as estrelas, Um sopro de vida, A vida íntima de Laura e Pomba enamorada, ou, Uma história de amor: e outros contos escolhidos.</p>
-            </ion-item>
-          </ion-list>
-
-          <div class="spacer" style="width: 300px; height: 40px;"></div>
-
-          <a ui-sref="simulado" id="aHoraDaEstrela-button34" class="button button-dark  button-block icon-right ion-play">Verificar Respostas</a>
-
-
-
-
-
-
-
-
-
-  </ion-content>
 </ion-view>
