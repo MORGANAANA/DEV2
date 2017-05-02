@@ -423,9 +423,11 @@ angular.module('app.controllers', [])
 
     	  //verifica se o usuario acertou a resposta e marca na variavel estado.
     	  for(var I=0;I<respostaUsuario.length;I++){
+          nQuestoes = 0;
     		  for(var I2=0;I2<questoes.length;I2++){
+            nQuestoes++;
     			  if(respostaUsuario[I].idQuestao == questoes[I2]._id){
-    				  nQuestoes++;
+
     				  if(respostaUsuario[I].alternativa == questoes[I2].resposta){
     					  respostaUsuario[I].estado = "certo";
     					  nAcerto++;
@@ -438,6 +440,10 @@ angular.module('app.controllers', [])
     	  }
 
     	  simuladoService.respostasSimulado = respostaUsuario;
+
+        var auxResposta = {nAcerto:nAcerto,nQuestoes:nQuestoes};
+
+        $scope.enviaResultado(auxResposta);
 
     	  alert("acertou "+nAcerto+" questoes em "+nQuestoes+" questoes");
 
@@ -456,12 +462,12 @@ angular.module('app.controllers', [])
         console.log("universidade: "+universidade+"   n questoes:  "+numeroQuestoes);
 
       }
-
-      $scope.enviaResultado = function(){
+      //envia resultado do banco para a nalisar.
+      $scope.enviaResultado = function(resultado){
 
         var url = 'http://'+urlServer+'/simulado/resultados';
 
-        $http.post(url,$scope.simuladoResultado)
+        $http.post(url,resultado)
 
           .success(function(){
             console.log("resultado enviado com sucesso");
