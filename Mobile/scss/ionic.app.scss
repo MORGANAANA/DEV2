@@ -43,11 +43,11 @@ $positive: #489c99 !default;
 .item_correto{
   @extend.alinhamentoTXT;
   color:#fff;
-  background-color:2f5a29;
+  background-color:#2f5a29;
 }
 
 .item_selecionado{
   @extend.alinhamentoTXT;
   color:#fff;
-  background-color:2e6796;
+  background-color:#2e6796;
 }
