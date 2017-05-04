@@ -439,13 +439,21 @@ angular.module('app.controllers', [])
     		  }
     	  }
 
-    	  simuladoService.respostasSimulado = respostaUsuario;
+        simuladoService.respostasSimulado = respostaUsuario;
 
-        var auxResposta = {nAcerto:nAcerto,nQuestoes:nQuestoes};
-
-        $scope.enviaResultado(auxResposta);
-
-    	  alert("acertou "+nAcerto+" questoes em "+nQuestoes+" questoes");
+        var porcentagen = (100 * nAcerto)/nQuestoes;
+        if(porcentagen == 100){
+          alert("Parabens você acertou todas as questões");
+        }else if(porcentagen >= 75 && porcentagen < 100){
+          alert("Você esta muito bem!! Parabens, acertou" + porcentagen + "porcento das questões");
+        }else if(porcentagen >= 50 && porcentagen < 75){
+          alert("Você precisa melhorar mais, acertou" + porcentagen + "porcento das questões");
+        }else if(porcentagen >=25 && porcentagen < 50){
+          alert("Você está mau, estude mais, acertou" + porcentagen + "porcento das questões")
+        }else if(porcentagen > 0 && porcentagen < 25){
+          alert("Você foi péssimo, acertou quase nada, acertou" + porcentagen + "porcento das questões");
+        }else if(porcentagen == 0 ){
+          alert("Você não acertou nenhuma");
 
       }
 
