@@ -452,9 +452,9 @@ angular.module('app.controllers', [])
           alert("Você está mau, estude mais, acertou" + porcentagen + "porcento das questões")
         }else if(porcentagen > 0 && porcentagen < 25){
           alert("Você foi péssimo, acertou quase nada, acertou" + porcentagen + "porcento das questões");
-        }else if(porcentagen == 0 ){
+        }else if(porcentagen == 0 ) {
           alert("Você não acertou nenhuma");
-
+        }
       }
 
       $scope.fazerSimulado = function(){
