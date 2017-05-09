@@ -45,8 +45,21 @@ white-space: initial !important;
 
 .button.button-positive-marcarEncontro{
   background-color: #489c99 ;
-
 }
 
+.button.button-preto{
+  color:#fff;
+  background-color: #000 ;
+}
+
+.button.button-laranja{
+  color:#fff;
+  background-color: #ffa42d;
+}
+
+.descricaoTopico{
+  width: 300px !important;
+  background-color: green;
+}
 
 /*CONFIGURAÇÕES TELA .... */
