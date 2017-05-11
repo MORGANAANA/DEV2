@@ -9,7 +9,8 @@ var objectId = require('mongodb').ObjectID;
 var winston = require('winston');
 var bb = require('express-busboy-custom');
 var fs = require('fs');
-var ip = require('os').networkInterfaces().lo[0].address;
+//var ip = require('os').networkInterfaces().lo[0].address;
+var ip = "localhost";
 var argv = require('yargs').argv;
 var porta = argv.porta ? argv.porta : 7001;
 
