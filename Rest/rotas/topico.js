@@ -82,7 +82,7 @@ module.exports = function (app) {
     });
 
     // Deletar um tópico pelo ID
-    app.delete('/questao/id/:id', function (req, res) {
+    app.delete('/topico/id/:id', function (req, res) {
         var id = new objectId(req.params.id);
 
         mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
@@ -158,6 +158,20 @@ module.exports = function (app) {
                 });
             }
         });
+    });
+
+    app.post('/topico/id/:id/comentario/:comentario', (req, res) =>{
+       mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
+           if(err){
+               res.status(500).send(' Ocorreu um erro de conexão: ' + err);
+               winston.error(' Ocorreu um erro de conexão', {erro: err});
+           } else {
+               /*
+                  TODO implementar a criação e a exclusão de comentários nos tópicos
+
+               */
+           }
+       })
     });
 
 };
