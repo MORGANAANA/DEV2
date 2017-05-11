@@ -3,7 +3,9 @@
  */
 var winston = require('winston');
 var fs = require('fs');
-var ip = require('os').networkInterfaces().lo[0].address;
+//var ip = require('os').networkInterfaces().lo[0].address;
+var ip = "localhost";
+
 
 module.exports = function (winston) {
     var logger = new (winston.Logger)({
