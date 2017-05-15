@@ -73,10 +73,12 @@ angular.module('app.routes', [])
     controller: 'simuladoCtrl'
   })
 
-  .state('criarForum', {
-    url: '/criar_forum',
+
+  .state('criarTopico', {
+    url: '/criarTopico',
     templateUrl: 'templates/criarTopico.html',
-    controller: 'criarForumCtrl'
+    controller: 'criarTopicoCtrl'
+
   })
 
   .state('gerarSimulado', {
