@@ -73,10 +73,12 @@ angular.module('app.routes', [])
     controller: 'simuladoCtrl'
   })
 
+
   .state('criarTopico', {
     url: '/criarTopico',
     templateUrl: 'templates/criarTopico.html',
     controller: 'criarTopicoCtrl'
+
   })
 
   .state('gerarSimulado', {

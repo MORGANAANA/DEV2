@@ -1,7 +1,26 @@
 angular.module('app.controllers', [])
 
-  .controller('loginCtrl', ['$scope', '$stateParams',
-    function ($scope, $stateParams) {
+  .controller('loginCtrl', ['$scope','loginService','$location',
+    function ($scope,loginService,$location) {
+
+      $scope.email = "";
+
+      $scope.senha = "";
+
+      $scope.login = function(){
+        loginService.login($scope.email,$scope.senha,function(result){
+          if(result == true){
+            $location.path('inicial');
+          }else{
+            $location.path('login');
+            console.log("Erro ao logar");
+          }
+        })
+      }
+
+      $scope.logout = function(){
+        loginService.logout();
+      }
 
 
     }])
@@ -509,11 +528,39 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
     function ($scope, $stateParams) {
+      var urlServer = "localhost:7001";
 
+      $scope.criarTopicoCtrl = function (titulo, contexto, id) {
+        var url = 'http://' + urlServer + '/topico/id/' + id;
+        $http.get(url)
+          .success(function (data) {
+            console.log("Topico criado com sucesso");
+          })
+          .error(function () {
+            console.log("Erro ao criar o topico");
+          })
+      }
+      $scope.deletarTopico = function (id) {
+
+        var url = 'http://' + urlServer + '/topico/id/' + id;
+
+        $http.delete(url)
+
+          .success(function () {
+            console.log("Topico deletado com sucesso");
+          })
+
+          .error(function () {
+            console.log("erro ao deletar o topico");
+          })
+      }
 
     }])
 
-    .controller('gerarSimuladoCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+
+
+
+  .controller('gerarSimuladoCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
