@@ -75,7 +75,7 @@ angular.module('app.routes', [])
 
   .state('criarForum', {
     url: '/criar_forum',
-    templateUrl: 'templates/criarForum.html',
+    templateUrl: 'templates/criarTopico.html',
     controller: 'criarForumCtrl'
   })
 
