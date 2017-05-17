@@ -10,9 +10,12 @@ angular.module('app.services', [])
     this.login = function(email,senha,callback){
 
       //post com email e senha.
-      $http.post('localhost:7001/login',{email:email,senha:senha})
+      $http.post('http://localhost:7001/login',{email:email,senha:senha})
       //caso sucesso.
+
+
         .success(function(res) {
+
           if(res.token) {
             //define os dados do usuario que serao armazenados no sistema.
             var usuario = {email: email, senha: senha, token: res.token}

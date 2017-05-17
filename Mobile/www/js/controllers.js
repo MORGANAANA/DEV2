@@ -325,37 +325,7 @@ angular.module('app.controllers', [])
 
 
     }])
-  .controller('MyController', function($scope, $ionicModal) {
-    $ionicModal.fromTemplateUrl('modal.html', {
-      scope: $scope,
-      animation: 'slide-in-up'
-    }).then(function (modal) {
-      $scope.modal = modal;
-    })
-    $scope.abreModal = function () {
-      $scope.modal.show();
-    }
-    $scope.fechaModal = function () {
-      $scope.modal.hide();
-    }
-    // Cleanup the modal when we're done with it!
-    $scope.$on('$destroy', function () {
-      $scope.modal.remove();
-    })
-    // Execute action on hide modal
-    //$scope.$on('modal.hidden', function () {
-    // Execute action
-    //})
-    // Execute action on remove modal
-    //$scope.$on('modal.removed', function () {
-    // Execute action
-    //})
 
-    $scope.Mostra = function () {
-      alert("Ola Mundo");
-
-    }
-  })
 
   .controller('encontroLocalCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function

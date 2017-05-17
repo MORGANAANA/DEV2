@@ -154,7 +154,7 @@ module.exports = function (app) {
                     if(err){
                         winston.error('ocorreu um erro de busca: ', {erro:err});
                         res.status(500).send('erro de busca' + err);
-                    }
+                      }
                     res.status(201).json(docs);
                 });
             }
