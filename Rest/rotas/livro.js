@@ -152,10 +152,11 @@ module.exports = function (app) {
                         winston.error('ocorreu um erro de busca', {erro: 'Nenhum resultado'});
                         res.status(500).send('Erro de busca: ' + 'Nenhum resultado encontrado');
                     }
+
                     // var arrayTest = new Array();
-                    //
-                    // // var controlador = 0;
-                    //
+
+                    // var controlador = 0;
+
                     // for(var i = 0; i< docs.length; i++){
                     //     var numero = i;
                     //     db.collection('livro').findOne({'titulo': {'$regex' : '^'+ docs[i]._id +'$', '$options' : 'i'} }, function (err, resultado) {

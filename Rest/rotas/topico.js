@@ -161,18 +161,66 @@ module.exports = function (app) {
         });
     });
 
-    app.post('/topico/id/:id/comentario/:comentario', (req, res) =>{
-       mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
+    app.post('/topico/id/:id/comentario/', (req, res) =>{
+
+        var id = new objectId(req.params.id);
+        var comentario = req.body;
+
+        var query = {
+            "$addToSet": {"respostas": comentario}
+        };
+
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
            if(err){
                res.status(500).send(' Ocorreu um erro de conexão: ' + err);
                winston.error(' Ocorreu um erro de conexão', {erro: err});
-           } else {
-               /*
-                  TODO implementar a criação e a exclusão de comentários nos tópicos
-
-               */
+           } else{
+               db.collection('topico').updateOne({"_id":id}, query, function (err, result) {
+                   if(err){
+                       winston.error('ocorreu um erro de insercao', {erro: err});
+                       res.status(500).send('erro de busca: ' + err);
+                   }
+                   else{
+                       res.status(201).json({"valor":"ok"});
+                   }
+               });
            }
        })
     });
+
+    app.delete('/topico/id/:id/comentario/', (req, res) =>{
+
+        var id = new objectId(req.params.id);
+        var comentario = req.body;
+
+        var query = {
+            "$pull": {"respostas": comentario}
+        };
+
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
+            if(err){
+                res.status(500).send(' Ocorreu um erro de conexão: ' + err);
+                winston.error(' Ocorreu um erro de conexão', {erro: err});
+            } else{
+                db.collection('topico').updateOne({"_id":id}, query, function (err, result) {
+                    if(err){
+                        winston.error('ocorreu um erro de insercao', {erro: err});
+                        res.status(500).send('erro de busca: ' + err);
+                    }
+                    else{
+                        res.status(201).json({"valor":"ok"});
+                    }
+                });
+            }
+        })
+    });
+
+    app.post('/topico/teste/:id', (req, res) =>{
+        var id = req.params.id;
+        var objeto = req.body;
+        console.log('id: ' + id);
+        console.log('objeto: '+ JSON.stringify(objeto));
+        res.send('ok');
+    })
 
 };

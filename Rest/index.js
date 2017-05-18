@@ -21,7 +21,7 @@ var questao = require('./rotas/questao')(app);
 var simulado = require('./rotas/simulado')(app);
 var topico = require('./rotas/topico')(app);
 
-var usuario = require('./rotas/usuario')(app);
+// var usuario = require('./rotas/usuario')(app);
 
 app.get('/', function (req, res) {
    res.render('../views/home.ejs');
