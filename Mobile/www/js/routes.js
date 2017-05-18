@@ -87,7 +87,8 @@ angular.module('app.routes', [])
   controller: 'gerarSimuladoCtrl'
 })
 
-$urlRouterProvider.otherwise('/inicial')
+
+ $urlRouterProvider.otherwise('/inicial')
 
 
 
