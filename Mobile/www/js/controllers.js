@@ -500,14 +500,17 @@ angular.module('app.controllers', [])
     function ($scope, $stateParams) {
       var urlServer = "localhost:7001";
 
-      $scope.criarTopicoCtrl = function (titulo, contexto, id) {
+      $scope.criarTopico = function (titulo, contexto, id) {
         var url = 'http://' + urlServer + '/topico/id/' + id;
         $http.get(url)
           .success(function (data) {
             console.log("Topico criado com sucesso");
+            $scope.topico = data;
+            TopicoService.setTopico(data);
           })
           .error(function () {
             console.log("Erro ao criar o topico");
+            $scope.topico = data;
           })
       }
       $scope.deletarTopico = function (id) {

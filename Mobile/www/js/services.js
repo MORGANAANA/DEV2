@@ -103,4 +103,15 @@ angular.module('app.services', [])
 
 
 
-  }]);
+  }])
+
+.service('TopicoService', [function(){
+
+
+  this.topico = "";
+
+    this.setTopico = function(top){
+    this.topico = top;
+  }
+
+}]);
