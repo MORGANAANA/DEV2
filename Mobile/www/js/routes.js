@@ -88,7 +88,7 @@ angular.module('app.routes', [])
 })
 
 
- $urlRouterProvider.otherwise('/login')
+ $urlRouterProvider.otherwise('/inicial')
 
 
 
