@@ -46,8 +46,32 @@
     <div class="col s8 offset-s2"><div class="alert alert-success" role="alert">
             Seja Bem-Vindo(a) a Página Rest Mais lindona do Mundo! :D
         </div></div>
+    <div class="col s8 offset-s2"><div class="alert alert-warn" role="alert" style="background-color: #C56D6D;">
+            Documentação ainda incompleta!
+        </div></div>
 
     <!--documentação para Rotas de Livros-->
+
+    <div class="col s8 offset-s2">
+        <h4>Operações Para Usuário(s):</h4>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/usuario/login</div>
+                <div class="collapsible-body">
+                        <pre>
+                            {
+                                nome: mathias,
+                                idade: 21
+                            }
+                        </pre>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">POST</span>/usuario/cadastro</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+        </ul>
+    </div>
 
     <div class="col s8 offset-s2">
         <h4>Operações Para Livro(s):</h4>
@@ -119,6 +143,69 @@
             </li>
             <li>
                 <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/universidades</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col s8 offset-s2">
+        <h4>Operações Para Simulado(s)</h4>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/simulado/universidade/:universidade/quantidade/:quantidade</div>
+                <div class="collapsible-body">
+                        <pre>
+                            {
+                                nome: mathias,
+                                idade: 21
+                            }
+                        </pre>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/simulado/resultados</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col s8 offset-s2">
+        <h4>Operações Para Tópico(s):</h4>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">POST</span>/topico</div>
+                <div class="collapsible-body">
+                        <pre>
+                            {
+                                nome: mathias,
+                                idade: 21
+                            }
+                        </pre>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/topico/id/:id</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">DELETE</span>/topico/id/:id</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/topico/livro/:livro</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">GET</span>/topico/usuario/:usuario</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">POST</span>/topico/id/:id/comentario/</div>
+                <div class="collapsible-body"><p>bla bla bla</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><span class="new badge" data-badge-caption="">DELETE</span>/topico/id/:id/comentario/</div>
                 <div class="collapsible-body"><p>bla bla bla</p></div>
             </li>
         </ul>

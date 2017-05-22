@@ -80,7 +80,7 @@ module.exports = function (app) {
                         let resposta = {
                             "_id":id,
                             "situacao":"removido"
-                        }
+                        };
                         res.status(201).json(resposta);
                     }
                 });
