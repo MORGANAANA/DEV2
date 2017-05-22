@@ -29,6 +29,7 @@ angular.module('app.services', [])
             //caso haja um token na requisição callback retorna positivo se nao negativo.
             callback(true);
           }else{
+
             callback(false);
           }
 
@@ -103,4 +104,15 @@ angular.module('app.services', [])
 
 
 
-  }]);
+  }])
+
+.service('TopicoService', [function(){
+
+
+  this.topico = "";
+
+    this.setTopico = function(top){
+    this.topico = top;
+  }
+
+}]);
