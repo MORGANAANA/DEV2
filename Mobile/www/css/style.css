@@ -69,21 +69,9 @@ white-space: initial !important;
   margin-bottom: 10px
 }
 .topico-ver-mais {
-  color: #f8f8f8 !important;
-  background-color: #43945b;
-  margin-top: 10px;
-  padding-left: 30%;
-/*  padding-left: 40%;
-    /*border-color: #ddd;
-    background-color: #aaaaaa;
-    color: #444;
-    position: relative;
-    z-index: 2;
-    display: block;
-    margin: -1px;
-    padding: 16px;
-    border-width: 1px;
-    border-style: solid;
-    font-size: 16px;*/
+  /* color: #f8f8f8 !important; */
+/* background-color: #a9bfe2; */
+/* margin-top: 10px; */
+padding-left: 0%;
 }
 /*CONFIGURAÇÕES TELA .... */
