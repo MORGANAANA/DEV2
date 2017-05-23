@@ -114,5 +114,9 @@ angular.module('app.services', [])
     this.setTopico = function(top){
     this.topico = top;
   }
+}
+  .service('ComentarTopicoService', [function () {
 
-}]);
+  }])
+
+]);
