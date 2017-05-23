@@ -61,6 +61,13 @@ white-space: initial !important;
   width: 300px !important;
   background-color: green;
 }
+
+.item_topicos{
+  color: #94662c;
+  background-color: #d6d6d6;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
 .topico-ver-mais {
   color: #f8f8f8 !important;
   background-color: #43945b;

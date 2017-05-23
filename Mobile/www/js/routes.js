@@ -31,6 +31,7 @@ angular.module('app.routes', [])
 
   })
 
+
     .state('horaEstrela', {
       url: '/horaEstrela',
       templateUrl: 'templates/horaEstrela.html',
@@ -86,6 +87,12 @@ angular.module('app.routes', [])
   templateUrl: 'templates/gerarSimulado.html',
 
 })
+.state('listaDeTopicos', {
+  url: '/listaDeTopicos',
+  templateUrl: 'templates/listaDeTopicos.html',
+
+})
+
 
 
  $urlRouterProvider.otherwise('/inicial')
