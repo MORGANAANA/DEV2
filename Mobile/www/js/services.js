@@ -116,7 +116,12 @@ angular.module('app.services', [])
   }
 }
   .service('ComentarTopicoService', [function () {
+    this.comentar = "";
 
+    this.setComentar = function (com) {
+      this.comentar = com;
+
+    }
   }])
 
 ]);

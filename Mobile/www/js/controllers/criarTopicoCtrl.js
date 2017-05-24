@@ -14,7 +14,7 @@ angular.module('criarTopicoCtrl', [])
             $scope.topico = data;
             TopicoService.setTopico(data);
           })
-          .error(function () {
+          .error(function (data) {
             console.log("Erro ao criar o topico");
             $scope.topico = data;
           })
