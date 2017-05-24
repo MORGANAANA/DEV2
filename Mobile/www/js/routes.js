@@ -87,6 +87,7 @@ angular.module('app.routes', [])
   templateUrl: 'templates/gerarSimulado.html',
 
 })
+
 .state('listaDeTopicos', {
   url: '/listaDeTopicos',
   templateUrl: 'templates/listaDeTopicos.html',
