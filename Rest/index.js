@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var mongoClient = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
 var winston = require('winston');
+var cors = require('cors');
 var bb = require('express-busboy-custom');
 var fs = require('fs');
 // var ip = require('os').networkInterfaces().lo[0].address;
@@ -13,7 +14,7 @@ var ip = 'localhost';
 var argv = require('yargs').argv;
 var porta = argv.porta ? argv.porta : 7001;
 var jwt    = require('jsonwebtoken');
-
+var mongan = require('morgan');
 var logger = require('./config/logger_config')(winston);
 var express = require('./config/express_config')(app);
 
@@ -28,7 +29,7 @@ var usuario = require('./rotas/usuario')(app);
 app.use(function(req, res, next) {
 
     // check header or url parameters or post parameters for token
-    var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJmdWxhbm9AZ21haWwuY29tIiwic2VuaGEiOiJtaW5oYXNlbmhhIiwiaWF0IjoxNDk1NjQ4Njg2LCJleHAiOjE0OTU3MzUwODZ9.j_ceyOdAAlt42jml5ehziuYAE3BcuNiY43bCDwFSnjM';
+    var token = req.body.token || req.params.token || req.headers['x-access-token'] || req.headers['authorization'] || req.headers['token'];
 
     // decode token
     if (token) {
