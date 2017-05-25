@@ -66,7 +66,7 @@ module.exports = (app) => {
                winston.error('ocorreu um erro de conexão', {erro: err});
            } else {
                var query = {
-                   "_id": dados.usuario,
+                   "_id": dados.nome,
                    senha: dados.senha
                };
                db.collection('usuario').insertOne(query, function (erro) {
