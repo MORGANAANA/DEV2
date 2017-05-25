@@ -36,6 +36,11 @@ white-space: initial !important;
 
   }
 
+.ng-binding{
+  white-space: initial !important;
+}
+
+
 .item_correto{
   color: #fff;
   background-color: #2f5a29;

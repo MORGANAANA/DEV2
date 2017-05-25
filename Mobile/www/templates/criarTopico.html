@@ -1,7 +1,7 @@
 //pagina criar topicos nao irrigada completamente/ nao pega os valores dos campos
 //nao tem referencia para qual controller na pagina criar topicos. (ja lança exceção na cara quando roda).
 <ion-view title="Criar Tópico de Discussão" id="page15" style="background-color:#54146D;">
-  <ion-content padding="true" style="background: url(img/bg_girafinha_leitora.jpg) no-repeat center;background-size:cover;" class="has-header">
+  <ion-content padding="true" style="background: url(img/bg_girafinha_leitora.jpg) no-repeat center;background-size:cover;" class="has-header" ng-controller="criarTopicoCtrl">
     <div id="criarForum-container11">
 
           <div class="spacer" style="width: 300px; height: 30px;"></div>
@@ -15,8 +15,17 @@
     <div class="spacer" style="width: 300px; height: 50px;"></div>
 
       <form id="criarForum-form16" class="list">
+        <label class="item item-input" id="livro_do_topico">
+          <input type="text" ng-model="titulo">
+        </label>
+      </form>
+    </div>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+
+      <form id="criarForum-form16" class="list">
         <label class="item item-input" id="titulo_topico">
-          <input type="text" ng-model="Titulo" placeholder="Escolha um Título para o Fórum">
+          <input type="text" ng-model="titulo" placeholder="Escolha um Título para o Fórum">
         </label>
       </form>
     </div>
@@ -25,7 +34,7 @@
 
     <form id="criarForum-form21" class="list">
       <label class="item item-input"  id="descricaoTopico">
-      <textarea class="txtArea_descricaoTopico" ng-model="Descricao" placeholder="Faça uma breve desrição do motivo da criação deste Tópico"></textarea>
+      <textarea class="txtArea_descricaoTopico" ng-model="descricao" placeholder="Faça uma breve desrição do motivo da criação deste Tópico"></textarea>
     </label>
 
       <div class="spacer" style="width: 300px; height: 150px;"></div>
