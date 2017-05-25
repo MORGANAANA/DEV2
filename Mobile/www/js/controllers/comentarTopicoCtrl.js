@@ -3,17 +3,17 @@
  */
 angular.module('comentarTopicoCtrl', [])
 
-.controller('criarTopicoCtrl', ['$scope', '$stateParams',
-  function ($scope, $stateParams, ComentarTopicoService) {
+.controller('comentarTopicoCtrl', ['$scope', '$stateParams',
+  function ($scope, $stateParams, comentarTopicoService) {
     var urlServer = "localhost:7001";
 
     $scope.comentarTopico = function (contexto, id) {
-      var url = 'http://' + urlServer + '/comentario/id/' + id;
+      var url = 'http://' + urlServer + '/topico/id/:id/comentario/' + id;
       $http.post(url)
         .success(function (data) {
           console.log("Comentado com sucesso");
           $scope.comentar = data;
-          ComentarTopicoService.setComentar(data);
+          comentarTopicoService.setComentar(data);
         })
         .error(function (data) {
           console.log("Erro ao fazer o comentario");

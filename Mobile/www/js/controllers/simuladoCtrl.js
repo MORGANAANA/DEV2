@@ -153,9 +153,4 @@ angular.module('simuladoCtrl', [])
           })
 
       }
-
-      $scope.forumCtrl = function (titulo, contexto){
-
-      }
-
     }])

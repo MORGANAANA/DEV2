@@ -106,16 +106,15 @@ angular.module('app.services', [])
 
   }])
 
-.service('TopicoService', [function(){
+.service('criarTopicoService', [function(){
 
-
-  this.topico = "";
+   this.topico = "";
 
     this.setTopico = function(top){
     this.topico = top;
   }
 }
-  .service('ComentarTopicoService', [function () {
+  .service('comentarTopicoService', [function () {
     this.comentar = "";
 
     this.setComentar = function (com) {
