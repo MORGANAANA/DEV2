@@ -9,8 +9,10 @@ angular.module('app.services', [])
     //função para logar o usuario.
     this.login = function(email,senha,callback){
 
+      var urlServer = '45.76.8.32:80';
+
       //post com email e senha.
-      $http.post('http://localhost:7001/login',{email:email,senha:senha})
+      $http.post('http://'+urlServer+'/usuario/login',{nome:email,senha:senha})
       //caso sucesso.
 
 

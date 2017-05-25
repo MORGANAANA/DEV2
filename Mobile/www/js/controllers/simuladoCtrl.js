@@ -6,7 +6,7 @@ angular.module('simuladoCtrl', [])
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
     function ($scope,$http,simuladoService) {
 
-      var urlServer = "localhost:7001";
+      var urlServer = '45.76.8.32:80';
 
       $scope.showSelectValue = function (mySelect) {
         $scope.universidade = mySelect;

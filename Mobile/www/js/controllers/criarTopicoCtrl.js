@@ -4,7 +4,7 @@ angular.module('criarTopicoCtrl', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
     function ($scope, criarTopicoService) {
-      var urlServer = "localhost:7001";
+      var urlServer = "45.76.8.32:80";
 
       $scope.criarTopico = function (id) {
         var url = 'http://' + urlServer + '/topico/id/' + id;

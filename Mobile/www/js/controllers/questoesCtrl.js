@@ -7,7 +7,7 @@ angular.module('questoesCtrl', [])
 
 
 
-      var urlServer = "localhost:7001";
+      var urlServer = '45.76.8.32:80';
 
       $scope.service = questaoService;
 

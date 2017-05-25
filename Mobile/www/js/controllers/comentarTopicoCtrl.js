@@ -5,7 +5,7 @@ angular.module('comentarTopicoCtrl', [])
 
 .controller('comentarTopicoCtrl', ['$scope', '$stateParams',
   function ($scope, $stateParams, comentarTopicoService) {
-    var urlServer = "localhost:7001";
+    var urlServer = "45.76.8.32:80";
 
     $scope.comentarTopico = function (contexto, id) {
       var url = 'http://' + urlServer + '/topico/id/:id/comentario/' + id;
