@@ -28,4 +28,8 @@
     <icon src="resources\android\icon\drawable-xxxhdpi-icon.png" density="xxxhdpi"/>
   </platform>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+
+
+  <access origin="http://*45.76.8.32:80" />
+
 </widget>
