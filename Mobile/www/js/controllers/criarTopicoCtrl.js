@@ -1,9 +1,9 @@
 angular.module('criarTopicoCtrl', [])
 
-  .controller('criarTopicoCtrl', ['$scope', '$http', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-    function ($scope, $http) {
+    function ($scope, $http, livroService) {
       var urlServer = "45.76.8.32:80";
 
       $scope.criarTopico = function () {
@@ -14,11 +14,13 @@ angular.module('criarTopicoCtrl', [])
 
         var conteudo = {
           titulo: titulo,
-          descricao: descricao
-          //usuario:
-          //livro
+          descricao: descricao,
+          usuario: window.localStorage.getItem('usuarioLogado').nome,
+          livro: livroService.livro.titulo
 
         }
+
+        console.log(window.localStorage.getItem('usuarioLogado').nome);
 
 
         $http.post(url, conteudo)
