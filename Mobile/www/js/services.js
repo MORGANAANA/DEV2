@@ -4,6 +4,34 @@ angular.module('app.services', [])
 
   }])
 
+  .service('cadastroService',['$http',function($http){
+
+    var urlServer = '45.76.8.32:80';
+
+    this.cadastrar = function(usuario,senha,telefone){
+
+      var cont = {
+        'nome':usuario,
+        'senha':senha,
+        'telefone':telefone
+      }
+
+      $http.post('http://'+urlServer+'/usuario/registro',cont)
+
+        .success(function(){
+          console.log("Usuario cadastrado");
+        })
+
+        .error(function(){
+          console.log("Erro ao cadastrar usuario");
+        })
+
+
+
+    }
+
+  }])
+
   .service('loginService',['$http',function($http){
 
     //função para logar o usuario.

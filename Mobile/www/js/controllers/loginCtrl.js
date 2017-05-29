@@ -1,7 +1,7 @@
 angular.module('loginCtrl', [])
 
-  .controller('loginCtrl', ['$scope','loginService','$location',
-    function ($scope,loginService,$location) {
+  .controller('loginCtrl', ['$scope','cadastroService','loginService','$location',
+    function ($scope,cadastroService,loginService,$location) {
 
       $scope.email = "";
 
@@ -22,5 +22,18 @@ angular.module('loginCtrl', [])
         loginService.logout();
       }
 
+      $scope.cadastrar = function(){
+
+        var senha = $scope.cp_senha;
+        var confirmaSenha = $scope.cp_confirmeSenha;
+
+        if(senha==confirmaSenha){
+          cadastroService.cadastrar($scope.cp_email,$scope.cp_senha,$scope.cp_telefone);
+          alert("Usuario cadastrado com sucesso, aguarde confirmação de email");
+          $location.path('login');
+        }else{
+          alert("As senhas nao condizem");
+        }
+      }
 
     }])

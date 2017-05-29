@@ -1,23 +1,41 @@
 <ion-view title="Cadastro" id="page3">
-  <ion-content padding="true" style="background: url(img/bg_tela_cadastro.jpg) no-repeat center;background-size:cover;" class="has-header">
+  <ion-content padding="true" style="background: url(img/bg_tela_cadastro.jpg) no-repeat center;background-size:cover;" class="has-header" ng-controller="loginCtrl">
     <form id="cadastro-form9" class="list">
       <div class="spacer" style="width: 300px; height: 47px;"></div>
       <ion-list id="cadastro-list2">
+
         <label class="item item-input" id="cadastro-input9">
           <span class="input-label">Email</span>
-          <input type="text" placeholder="margarete@gmail.com">
+          <input type="text"  ng-model="cp_email" required>
         </label>
+
+        <div class="spacer" style="width: 300px; height: 18px;"></div>
+
         <label class="item item-input" id="cadastro-input10">
-          <span class="input-label">Usuário</span>
-          <input type="text" placeholder="Marga">
+          <span class="input-label">Telefone</span>
+          <input type="text" ng-model="cp_telefone" required>
         </label>
+
+        <div class="spacer" style="width: 300px; height: 18px;"></div>
+
         <label class="item item-input" id="cadastro-input11">
           <span class="input-label">Senha</span>
-          <input type="password" placeholder="">
+          <input type="password"  ng-model="cp_senha" required>
         </label>
+
+        <div class="spacer" style="width: 300px; height: 18px;"></div>
+
+        <label class="item item-input" id="cadastro-input12">
+          <span class="input-label">Confirme a senha</span>
+          <input type="password"  ng-model="cp_confirmeSenha" required>
+        </label>
+
       </ion-list>
+
       <div class="spacer" style="height: 100px;"></div>
-      <a ui-sref="inicial" id="cadastro-button8" class="button button-dark  button-block">Cadastrar</a>
+
+
+      <a id="cadastro-button8" ng-click="cadastrar()" class="button button-dark  button-block">Cadastrar</a>
     </form>
   </ion-content>
 </ion-view>
