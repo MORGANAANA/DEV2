@@ -4,34 +4,6 @@ angular.module('app.services', [])
 
   }])
 
-  .service('cadastroService',['$http',function($http){
-
-    var urlServer = '45.76.8.32:80';
-
-    this.cadastrar = function(usuario,senha,telefone){
-
-      var cont = {
-        'nome':usuario,
-        'senha':senha,
-        'telefone':telefone
-      }
-
-      $http.post('http://'+urlServer+'/usuario/registro',cont)
-
-        .success(function(){
-          console.log("Usuario cadastrado");
-        })
-
-        .error(function(){
-          console.log("Erro ao cadastrar usuario");
-        })
-
-
-
-    }
-
-  }])
-
   .service('loginService',['$http',function($http){
 
     //função para logar o usuario.
@@ -100,7 +72,7 @@ angular.module('app.services', [])
 
   .service('simuladoService',[function(){
 
-	this.respostasSimulado = [];
+    this.respostasSimulado = [];
 
     this.simulado ="";
 
@@ -136,21 +108,28 @@ angular.module('app.services', [])
 
   }])
 
-.service('criarTopicoService', [function(){
+  .service('criarTopicoService', [function(){
 
-   this.topico = "";
+    this.topico = "";
+    this.listaTopicos;
 
     this.setTopico = function(top){
-    this.topico = top;
-  }
-}
-  .service('comentarTopicoService', [function () {
-    this.comentar = "";
-
-    this.setComentar = function (com) {
-      this.comentar = com;
-
+      this.topico = top;
     }
-  }])
+  }
+    .service('comentarTopicoService', [function () {
+      this.comentar = "";
 
-]);
+      this.setComentar = function (com) {
+        this.comentar = com;
+
+      }
+    }])
+
+  ]);
+
+
+
+
+
+

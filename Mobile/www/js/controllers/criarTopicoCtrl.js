@@ -1,9 +1,9 @@
-angular.module('criarTopicoCtrl', [])
+aangular.module('criarTopicoCtrl', [])
 
-  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService','criarTopicoService',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-    function ($scope, $http, livroService) {
+    function ($scope, $http, livroService, criarTopicoService) {
       var urlServer = "45.76.8.32:80";
 
       $scope.criarTopico = function () {
@@ -46,6 +46,20 @@ angular.module('criarTopicoCtrl', [])
 
           .error(function () {
             console.log("erro ao deletar o topico");
+          })
+      }
+
+      //Listar topico
+      $scope.listaTopico = function (){
+        var url = 'http: //' +urlServer+ '/topicos';
+        $http.get(url)
+
+          .success(function (res) {
+            criarTopicoService.listaTopicos = res;
+            console.log("Topico Pego com sucesso")
+          })
+          .error(function () {
+            console.log("Erro ao listar")
           })
       }
 
