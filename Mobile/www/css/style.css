@@ -80,3 +80,13 @@ white-space: initial !important;
 padding-left: 0%;
 }
 /*CONFIGURAÇÕES TELA .... */
+
+/*CONFIGURAÇÔES TELA GERAR GRAFICOS BEGIN*/
+
+.button.button-estatisticas{
+
+  color: #ffffff;
+  background-color: #00009f;
+}
+
+/*CONFIGURAÇÔES TELA GERAR GRAFICOS END*/

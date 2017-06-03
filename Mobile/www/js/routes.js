@@ -89,10 +89,15 @@ angular.module('app.routes', [])
 })
 
 .state('listaDeTopicos', {
-  url: '/listaDeTopicos',
-  templateUrl: 'templates/listaDeTopicos.html',
+    url: '/listaDeTopicos',
+    templateUrl: 'templates/listaDeTopicos.html',
 
-})
+  })
+    .state('estatisticas', {
+      url: '/estatisticas',
+      templateUrl: 'templates/estatisticas.html',
+
+    })
 
 
 
