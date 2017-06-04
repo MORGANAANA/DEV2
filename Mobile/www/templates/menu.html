@@ -1,3 +1,66 @@
+<ion-nav-view></ion-nav-view>
+<script id="templates/menu.html" type="text/ng-template">
+ <ion-side-menus>
+   <!-- Main Content -->
+ <ion-side-menu-content>
+   <ion-nav-bar class="bar-positive">
+   <ion-nav-back-button>
+   </ion-nav-back-button>
+
+   <ion-nav-buttons side="left">
+     <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+     </button>
+   </ion-nav-buttons>
+ </ion-nav-bar>
+ <ion-nav-view name="menuContent"></ion-nav-view>
+ </ion-side-menu-content>
+
+ <!-- Left Side Menu -->
+ <ion-side-menu side="left">
+  <ion-header-bar class="bar-stable">
+    <h1 class="title">Left</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <ion-item menu-close href="#/app/search">
+        Search
+      </ion-item>
+      <ion-item menu-close href="#/app/browse">
+        Browse
+      </ion-item>
+      <ion-item menu-close href="#/app/playlists">
+        Playlists
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-side-menu>
+ </ion-side-menus>
+</script>
+<script id="templates/browse.html" type="text/ng-template">
+ <ion-view view-title="Browse">
+   <ion-content>
+     <h1>Browse</h1>
+   </ion-content>
+ </ion-view>
+</script>
+
+<script id="templates/search.html" type="text/ng-template">
+ <ion-view view-title="Search">
+   <ion-content>
+     <h1>Search</h1>
+   </ion-content>
+ </ion-view>
+</script>
+
+<script id="templates/playlists.html" type="text/ng-template">
+ <ion-view view-title="Playlists">
+   <ion-content>
+     <h1>Playlists</h1>
+   </ion-content>
+ </ion-view>
+</script>
+
+<!--
 <ion-view title="Inicial" id="page4" ng-app="app.controllers" >
   <ion-content padding="true" style="background: url(img/bg_menu.jpg) no-repeat center;background-size:cover;" class="has-header">
     <div ng-controller="questoesCtrl">
@@ -17,7 +80,7 @@
 
     <!--<a ui-sref="simulado" id="inicial-button14" style="font-weight:300;font-size:15px;" class="button button-balanced button-large">SIMULADO</a>-->
 
-
+  <!--
     <div ng-controller="questoesCtrl">
       <a ng-click="buscaListaUniversidades()" ui-sref="gerarSimulado" id="inicial-button37" style="border-radius:60px 60px 60px 60px;" class="button button-energized  button-block">gerar simulado</a>
     </div>
@@ -32,3 +95,4 @@
     </div>
 
 </ion-view>
+-->
