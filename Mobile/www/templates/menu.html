@@ -1,33 +1,39 @@
 <ion-view title="Inicial" id="page4" ng-app="app.controllers" >
   <ion-content padding="true" style="background: url(img/bg_menu.jpg) no-repeat center;background-size:cover;" class="has-header">
+    <ion-side-menus enable-menu-with-back-views="false">
+      <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+          <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+      </ion-side-menu-content>
 
+      <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+          <h1 class="title">Menu</h1>
+        </ion-header-bar>
+        <ion-content>
+          <ion-list>
+            <ion-item menu-close href="#/universidades">
+            Universidades
+          </ion-item>
+              <ion-item menu-close href="#/gerarSimulado">
+              Simulado
+            </ion-item>
+            <ion-item menu-close href="#/marcarEncontro">
+            Marcar Encontro
+          </ion-item>
 
+                </ion-list>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>
 
-    <ion-menu [content]="content">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-list>
-          <button ion-item (click)="openPage(homePage)">
-            Home
-          </button>
-          <button ion-item (click)="openPage(friendsPage)">
-            Friends
-          </button>
-          <button ion-item (click)="openPage(eventsPage)">
-            Events
-          </button>
-          <button ion-item (click)="closeMenu()">
-            Close Menu
-          </button>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-
-    <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
 <!--Menuzin -->
   <!--  <ion-menu side="left" [content]="mycontent">
       <ion-content>
