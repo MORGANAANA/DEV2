@@ -44,9 +44,9 @@ angular.module('app.routes', [])
 
   })
 
-  .state('anLiseDosPersonagens', {
+  .state('comentarForum', {
     url: '/forum',
-    templateUrl: 'templates/anLiseDosPersonagens.html',
+    templateUrl: 'templates/comentarForum.html',
 
   })
 
@@ -101,7 +101,7 @@ angular.module('app.routes', [])
 
 
 
- $urlRouterProvider.otherwise('/login')
+ $urlRouterProvider.otherwise('/forum')
 
 
 

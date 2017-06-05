@@ -1,4 +1,5 @@
 {
   "name": "AppLeitura",
-  "app_id": ""
+  "app_id": "",
+  "type": "ionic1"
 }

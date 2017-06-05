@@ -89,4 +89,34 @@ padding-left: 0%;
   background-color: #00009f;
 }
 
+.forum-username{
+  color:green;
+  font-size: 13pt !important;
+}
+
+.forum-descricao-titulo{
+  background-color:#8c1919;
+  color:#fff;
+  text-align: center;
+  font-family: Amatic SC;
+  font-size: 30px;
+}
+
+.forum-descricao{
+  border-radius: 10px !important;
+}
+
+.forum-descricao-txt{
+  white-space: initial !important;
+  color:grey;
+  padding: 4pt 4px 4pt 4pt;
+}
+.forum-balao-de-conversa{
+  white-space: initial !important;
+  padding: 4pt 4px 4pt 6pt;
+}
+.forum-dataHora{
+  font-size: 8pt !important;
+}
+
 /*CONFIGURAÇÔES TELA GERAR GRAFICOS END*/
