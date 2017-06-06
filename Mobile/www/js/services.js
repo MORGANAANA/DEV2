@@ -4,6 +4,12 @@ angular.module('app.services', [])
 
   }])
 
+  .service('estatisticaService',[function(){
+
+    this.estatistica = "";
+
+  }])
+
   .service('loginService',['$http',function($http){
 
     //função para logar o usuario.
