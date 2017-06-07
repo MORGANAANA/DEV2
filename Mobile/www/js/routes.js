@@ -101,7 +101,7 @@ angular.module('app.routes', [])
 
 
 
- $urlRouterProvider.otherwise('/estatisticas')
+ $urlRouterProvider.otherwise('/login')
 
 
 
