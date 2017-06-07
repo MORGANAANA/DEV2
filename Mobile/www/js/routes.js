@@ -101,7 +101,7 @@ angular.module('app.routes', [])
 
 
 
- $urlRouterProvider.otherwise('/forum')
+ $urlRouterProvider.otherwise('/login')
 
 
 
