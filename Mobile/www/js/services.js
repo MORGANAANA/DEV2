@@ -286,14 +286,13 @@ angular.module('app.services', [])
     }
   }])
 
-    .service('comentarTopicoService', [function () {
+  .service('comentarTopicoService', [function () {
       this.comentar = "";
 
       this.setComentar = function (com) {
         this.comentar = com;
-
       }
-    }])
+  }])
 
 
 

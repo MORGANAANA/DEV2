@@ -54,13 +54,30 @@ angular.module('criarTopicoCtrl', [])
         var url = 'http: //' +urlServer+ '/topicos';
         $http.get(url)
 
-          .success(function (res) {
-            criarTopicoService.listaTopicos = res;
+        .success(function (data) {
+            $scope.topico = data;
+            criarTopicoService.setTopico(data);
             console.log("Topico Pego com sucesso")
-          })
+        })
           .error(function () {
             console.log("Erro ao listar")
           })
       }
+
+      //comentar topico
+      $scope.comentarTopico = function (contexto, id) {
+        var url = 'http://' + urlServer + '/topico/id/:id/comentario/' + id;
+        $http.post(url)
+          .success(function (data) {
+            console.log("Comentado com sucesso");
+            $scope.comentar = data;
+            comentarTopicoService.setComentar(data);
+          })
+          .error(function (data) {
+            console.log("Erro ao fazer o comentario");
+            $scope.comentar = data;
+          })
+      }
+
 
     }])
