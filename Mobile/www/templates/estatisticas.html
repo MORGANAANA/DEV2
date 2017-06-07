@@ -6,26 +6,63 @@
       <img src="img/banner_estatisticas.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
     </div>
 
-    <form id="form-graficos" class="list">
+    <form id="estatisticas">
 
-      <div class="list card forun-balao-de-conversa" id="anLiseDosPersonagens-card24">
+      <div class="list card" id="card-grafico-geral">
 
-        <ion-item class="item-avatar item-icon-right" id="anLiseDosPersonagens-list-item17">
+        <ion-item id="titulo-grafico-geral">
           <h2>Grafico Geral</h2>
         </ion-item>
 
-        <div id="anLiseDosPersonagens-container4">
-          <div id="anLiseDosPersonagens-markdown10" class="show-list-numbers-and-dots">
+        <ion-item>
 
+          <div zingchart id="grafico-geral" zc-json="graficoGeral" zc-width="100%" zc-height="350px">
 
-            <div zingchart id="chart-1" zc-json="graficoMediaAcertoErros" zc-width="100%" zc-height="350px">
+              <!-- graficos -->
+
+          </div>
+        </ion-item>
+
+      </div>
+
+      <div class="spacer" style="width: 300px; height: 25px;"></div>
+
+      <div class="list card" id="card-grafico-universidade">
+
+        <ion-item id="titulo-grafico-universidade">
+          <h2>Grafico Universidade</h2>
+        </ion-item>
+
+        <ion-item>
+
+          <div zingchart id="grafico-universidade" zc-json="graficoUniversidade" zc-width="100%" zc-height="350px">
 
             <!-- graficos -->
 
           </div>
-        </div>
+        </ion-item>
 
       </div>
+
+      <div class="spacer" style="width: 300px; height: 25px;"></div>
+
+      <div class="list card" id="card-grafico-data">
+
+        <ion-item id="titulo-grafico-data">
+          <h2>Grafico Data</h2>
+        </ion-item>
+
+        <ion-item>
+
+          <div zingchart id="grafico-data" zc-json="graficoData" zc-width="100%" zc-height="350px">
+
+
+
+          </div>
+        </ion-item>
+
+      </div>
+
 
     </form>
 
