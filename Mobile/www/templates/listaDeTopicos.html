@@ -1,23 +1,21 @@
 
 <ion-view title="Lista de tópicos" id="page5" style="background-color:#B3B38B;">
-  <script>
-    document.ready(function(){
-      $scope.listaDeTopicos();
-    });
-  </script>
-  <ion-content padding="true" style="background: url(img/bg_lista_topicos.png) no-repeat center;background-size:cover;" class="has-header">
+  <ion-content padding="true" style="background: url(img/bg_lista_topicos.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="criarTopicoCtrl">
 
     <div class="spacer" style="width: 300px; height: 20px;"></div>
-    <ion-list ng-repeat="topico in service.listaTopico track by $index" id="listaDeLivros-list5">
 
-      <ion-item  class="item-thumbnail-left" id="listaDeTopicos-list-item6" ui-sref="comentarTopico" ng-click="listaTopico(topicos._id)" >
+    <ion-list ng-repeat="topico in service.listaTopico" id="listaDeLivros-list5">
+
+      <ion-item  class="item-thumbnail-left" id="listaDeTopicos-list-item6" ui-sref="comentarTopico" >
         <!-- -<img src="{{livros.imagem}}">-->
 
-        <h2>{{topicos.titulo}}</h2>
-        <p>{{topicos.descricao}}</p>
+        <h2>{{topico.titulo}}</h2>
+        <p>{{topico.descricao}}</p>
 
       </ion-item>
+
       <div class="spacer" style="width: 300px; height: 166px;"></div>
+
     </ion-list>
 
 

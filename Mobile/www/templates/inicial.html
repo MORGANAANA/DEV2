@@ -12,8 +12,9 @@
 
     <a ui-sref="criarTopico" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Criar Tópico</a>
 
-    <a ui-sref="listaDeTopicos" id="inicial-button13" style="font-weight:30;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Lista de Tópico</a>
-
+    <div ng-controller="criarTopicoCtrl">
+      <a ui-sref="listaDeTopicos"  ng-click="listaTopico()" id="inicial-button13" style="font-weight:30;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Lista de Tópico</a>
+    </div>
 
     <!--<a ui-sref="simulado" id="inicial-button14" style="font-weight:300;font-size:15px;" class="button button-balanced button-large">SIMULADO</a>-->
 

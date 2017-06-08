@@ -279,7 +279,7 @@ angular.module('app.services', [])
   .service('criarTopicoService', [function(){
 
     this.topico = "";
-    this.listaTopicos;
+    this.listaTopico = "";
 
     this.setTopico = function(top){
       this.topico = top;

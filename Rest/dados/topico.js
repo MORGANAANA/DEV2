@@ -1,9 +1,13 @@
 /**
  * Created by mathias on 04/05/17.
  */
+
+//adicionar descricao
+
 let topico =
     {
         "titulo": "Como morreu o personagem x",
+        "descricao":"em tal parte o personagem x sumiu e tenho duvida se ele foi assassinado ou se matou",
         "usuario": "usuario x",
         "livro": "O senhor dos aneis",
         "tags": [
