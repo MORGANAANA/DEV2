@@ -19,6 +19,7 @@ angular.module('app.routes', [])
 
   })
 
+  APLICAR ESSA COISA
   .state('menu', {
     url: '/menu',
     templateUrl: 'templates/menu.html',
