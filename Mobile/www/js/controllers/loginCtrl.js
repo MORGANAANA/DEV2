@@ -7,6 +7,7 @@ angular.module('loginCtrl', [])
 
       $scope.senha = "";
 
+      //Mudei a condição, caso o usuário e senha esteja correto ele irá para MENU e não Inicial
       $scope.login = function(){
         loginService.login($scope.email,$scope.senha,function(result){
           if(result == true){
