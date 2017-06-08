@@ -19,7 +19,7 @@ angular.module('app.routes', [])
 
   })
 
-  APLICAR ESSA COISA
+  //APLICAR ESSA COISA, E UMA DA TELA INICIAL
   .state('menu', {
     url: '/menu',
     templateUrl: 'templates/menu.html',
