@@ -22,6 +22,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
   });
 })
 
+//Não faço a menor ideia porq isso esta aqui e não junto com as demais rotas....
 .state('app', {
 url: "/app",
 abstract: true,
