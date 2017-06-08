@@ -19,9 +19,9 @@ angular.module('app.routes', [])
 
   })
 
-  .state('inicial', {
-    url: '/inicial',
-    templateUrl: 'templates/inicial.html',
+  .state('menu', {
+    url: '/menu',
+    templateUrl: 'templates/menu.html',
 
   })
 
@@ -100,7 +100,7 @@ angular.module('app.routes', [])
 
 
 
- $urlRouterProvider.otherwise('/login')
+ $urlRouterProvider.otherwise('/menu')
 
 
 

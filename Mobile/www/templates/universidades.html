@@ -1,5 +1,12 @@
 <ion-view title="Universidades" id="page7">
+
+  <ion-nav-buttons side="left">
+   <button class="button button-clear" ng-click="goBack()"><i class="ion-ios-arrow-back" style="font-size:20px;" ></i></button>
+  </ion-nav-buttons>
+
+<ion-nav-view></ion-nav-view>
   <ion-content padding="true" style="background: url(img/bg_lista_universidades.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="questoesCtrl">
+
     <ion-list ng-repeat="universidades in service.listaUniversidades" id="universidades-list7" ng-controller="livroCtrl">
       <ion-item ng-click="buscaListaLivrosPorUniversidade(universidades._id)" class="item-icon-left dark" id="universidades-list-item10" ui-sref="listaDeLivros">
 
@@ -9,6 +16,6 @@
 
     </ion-list>
     <div class="spacer" style="width: 300px; height: 166px;"></div>
-    
+
   </ion-content>
 </ion-view>
