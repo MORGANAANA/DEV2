@@ -1,10 +1,11 @@
 angular.module('criarTopicoCtrl', [])
 
   .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService','criarTopicoService',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
+
     function ($scope, $http, livroService, criarTopicoService) {
       var urlServer = "45.76.8.32:80";
+
+      $scope.service = criarTopicoService;
 
       $scope.criarTopico = function () {
 
@@ -51,16 +52,35 @@ angular.module('criarTopicoCtrl', [])
 
       //Listar topico
       $scope.listaTopico = function (){
-        var url = 'http: //' +urlServer+ '/topicos';
+        var url = 'http://' +urlServer+ '/topicos';
         $http.get(url)
 
-          .success(function (res) {
-            criarTopicoService.listaTopicos = res;
+        .success(function (data) {
+            $scope.topico = data;
+            criarTopicoService.listaTopico = data;
+
             console.log("Topico Pego com sucesso")
-          })
+
+        })
           .error(function () {
             console.log("Erro ao listar")
           })
       }
+
+      //comentar topico
+      $scope.comentarTopico = function (contexto, id) {
+        var url = 'http://' + urlServer + '/topico/id/:id/comentario/' + id;
+        $http.post(url)
+          .success(function (data) {
+            console.log("Comentado com sucesso");
+            $scope.comentar = data;
+            comentarTopicoService.setComentar(data);
+          })
+          .error(function (data) {
+            console.log("Erro ao fazer o comentario");
+            $scope.comentar = data;
+          })
+      }
+
 
     }])

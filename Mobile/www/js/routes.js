@@ -43,12 +43,11 @@ angular.module('app.routes', [])
     templateUrl: 'templates/universidades.html',
 
   })
+    .state('comentarTopico', {
+      url: '/comentarTopico',
+      templateUrl: 'templates/comentarTopico.html',
 
-  .state('comentarForum', {
-    url: '/forum',
-    templateUrl: 'templates/comentarForum.html',
-
-  })
+    })
 
   .state('marcarEncontro', {
     url: '/Marcarencontros',
