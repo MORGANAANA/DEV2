@@ -1,6 +1,6 @@
 angular.module('app.services', [])
 
-  .factory('graficoGeralFactory', ['estatisticaService',function(){
+  .factory('graficoGeralFactory', ['estatisticaService',function(estatisticaService){
 
     var grafico = graficoModel = {
       globals: {
@@ -42,11 +42,13 @@ angular.module('app.services', [])
       },
       series: [{
         text: "Acertos",
-        values: [5],
+        values:[10],
+        //values: [estatisticaService.estatistica.graficoGeral.totalAcertos],
         backgroundColor: "#5e9732",
       }, {
         text: "Erros",
-        values: [10],
+        values:[20],
+        //values: [estatisticaService.estatistica.graficoGeral.totalAcertos],
         backgroundColor: "#aa5039"
       }]
     };
@@ -56,6 +58,60 @@ angular.module('app.services', [])
 
   .factory('graficoUniversidadeFactory', ['estatisticaService',function(){
 
+    var dados = [];
+
+    var aleatorio = function (inferior,superior){
+      numPossibilidades = superior - inferior
+      aleat = Math.random() * numPossibilidades
+      aleat = Math.floor(aleat)
+      return parseInt(inferior) + aleat
+    }
+
+    var corAleatoria = function(){
+      var hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
+      var cor_aleatoria = "#";
+      for (i=0;i<6;i++){
+        var posarray = aleatorio(0,hexadecimal.length);
+        cor_aleatoria += hexadecimal[posarray];
+      }
+      return cor_aleatoria;
+    }
+
+   //var universidades = estatisticaService.estatistica.graficoUniversidades;
+
+    var universidades = [{
+      questoesRealizadas:"30",
+      universidade:"fuvest"
+    },
+      {
+        questoesRealizadas:"20",
+        universidade:"ufrgs"
+      },
+      {
+        questoesRealizadas: "15",
+        universidade: "puc"
+      }
+    ]
+
+
+    dados = [{
+      text: universidades[0].universidade,
+      values: [universidades[0].questoesRealizadas],
+      backgroundColor: corAleatoria(),
+    }]
+
+    for(var I=1;I<universidades.length;I++){
+      var aux =
+      {
+        text: universidades[I].universidade,
+        values: [universidades[I].questoesRealizadas],
+        backgroundColor: corAleatoria(),
+      }
+
+      dados.push(aux);
+
+    }
+
     var grafico = graficoModel = {
       globals: {
         shadow: false,
@@ -67,7 +123,7 @@ angular.module('app.services', [])
       backgroundColor: "#fff",
 
       legend: {
-        layout: "x2",
+        layout: "x4",
         position: "0%",
         borderColor: "transparent",
         marker: {
@@ -94,22 +150,28 @@ angular.module('app.services', [])
           sequence:"1",
         }
       },
-      series: [{
-        text: "Acertos",
-        values: [5],
-        backgroundColor: "#5e9732",
-      }, {
-        text: "Erros",
-        values: [10],
-        backgroundColor: "#aa5039"
-      }]
+      series: dados
     };
 
+    //console.log(grafico.series[0].values[0]);
     return grafico;
   }])
 
 
   .factory('graficoDataFactory', ['estatisticaService',function(){
+
+    var result = [];
+
+    var questoes = estatisticaService.estatistica.graficoTempo;
+
+    for(var I=0;I<questoes.length;I++){
+      var acerto = questoes[I].acerto;   //10
+      var qQuestoes = questoes[I].quantasQuestoes;   //30
+      var aux = (100/qQuestoes)*acerto;
+
+      result.push(aux);
+    }
+
 
     var grafico = {
       "type": "line",
@@ -130,7 +192,8 @@ angular.module('app.services', [])
       },
       "series": [
         {
-          "values": [1,3,4,6,8,6]
+          "text":"Media de desempenho",
+          "values": result
         }
       ]
     }

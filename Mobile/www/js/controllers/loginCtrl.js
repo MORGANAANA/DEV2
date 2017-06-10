@@ -12,7 +12,7 @@ angular.module('loginCtrl', [])
           if(result == true){
             $location.path('/menu/inicial');
           }else{
-            $location.path('login');
+            $location.path('/login');
             console.log("Erro ao logar");
           }
         })
@@ -30,7 +30,7 @@ angular.module('loginCtrl', [])
         if(senha==confirmaSenha){
           cadastroService.cadastrar($scope.cp_email,$scope.cp_senha,$scope.cp_telefone);
           alert("Usuario cadastrado com sucesso, aguarde confirmação de email");
-          $location.path('login');
+          $location.path('/login');
         }else{
           alert("As senhas nao condizem");
         }
