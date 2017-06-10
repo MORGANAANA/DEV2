@@ -1,35 +1,35 @@
 <ion-view title="Inicial" id="page4" ng-app="app.controllers" >
   <ion-content padding="true" style="background: url(img/bg_menu.jpg) no-repeat center;background-size:cover;" class="has-header">
     <div ng-controller="questoesCtrl">
-      <a ui-sref="universidades" ng-click="buscaListaUniversidades()" id="inicial-button9" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">UNIVERSIDADES</a>
+      <a ui-sref="menu.universidades" ng-click="buscaListaUniversidades()" id="inicial-button9" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">UNIVERSIDADES</a>
     </div>
     <div ng-controller="livroCtrl">
-      <a ui-sref="listaDeLivros" ng-click="buscaListaLivros()" id="inicial-button10" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">List_livros</a>
+      <a ui-sref="menu.listaDeLivros" ng-click="buscaListaLivros()" id="inicial-button10" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">List_livros</a>
     </div>
-    <a ui-sref="aHoraDaEstrela" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">Info_livros</a>
-    <a ui-sref="anLiseDosPersonagens" id="inicial-button16" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">foruns</a>
-    <a ui-sref="marcarEncontro" id="inicial-button31" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">MarcarEncontros</a>
+    <a ui-sref="menu.aHoraDaEstrela" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-balanced button-large">Info_livros</a>
+    <a ui-sref="menu.anLiseDosPersonagens" id="inicial-button16" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">foruns</a>
+    <a ui-sref="menu.marcarEncontro" id="inicial-button31" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-positive button-large">MarcarEncontros</a>
 
-    <a ui-sref="criarTopico" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Criar Tópico</a>
+    <a ui-sref="menu.criarTopico" id="inicial-button15" style="font-weight:300;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Criar Tópico</a>
 
     <div ng-controller="criarTopicoCtrl">
-      <a ui-sref="listaDeTopicos"  ng-click="listaTopico()" id="inicial-button13" style="font-weight:30;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Lista de Tópico</a>
+      <a ui-sref="menu.listaDeTopicos"  ng-click="listaTopico()" id="inicial-button13" style="font-weight:30;font-size:15px;border-radius:60px 60px 40px 40px;" class="button button-preto button-large">Lista de Tópico</a>
     </div>
 
-    <!--<a ui-sref="simulado" id="inicial-button14" style="font-weight:300;font-size:15px;" class="button button-balanced button-large">SIMULADO</a>-->
+    <!--<a ui-sref="/menu/simulado" id="inicial-button14" style="font-weight:300;font-size:15px;" class="button button-balanced button-large">SIMULADO</a>-->
 
 
     <div ng-controller="questoesCtrl">
-      <a ng-click="buscaListaUniversidades()" ui-sref="gerarSimulado" id="inicial-button37" style="border-radius:60px 60px 60px 60px;" class="button button-energized  button-block">gerar simulado</a>
+      <a ng-click="buscaListaUniversidades()" ui-sref="menu.gerarSimulado" id="inicial-button37" style="border-radius:60px 60px 60px 60px;" class="button button-energized  button-block">gerar simulado</a>
     </div>
 
 
     <div ng-controller="questoesCtrl">
-      <a ui-sref="questoes" ng-click="buscaListaQuestoes()" id="inicial-button30" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">Lista_Questoes</a>
+      <a ui-sref="menu.questoes" ng-click="buscaListaQuestoes()" id="inicial-button30" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-assertive button-large">Lista_Questoes</a>
     </div>
 
     <div>
-      <a ui-sref="estatisticas" id="inicial-button-graficos" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-estatisticas ">Exibir estatisticas</a>
+      <a ui-sref="menu.estatisticas" id="inicial-button-graficos" style="font-weight:300;font-size:15px;border-radius:60px 60px 60px 60px;" class="button button-estatisticas ">Exibir estatisticas</a>
     </div>
 
 </ion-view>

@@ -5,102 +5,179 @@ angular.module('app.routes', [])
 
   $stateProvider
 
+    .state('menu', {
+      url: '/menu',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
 
+    })
 
       .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html',
+
+
+        templateUrl: 'templates/login.html',
+
 
   })
 
   .state('cadastro', {
     url: '/cadastro',
-    templateUrl: 'templates/cadastro.html',
+
+        templateUrl: 'templates/cadastro.html',
+
+
+
 
   })
 
-  .state('menu', {
-    url: '/menu',
-    templateUrl: 'templates/menu.html',
+  .state('menu.inicial', {
+    url: '/inicial',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/inicial.html',
+      }
+    }
+
 
   })
 
-  .state('listaDeLivros', {
+  .state('menu.listaDeLivros', {
     url: '/listaDeLivros',
-    templateUrl: 'templates/listaDeLivros.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/listaDeLivros.html',
+      }
+    }
+
 
   })
 
 
-    .state('horaEstrela', {
+    .state('menu.horaEstrela', {
       url: '/horaEstrela',
-      templateUrl: 'templates/horaEstrela.html',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/horaEstrela.html',
+        }
+      }
+
 
     })
 
-  .state('universidades', {
+  .state('menu.universidades', {
     url: '/universidades',
-    templateUrl: 'templates/universidades.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/universidades.html',
+      }
+    }
+
 
   })
-    .state('comentarTopico', {
+    .state('menu.comentarTopico', {
       url: '/comentarTopico',
-      templateUrl: 'templates/comentarTopico.html',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/comentarTopico.html',
+        }
+      }
+
 
     })
 
-  .state('marcarEncontro', {
+  .state('menu.marcarEncontro', {
     url: '/Marcarencontros',
-    templateUrl: 'templates/marcarEncontro.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/marcarEncontro.html',
+      }
+    }
+
 
   })
 
-  .state('questoes', {
+  .state('menu.questoes', {
     url: '/questoes',
-    templateUrl: 'templates/questoes.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/questoes.html',
+      }
+    }
+
 
   })
 
-  .state('encontroLocal', {
+  .state('menu.encontroLocal', {
     url: '/detalhes-encontro',
-    templateUrl: 'templates/encontroLocal.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/encontroLocal.html',
+      }
+    }
+
 
   })
 
-  .state('simulado', {
+  .state('menu.simulado', {
     url: '/simulado',
-    templateUrl: 'templates/simulado.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/simulado.html',
+      }
+    }
+
 
   })
 
 
-  .state('criarTopico', {
+  .state('menu.criarTopico', {
     url: '/criarTopico',
-    templateUrl: 'templates/criarTopico.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/criarTopico.html',
+      }
+    }
+
 
 
   })
 
-  .state('gerarSimulado', {
+  .state('menu.gerarSimulado', {
   url: '/gerarSimulado',
-  templateUrl: 'templates/gerarSimulado.html',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/gerarSimulado.html',
+      }
+    }
+
 
 })
 
-.state('listaDeTopicos', {
+.state('menu.listaDeTopicos', {
     url: '/listaDeTopicos',
-    templateUrl: 'templates/listaDeTopicos.html',
+  views: {
+    'menuContent': {
+      templateUrl: 'templates/listaDeTopicos.html',
+    }
+  }
+
 
   })
-    .state('estatisticas', {
+    .state('menu.estatisticas', {
       url: '/estatisticas',
-      templateUrl: 'templates/estatisticas.html',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/estatisticas.html',
+        }
+      }
+
 
     })
 
 
 
- $urlRouterProvider.otherwise('/menu')
+ $urlRouterProvider.otherwise('/login')
 
 
 

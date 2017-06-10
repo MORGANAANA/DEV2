@@ -10,7 +10,7 @@ angular.module('loginCtrl', [])
       $scope.login = function(){
         loginService.login($scope.email,$scope.senha,function(result){
           if(result == true){
-            $location.path('inicial');
+            $location.path('/menu/inicial');
           }else{
             $location.path('login');
             console.log("Erro ao logar");

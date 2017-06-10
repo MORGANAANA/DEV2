@@ -1,16 +1,16 @@
 <ion-view title="Lista de Livros" id="page5" style="background-color:#B3B38B;">
-  <!--<script>-->
-    <!--document.ready(function(){-->
-      <!--$scope.buscaListaLivros();-->
-    <!--});-->
-  <!--</script>-->
+  <script>
+    document.ready(function(){
+      $scope.buscaListaLivros();
+    });
+  </script>
   <ion-content padding="true" style="background: url(img/bg_lista_livros.jpg) no-repeat center;background-size:cover;" class="has-header"  ng-controller="livroCtrl">
 
     <!--<h3 id="listaDeLivros-heading1" style="color:#3A3636;font-weight:400;"></h3>-->
     <div class="spacer" style="width: 300px; height: 44px;"></div>
     <ion-list ng-repeat="livros in service.listaLivros track by $index" id="listaDeLivros-list5">
 
-      <ion-item  class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="horaEstrela" ng-click="buscaLivro(livros._id)" >
+      <ion-item  class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="menu.horaEstrela" ng-click="buscaLivro(livros._id)" >
         -<img src="{{livros.imagem}}">
 
         <h2>{{livros.titulo}}</h2>
