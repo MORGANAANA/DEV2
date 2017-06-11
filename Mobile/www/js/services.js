@@ -2,7 +2,7 @@ angular.module('app.services', [])
 
   .factory('graficoGeralFactory', ['estatisticaService',function(estatisticaService){
 
-    var grafico = graficoModel = {
+    var grafico =  {
       globals: {
         shadow: false,
         fontFamily: "Comic Sans",
@@ -112,7 +112,7 @@ angular.module('app.services', [])
 
     }
 
-    var grafico = graficoModel = {
+    var grafico = {
       globals: {
         shadow: false,
         fontFamily: "Comic Sans",
@@ -162,7 +162,19 @@ angular.module('app.services', [])
 
     var result = [];
 
-    var questoes = estatisticaService.estatistica.graficoTempo;
+    var questoes = [{
+      acerto: "15",
+      quantasQuestoes: "30"
+    },{
+      acerto: "5",
+      quantasQuestoes: "10"
+    },{
+      acerto: "20",
+      quantasQuestoes: "20"
+    },
+    ];
+
+    //var questoes = estatisticaService.estatistica.graficoTempo;
 
     for(var I=0;I<questoes.length;I++){
       var acerto = questoes[I].acerto;   //10

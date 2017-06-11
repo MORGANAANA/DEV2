@@ -123,7 +123,6 @@ angular.module('questoesCtrl', [])
 
           .success(function(data){
             console.log("universidades listadas com sucesso");
-            console.log(data);
             questaoService.setListaUniversidades(data);
           })
 

@@ -14,23 +14,43 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title"></h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
 
-        <ion-item menu-close href="#/menu/gerarSimulado">
-          Gerar simulado
-        </ion-item>
-        <ion-item menu-close href="#/menu/estatisticas">
-          estatisticas
-        </ion-item>
         <ion-item menu-close href="#/menu/inicial">
-          Inicial
+          Tela inicial
         </ion-item>
+
+        <ion-item menu-close ng-controller="questoesCtrl" ng-click="buscaListaUniversidades()" href="#/menu/universidades">
+          Universidades
+        </ion-item>
+
+        <ion-item menu-close ng-controller="livroCtrl" ng-click="buscaListaLivros()" href="#/menu/listaDeLivros">
+          Livros
+        </ion-item>
+
+        <ion-item menu-close ng-controller="simuladoCtrl" ng-click="buscaListaUniversidades()" href="#/menu/gerarSimulado">
+          Fazer simulado
+        </ion-item>
+
+        <ion-item menu-close ng-controller="criarTopicoCtrl" ng-click="listaTopico()" href="#/menu/listaDeTopicos">
+          Lista de Tópico
+        </ion-item>
+
+        <ion-item menu-close ng-controller="estatisticasCtrl" ng-click="estatisticasUsuario()" href="#/menu/estatisticas">
+          Estatisticas de usuario
+        </ion-item>
+
         <ion-item menu-close ng-controller="livroCtrl" ng-click="buscaListaLivros()" href="#/menu/listaDeLivros">
           Lista Livros
         </ion-item>
+
+        <ion-item menu-close ng-controller="loginCtrl" ng-click="logout()" href="#/login">
+          Logout
+        </ion-item>
+
       </ion-list>
     </ion-content>
   </ion-side-menu>

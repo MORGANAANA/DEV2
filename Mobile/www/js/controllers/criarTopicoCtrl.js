@@ -35,6 +35,7 @@ angular.module('criarTopicoCtrl', [])
 
           })
       }
+
       $scope.deletarTopico = function () {
 
         var url = 'http://' + urlServer + '/topico/id/' + id;
