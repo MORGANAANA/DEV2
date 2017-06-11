@@ -8,12 +8,16 @@ angular.module('loginCtrl', [])
       $scope.senha = "";
 
       $scope.login = function(){
+        if($scope.email.length || $scope.senha.length < 3){
+          alert("Os campos usuario ou senha devem ter no minimo 4 digitos");
+        }
         loginService.login($scope.email,$scope.senha,function(result){
           if(result == true){
             $location.path('/menu/inicial');
           }else{
             $location.path('/login');
             console.log("Erro ao logar");
+            alert("Erro ao realizar o login\n campo usuario ou senha incorreto");
           }
         })
       }
@@ -37,3 +41,4 @@ angular.module('loginCtrl', [])
       }
 
     }])
+

@@ -20,20 +20,21 @@ angular.module('criarTopicoCtrl', [])
           livro: livroService.livro.titulo
 
         }
+        if($scope.titulo.length > 10 || $scope.descricao.length > 20){
+          console.log(window.localStorage.getItem('usuarioLogado').nome);
+          $http.post(url, conteudo)
+            .success(function () {
+              console.log("Topico criado com sucesso");
+              //criarTopicoService.setTopico(data);
+            })
 
-        console.log(window.localStorage.getItem('usuarioLogado').nome);
+            .error(function () {
+              console.log("Erro ao criar o topico");
 
-
-        $http.post(url, conteudo)
-          .success(function () {
-            console.log("Topico criado com sucesso");
-
-            //criarTopicoService.setTopico(data);
-          })
-          .error(function () {
-            console.log("Erro ao criar o topico");
-
-          })
+            })
+        }else{
+          alert("O campo titulo deve ter no minimo 10 letras\nO campo descrição deve ter mais de 20 caracters")
+        }
       }
 
       $scope.deletarTopico = function () {

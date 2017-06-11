@@ -117,10 +117,12 @@ angular.module('simuladoCtrl', [])
 
         var numeroQuestoes = $scope.nQuestoes;
 
-        $scope.buscarSimulado(universidade, numeroQuestoes);
-
-        console.log("universidade: " + universidade + "   n questoes:  " + numeroQuestoes);
-
+        if(universidade.value != null || numeroQuestoes.value != null){
+          $scope.buscarSimulado(universidade, numeroQuestoes);
+          console.log("universidade: " + universidade + "   n questoes:  " + numeroQuestoes);
+        }else {
+          alert("selecione uma universidade e o numero de questões")
+        }
       }
       //envia resultado do banco para a nalisar.
       $scope.enviaResultado = function (resultado) {
