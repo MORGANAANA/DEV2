@@ -9,7 +9,7 @@ angular.module('estatisticasCtrl',['zingchart-angularjs'])
 
   }])
 
-.controller('estatisticasCtrl',['$http','$scope',function($http,$scope){
+.controller('estatisticasCtrl',['$http','$scope','estatisticaService',function($http,$scope,estatisticaService){
 
   var urlServer = '45.76.8.32:80';
 
@@ -17,7 +17,7 @@ angular.module('estatisticasCtrl',['zingchart-angularjs'])
 
     var user = window.localStorage.getItem('usuarioLogado');
 
-    var url = "http://"+urlServer+"/estatistica/usuario/"+user;
+    var url = "http://"+urlServer+"/simulado/resultados/"+user;
 
     $http.get(url)
 

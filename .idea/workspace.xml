@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7eb96b93-dd7f-4c57-bff4-12676773c5b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/js/controllers/criarTopicoCtrl.js" afterPath="$PROJECT_DIR$/Mobile/www/js/controllers/criarTopicoCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js" afterPath="$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/js/controllers/questoesCtrl.js" afterPath="$PROJECT_DIR$/Mobile/www/js/controllers/questoesCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js" afterPath="$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/js/controllers/simuladoCtrl.js" afterPath="$PROJECT_DIR$/Mobile/www/js/controllers/simuladoCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/js/services.js" afterPath="$PROJECT_DIR$/Mobile/www/js/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/templates/estatisticas.html" afterPath="$PROJECT_DIR$/Mobile/www/templates/estatisticas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/templates/inicial.html" afterPath="$PROJECT_DIR$/Mobile/www/templates/inicial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/templates/menu.html" afterPath="$PROJECT_DIR$/Mobile/www/templates/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Mobile/www/templates/simulado.html" afterPath="$PROJECT_DIR$/Mobile/www/templates/simulado.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,26 +24,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mobile/www/js/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="directives.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mobile/www/js/directives.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mobile/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,44 +44,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="estatisticas.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mobile/www/templates/estatisticas.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="services.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mobile/www/js/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="215" column="25" lean-forward="false" selection-start-line="215" selection-start-column="25" selection-end-line="215" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="criarTopicoCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/criarTopicoCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="83" column="7" lean-forward="false" selection-start-line="71" selection-start-column="5" selection-end-line="83" selection-end-column="7" />
-              <folding>
-                <marker date="1497145452751" expanded="true" signature="2423:2430" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="criarTopico.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mobile/www/templates/criarTopico.html">
+      <file leaf-file-name="simulado.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mobile/www/templates/simulado.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
-              <caret line="35" column="45" lean-forward="false" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="60" />
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simuladoCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/simuladoCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1666">
+              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="estatisticasCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="110" lean-forward="false" selection-start-line="11" selection-start-column="110" selection-end-line="11" selection-end-column="110" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gerarSimulado.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mobile/www/templates/gerarSimulado.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="37" column="66" lean-forward="false" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inicial.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Mobile/www/templates/inicial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#6;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,16 +121,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inicial.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Mobile/www/templates/inicial.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="10" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="32" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -144,16 +140,17 @@
         <option value="$PROJECT_DIR$/Mobile/www/templates/listaDeTopicos.html" />
         <option value="$PROJECT_DIR$/Mobile/www/templates/login.html" />
         <option value="$PROJECT_DIR$/Mobile/www/js/controllers/livroCtrl.js" />
-        <option value="$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js" />
         <option value="$PROJECT_DIR$/Mobile/www/js/routes.js" />
         <option value="$PROJECT_DIR$/Mobile/www/templates/simulado.html" />
         <option value="$PROJECT_DIR$/Mobile/www/js/controllers/questoesCtrl.js" />
-        <option value="$PROJECT_DIR$/Mobile/www/js/services.js" />
-        <option value="$PROJECT_DIR$/Mobile/www/templates/inicial.html" />
         <option value="$PROJECT_DIR$/Mobile/www/templates/menu.html" />
         <option value="$PROJECT_DIR$/Mobile/www/templates/estatisticas.html" />
-        <option value="$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js" />
         <option value="$PROJECT_DIR$/Mobile/www/js/controllers/criarTopicoCtrl.js" />
+        <option value="$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js" />
+        <option value="$PROJECT_DIR$/Mobile/www/js/controllers/simuladoCtrl.js" />
+        <option value="$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js" />
+        <option value="$PROJECT_DIR$/Mobile/www/templates/inicial.html" />
+        <option value="$PROJECT_DIR$/Mobile/www/js/services.js" />
       </list>
     </option>
   </component>
@@ -169,7 +166,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1040" />
+    <option name="width" value="1055" />
     <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -424,17 +421,18 @@
       <workItem from="1497117596612" duration="5343000" />
       <workItem from="1497142337637" duration="24000" />
       <workItem from="1497142479618" duration="3132000" />
+      <workItem from="1497231356985" duration="9772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30698000" />
+    <option name="totallyTimeSpent" value="40470000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1040" height="1087" extended-state="0" />
+    <frame x="-7" y="0" width="1055" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29882812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25409046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -531,9 +529,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding>
-            <marker date="1497145452751" expanded="true" signature="2423:2430" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -549,9 +545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <marker date="1497145452751" expanded="true" signature="2423:2430" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -600,9 +594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <marker date="1497145452751" expanded="true" signature="2423:2430" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -637,9 +629,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <marker date="1497145452751" expanded="true" signature="2423:2430" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -701,34 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/simuladoCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mobile/www/templates/cadastro.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mobile/www/templates/gerarSimulado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="66" lean-forward="false" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="7" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="36" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -743,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mobile/www/templates/simulado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/livroCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -759,21 +717,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/criarTopicoCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="1411">
           <caret line="83" column="7" lean-forward="false" selection-start-line="71" selection-start-column="5" selection-end-line="83" selection-end-column="7" />
-          <folding>
-            <marker date="1497145452751" expanded="true" signature="2423:2430" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -789,14 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mobile/www/templates/inicial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="10" lean-forward="true" selection-start-line="30" selection-start-column="3" selection-end-line="32" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -841,10 +781,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Mobile/www/templates/gerarSimulado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="66" lean-forward="false" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mobile/www/templates/simulado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/simuladoCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mobile/www/js/controllers/estatisticasCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="110" lean-forward="false" selection-start-line="11" selection-start-column="110" selection-end-line="11" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mobile/www/templates/inicial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#6;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Mobile/www/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="215" column="25" lean-forward="false" selection-start-line="215" selection-start-column="25" selection-end-line="215" selection-end-column="25" />
+        <state relative-caret-position="425">
+          <caret line="178" column="0" lean-forward="true" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding />
         </state>
       </provider>

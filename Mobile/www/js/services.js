@@ -2,6 +2,11 @@ angular.module('app.services', [])
 
   .factory('graficoGeralFactory', ['estatisticaService',function(estatisticaService){
 
+    var nAcertos = estatisticaService.estatistica.graficoGeral.nAcertoTotais;
+    var nQuestoes = estatisticaService.estatistica.graficoGeral.nQuestoesTotais;
+
+    var nErros = nQuestoes - nAcertos;
+
     var grafico =  {
       globals: {
         shadow: false,
@@ -42,13 +47,13 @@ angular.module('app.services', [])
       },
       series: [{
         text: "Acertos",
-        values:[10],
-        //values: [estatisticaService.estatistica.graficoGeral.totalAcertos],
+        //values:[10],
+        values: [nAcertos],
         backgroundColor: "#5e9732",
       }, {
         text: "Erros",
-        values:[20],
-        //values: [estatisticaService.estatistica.graficoGeral.totalAcertos],
+        //values:[20],
+        values: [nErros],
         backgroundColor: "#aa5039"
       }]
     };
@@ -56,9 +61,9 @@ angular.module('app.services', [])
     return grafico;
   }])
 
-  .factory('graficoUniversidadeFactory', ['estatisticaService',function(){
+  .factory('graficoUniversidadeFactory', ['estatisticaService',function(estatisticaService){
 
-    var dados = [];
+    var mdados = [];
 
     var aleatorio = function (inferior,superior){
       numPossibilidades = superior - inferior
@@ -77,38 +82,31 @@ angular.module('app.services', [])
       return cor_aleatoria;
     }
 
-   //var universidades = estatisticaService.estatistica.graficoUniversidades;
+   var universidades = estatisticaService.estatistica.graficoUniversidade;
 
-    var universidades = [{
-      questoesRealizadas:"30",
-      universidade:"fuvest"
+    /*var universidades = [{
+      nQuestoes:"30",
+      _id:"fuvest"
     },
       {
-        questoesRealizadas:"20",
-        universidade:"ufrgs"
+        nQuestoes:"20",
+        _id:"ufrgs"
       },
       {
-        questoesRealizadas: "15",
-        universidade: "puc"
+        nQuestoes: "15",
+        _id: "puc"
       }
     ]
-
-
-    dados = [{
-      text: universidades[0].universidade,
-      values: [universidades[0].questoesRealizadas],
-      backgroundColor: corAleatoria(),
-    }]
-
-    for(var I=1;I<universidades.length;I++){
+*/
+    for(var I=0;I<universidades.length;I++){
       var aux =
       {
-        text: universidades[I].universidade,
-        values: [universidades[I].questoesRealizadas],
+        text: universidades[I]._id,
+        values: [universidades[I].nQuestoes],
         backgroundColor: corAleatoria(),
       }
 
-      dados.push(aux);
+      mdados.push(aux);
 
     }
 
@@ -133,8 +131,6 @@ angular.module('app.services', [])
       },
 
       plot: {
-        'selection-mode':"none",
-        'selected-marker':"none",
         refAngle: "-90",
         borderWidth: "0px",
         valueBox: {
@@ -150,7 +146,7 @@ angular.module('app.services', [])
           sequence:"1",
         }
       },
-      series: dados
+      series: mdados
     };
 
     //console.log(grafico.series[0].values[0]);
@@ -158,28 +154,28 @@ angular.module('app.services', [])
   }])
 
 
-  .factory('graficoDataFactory', ['estatisticaService',function(){
+  .factory('graficoDataFactory', ['estatisticaService',function(estatisticaService){
 
     var result = [];
-
+/*
     var questoes = [{
-      acerto: "15",
-      quantasQuestoes: "30"
+      nAcerto: "15",
+      nQuestoes: "30"
     },{
-      acerto: "5",
-      quantasQuestoes: "10"
+      nAcerto: "5",
+      nQuestoes: "10"
     },{
-      acerto: "20",
-      quantasQuestoes: "20"
+      nAcerto: "20",
+      nQuestoes: "20"
     },
     ];
-
-    //var questoes = estatisticaService.estatistica.graficoTempo;
+*/
+    var questoes = estatisticaService.estatistica.graficoTempo;
 
     for(var I=0;I<questoes.length;I++){
-      var acerto = questoes[I].acerto;   //10
-      var qQuestoes = questoes[I].quantasQuestoes;   //30
-      var aux = (100/qQuestoes)*acerto;
+      var acerto = questoes[I].nAcerto;   //10
+      var qQuestoes = questoes[I].nQuestoes;   //30
+      var aux = parseInt((100/qQuestoes)*acerto);
 
       result.push(aux);
     }
@@ -235,7 +231,7 @@ angular.module('app.services', [])
 
           if(res.token) {
             //define os dados do usuario que serao armazenados no sistema.
-            var usuario = {email: email, senha: senha, token: res.token}
+            var usuario = email;
 
             //guarda no sistema o usuario logado.
             window.localStorage.setItem('usuarioLogado', usuario);
@@ -316,6 +312,8 @@ angular.module('app.services', [])
   .service('simuladoService',[function(){
 
     this.respostasSimulado = [];
+
+    this.universidade = "";
 
     this.simulado ="";
 

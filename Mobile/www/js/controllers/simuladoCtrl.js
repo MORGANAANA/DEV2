@@ -10,6 +10,7 @@ angular.module('simuladoCtrl', [])
 
       $scope.showSelectValue = function (mySelect) {
         $scope.universidade = mySelect;
+        simuladoService.universidade = mySelect;
         console.log(mySelect);
       }
 
@@ -93,6 +94,17 @@ angular.module('simuladoCtrl', [])
 
         simuladoService.respostasSimulado = respostaUsuario;
 
+        var user = window.localStorage.getItem('usuarioLogado');
+
+        var resultado = {
+          usuario:user,
+          nAcerto:nAcerto,
+          nQuestoes:nQuestoes,
+          universidade:simuladoService.universidade
+        }
+
+        $scope.enviaResultado(resultado);
+
         var porcentagen = Math.round((100 * nAcerto) / nQuestoes);
         if (porcentagen == 100) {
           alert("Parabens você acertou todas as questões");
@@ -117,12 +129,17 @@ angular.module('simuladoCtrl', [])
 
         var numeroQuestoes = $scope.nQuestoes;
 
+        $scope.buscarSimulado(universidade, numeroQuestoes);
+        console.log("universidade: " + universidade + "   n questoes:  " + numeroQuestoes);
+
+/*
         if(universidade.value != null || numeroQuestoes.value != null){
           $scope.buscarSimulado(universidade, numeroQuestoes);
           console.log("universidade: " + universidade + "   n questoes:  " + numeroQuestoes);
         }else {
           alert("selecione uma universidade e o numero de questões")
         }
+*/
       }
       //envia resultado do banco para a nalisar.
       $scope.enviaResultado = function (resultado) {
@@ -135,8 +152,8 @@ angular.module('simuladoCtrl', [])
             console.log("resultado enviado com sucesso");
           })
 
-          .error(function () {
-            console.log("erro ao enviar resultado");
+          .error(function (err) {
+            console.log("erro ao enviar resultado: "+err);
           })
 
       }
