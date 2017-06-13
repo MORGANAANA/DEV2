@@ -19,35 +19,43 @@
     <ion-content>
       <ion-list>
 
-        <ion-item menu-close href="#/menu/inicial">
-          Tela inicial
+
+        <ion-item menu-close href="#/menu/inicial" class="item-icon-left dark">
+          <i class="icon ion-home"></i>  Tela inicial
         </ion-item>
 
-        <ion-item menu-close ng-controller="questoesCtrl" ng-click="buscaListaUniversidades()" href="#/menu/universidades">
+        <ion-item menu-close ng-controller="questoesCtrl" ng-click="buscaListaUniversidades()" href="#/menu/universidades" class="item-icon-left dark">
+          <i class="icon ion-university"></i>
           Universidades
         </ion-item>
 
-        <ion-item menu-close ng-controller="livroCtrl" ng-click="buscaListaLivros()" href="#/menu/listaDeLivros">
+        <ion-item menu-close ng-controller="livroCtrl" ng-click="buscaListaLivros()" href="#/menu/listaDeLivros" class="item-icon-left dark">
+          <i class="icon ion-ios-bookmarks"></i>
           Livros
         </ion-item>
 
-        <ion-item menu-close ng-controller="simuladoCtrl" ng-click="buscaListaUniversidades()" href="#/menu/gerarSimulado">
+        <ion-item menu-close ng-controller="simuladoCtrl" ng-click="buscaListaUniversidades()" href="#/menu/gerarSimulado" class="item-icon-left dark">
+            <i class="icon ion-ios-play"></i>
           Fazer simulado
         </ion-item>
 
-        <ion-item menu-close ng-controller="criarTopicoCtrl" ng-click="listaTopico()" href="#/menu/listaDeTopicos">
+        <ion-item menu-close ng-controller="criarTopicoCtrl" ng-click="listaTopico()" href="#/menu/listaDeTopicos" class="item-icon-left dark">
+                <i class="icon ion-ios-paper" md="md-paper"></i>
           Lista de Tópico
         </ion-item>
 
-        <ion-item menu-close ng-controller="estatisticasCtrl" ng-click="estatisticasUsuario()" href="#/menu/estatisticas">
+        <ion-item menu-close ng-controller="estatisticasCtrl" ng-click="estatisticasUsuario()" href="#/menu/estatisticas" class="item-icon-left dark">
+            <i class="icon ion-ios-pie"></i>
           Estatisticas de usuario
         </ion-item>
 
-        <ion-item menu-close ng-controller="livroCtrl" ng-click="buscaListaLivros()" href="#/menu/listaDeLivros">
+        <ion-item menu-close ng-controller="livroCtrl" ng-click="buscaListaLivros()" href="#/menu/listaDeLivros" class="item-icon-left dark">
+            <i class="icon ion-ios-list"></i>
           Lista Livros
         </ion-item>
 
-        <ion-item menu-close ng-controller="loginCtrl" ng-click="logout()" href="#/login">
+        <ion-item menu-close ng-controller="loginCtrl" ng-click="logout()" href="#/login" class="item-icon-left dark">
+            <i class="icon ion-log-out"></i>
           Logout
         </ion-item>
 
