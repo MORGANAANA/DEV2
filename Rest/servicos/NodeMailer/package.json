@@ -1,0 +1,16 @@
+{
+  "name": "nodemailertest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodemailer.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Mathias Gheno Azzolini",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "mocha": "^3.4.2",
+    "nodemailer": "^4.0.1"
+  }
+}

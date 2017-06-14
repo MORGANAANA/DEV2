@@ -1,41 +1,37 @@
 /**
  * Created by mathias on 04/05/17.
  */
-var app = require('express')();
-var bodyParser = require('body-parser');
-var mongoClient = require('mongodb').MongoClient;
-var objectId = require('mongodb').ObjectID;
-var winston = require('winston');
-var bb = require('express-busboy-custom');
-var fs = require('fs');
-//var ip = require('os').networkInterfaces().lo[0].address;
-var ip = "localhost";
-var argv = require('yargs').argv;
-var porta = argv.porta ? argv.porta : 7001;
+let mongoClient = require('mongodb').MongoClient;
+let objectId = require('mongodb').ObjectID;
+let winston = require('winston');
+let fs = require('fs');
+let ip = "localhost";
+let argv = require('yargs').argv;
+let porta = argv.porta ? argv.porta : 7001;
 
-module.exports = function (app) {
+module.exports =  (app) => {
 
     //TOPICOS
 
     // Adicionar tópico no sistema
-    app.post('/topico',function (req, res) {
+    app.post('/topico', (req, res) => {
 
-        var topico = req.body;
+        let topico = req.body;
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros',  (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('topico').insertOne(topico, function (err) {
+                db.collection('topico').insertOne(topico,  (err) => {
                     if(err){
                         winston.error('ocorreu um erro de insercao', {erro: err});
                         res.status(500).send('erro de busca' + err);
                     }
                     else{
 
-                        var response = {
+                        let response = {
                             dados_inseridos: topico,
                             links: [
                                 {
@@ -58,16 +54,16 @@ module.exports = function (app) {
     });
 
     //Pegar um topico pelo ID
-    app.get('/topico/id/:id', function (req, res) {
-        var id = new objectId(req.params.id);
+    app.get('/topico/id/:id',  (req, res) => {
+        let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('topico').findOne({'_id':id}, function (err, resultado) {
+                db.collection('topico').findOne({'_id':id}, (err, resultado) => {
                     if(err){
                         winston.error('ocorreu um erro de busca', {erro: err});
                         res.status(500).send('erro de busca' + err);
@@ -83,16 +79,16 @@ module.exports = function (app) {
     });
 
     // Deletar um tópico pelo ID
-    app.delete('/topico/id/:id', function (req, res) {
-        var id = new objectId(req.params.id);
+    app.delete('/topico/id/:id', (req, res) => {
+        let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('topico').deleteOne({'_id':id}, function (err, resultado) {
+                db.collection('topico').deleteOne({'_id':id}, (err, resultado) => {
                     if(err){
                         winston.error('ocorreu um erro de busca', {erro: err});
                         res.status(500).send('erro de busca' + err);
@@ -112,20 +108,20 @@ module.exports = function (app) {
     });
 
     // Topicos por livro
-    app.get('/topico/livro/:livro', function (req, res) {
+    app.get('/topico/livro/:livro', (req, res) => {
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
 
-                var query = [
+                let query = [
                     {$match: {livro:{'$regex' : '^'+ req.params.livro +'$', '$options' : 'i'}}}
                 ];
 
-                db.collection('topico').aggregate(query).toArray(function (err, docs) {
+                db.collection('topico').aggregate(query).toArray( (err, docs) => {
                     if(err){
                         winston.error('ocorreu um erro de busca: ', {erro:err});
                         res.status(500).send('erro de busca' + err);
@@ -137,72 +133,45 @@ module.exports = function (app) {
     });
 
     // Topicos por usuario
-    app.get('/topico/usuario/:usuario', function (req, res) {
+    app.get('/topico/usuario/:usuario', (req, res) => {
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
 
-                var query = [
+                let query = [
                     {$match: {livro:{'$regex' : '^'+ req.params.usuario +'$', '$options' : 'i'}}}
                 ];
 
-                db.collection('topico').aggregate(query).toArray(function (err, docs) {
+                db.collection('topico').aggregate(query).toArray( (err, docs) => {
                     if(err){
                         winston.error('ocorreu um erro de busca: ', {erro:err});
                         res.status(500).send('erro de busca' + err);
-                      }
+                    }
                     res.status(201).json(docs);
                 });
             }
         });
     });
 
-    app.post('/topico/id/:id/comentario/', (req, res) =>{
+    app.post('/topico/id/:id/comentario/', (req, res) => {
 
-        var id = new objectId(req.params.id);
-        var comentario = req.body;
+        let id = new objectId(req.params.id);
+        let comentario = req.body;
 
-        var query = {
+        let query = {
             "$addToSet": {"respostas": comentario}
         };
 
         mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
-           if(err){
-               res.status(500).send(' Ocorreu um erro de conexão: ' + err);
-               winston.error(' Ocorreu um erro de conexão', {erro: err});
-           } else{
-               db.collection('topico').updateOne({"_id":id}, query, function (err, result) {
-                   if(err){
-                       winston.error('ocorreu um erro de insercao', {erro: err});
-                       res.status(500).send('erro de busca: ' + err);
-                   }
-                   else{
-                       res.status(201).json({"valor":"ok"});
-                   }
-               });
-           }
-       })
-    });
-
-    app.delete('/topico/id/:id/comentario/', (req, res) =>{
-
-        var id = new objectId(req.params.id);
-        var comentario = req.body;
-
-        var query = {
-            "$pull": {"respostas": comentario}
-        };
-
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
             if(err){
-                res.status(500).send(' Ocorreu um erro de conexão: ' + err);
                 winston.error(' Ocorreu um erro de conexão', {erro: err});
+                res.status(500).send(' Ocorreu um erro de conexão: ' + err);
             } else{
-                db.collection('topico').updateOne({"_id":id}, query, function (err, result) {
+                db.collection('topico').updateOne({"_id":id}, query, (err, result) => {
                     if(err){
                         winston.error('ocorreu um erro de insercao', {erro: err});
                         res.status(500).send('erro de busca: ' + err);
@@ -215,12 +184,47 @@ module.exports = function (app) {
         })
     });
 
-    app.post('/topico/teste/:id', (req, res) =>{
-        var id = req.params.id;
-        var objeto = req.body;
-        console.log('id: ' + id);
-        console.log('objeto: '+ JSON.stringify(objeto));
-        res.send('ok');
-    })
+    app.delete('/topico/id/:id/comentario/', (req, res) => {
 
+        let id = new objectId(req.params.id);
+        let comentario = req.body;
+
+        let query = {
+            "$pull": {"respostas": comentario}
+        };
+
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
+            if(err){
+                res.status(500).send(' Ocorreu um erro de conexão: ' + err);
+                winston.error(' Ocorreu um erro de conexão', {erro: err});
+            } else{
+                db.collection('topico').updateOne({"_id":id}, query,  (err, result) => {
+                    if(err){
+                        winston.error('ocorreu um erro de insercao', {erro: err});
+                        res.status(500).send('erro de busca: ' + err);
+                    }
+                    else{
+                        res.status(201).json({"valor":"ok"});
+                    }
+                });
+            }
+        })
+    });
+
+    app.get('/topicos', (req, res) => {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+            if(err){
+                winston.error('ocorreu um erro de conexão ', {erro:err});
+                res.status(500).send('ocorreu um erro de conexão: ' + err);
+            } else {
+                db.collection('topico').find({}).toArray(function (err, docs) {
+                    if(err){
+                        winston.error('ocorreu um erro de busca: ', {erro:err});
+                        res.status(500).send('erro de busca' + err);
+                    }
+                    res.status(201).json(docs);
+                });
+            }
+        });
+    });
 };

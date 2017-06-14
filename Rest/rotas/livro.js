@@ -2,28 +2,28 @@
  * Created by mathias on 04/05/17.
  */
 
-var mongoClient = require('mongodb').MongoClient;
-var objectId = require('mongodb').ObjectID;
-//var ip = require('os').networkInterfaces().lo[0].address;
-var ip = "localhost";
-var argv = require('yargs').argv;
-var porta = argv.porta ? argv.porta : 7001;
+let mongoClient = require('mongodb').MongoClient;
+let objectId = require('mongodb').ObjectID;
+let ip = "localhost";
+let winston = require('winston');
+let argv = require('yargs').argv;
+let porta = argv.porta ? argv.porta : 7001;
 
-module.exports = function (app) {
+module.exports = (app) => {
 
     // LIVROS
 
     //Pegar um livro pelo ID
-    app.get('/livro/id/:id', function (req, res) {
-        var id = new objectId(req.params.id);
+    app.get('/livro/id/:id', (req, res) => {
+        let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('livro').findOne({'_id':id}, function (err, resultado) {
+                db.collection('livro').findOne({'_id':id}, (err, resultado) => {
                     if(err){
                         winston.error('ocorreu um erro de busca', {erro: err});
                         res.status(500).send('erro de busca' + err);
@@ -40,15 +40,14 @@ module.exports = function (app) {
     });
 
     // Pegar todos os livros
-    app.get('/livros', function (req, res) {
-        var id = new objectId(req.params.id);
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+    app.get('/livros', (req, res) => {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('livro').find({}).toArray(function(err, docs) {
+                db.collection('livro').find({}).toArray( (err, docs) => {
                     if(err){
                         winston.error('ocorreu um erro de busca', {erro: err});
                         res.status(500).send('erro de busca' + err);
@@ -60,16 +59,16 @@ module.exports = function (app) {
     });
 
     // Deletar um arquivo pelo ID
-    app.delete('/livro/id/:id', function (req, res) {
-        var id = new objectId(req.params.id);
+    app.delete('/livro/id/:id', (req, res) => {
+        let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('livro').deleteOne({'_id':id}, function (err, resultado) {
+                db.collection('livro').deleteOne({'_id':id}, (err, resultado) => {
                     if(err){
                         winston.error('ocorreu um erro de busca', {erro: err});
                         res.status(500).send('erro de busca' + err);
@@ -89,23 +88,23 @@ module.exports = function (app) {
     });
 
     // Adicionar um livro no banco, Body Raw JSON!
-    app.post('/livro', function (req, res) {
-        var meuLivro = req.body;
+    app.post('/livro', (req, res) => {
+        let meuLivro = req.body;
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
             }
             else{
-                db.collection('livro').insertOne(meuLivro, function (err) {
+                db.collection('livro').insertOne(meuLivro, (err) => {
                     if(err){
                         winston.error('ocorreu um erro de insercao', {erro: err});
                         res.status(500).send('erro de busca' + err);
                     }
                     else{
 
-                        var response = {
+                        let response = {
                             dados_inseridos: meuLivro,
                             links: [
                                 {
@@ -130,8 +129,8 @@ module.exports = function (app) {
     });
 
     // Listagem de livros Por Universidade
-    app.get('/livros/universidade/:universidade', function (req, res) {
-        mongoClient.connect('mongodb://localhost:27017/app_livros', function (err, db) {
+    app.get('/livros/universidade/:universidade', (req, res) => {
+        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -142,7 +141,7 @@ module.exports = function (app) {
                     {$group: {_id : "$livro"}},
                     {$lookup: { from: "livro", localField: "_id", foreignField: "titulo", as: "livro"}},
                     { "$project": {"_id": 1, "livro": { "$arrayElemAt": [ "$livro", 0 ] }}}
-                ]).toArray(function(err, docs) {
+                ]).toArray( (err, docs) => {
 
                     if(err){
                         winston.error('ocorreu um erro de busca', {erro: err});
@@ -153,12 +152,12 @@ module.exports = function (app) {
                         res.status(500).send('Erro de busca: ' + 'Nenhum resultado encontrado');
                     }
 
-                    // var arrayTest = new Array();
+                    // let arrayTest = new Array();
 
-                    // var controlador = 0;
+                    // let controlador = 0;
 
-                    // for(var i = 0; i< docs.length; i++){
-                    //     var numero = i;
+                    // for(let i = 0; i< docs.length; i++){
+                    //     let numero = i;
                     //     db.collection('livro').findOne({'titulo': {'$regex' : '^'+ docs[i]._id +'$', '$options' : 'i'} }, function (err, resultado) {
                     //         // controlador++;
                     //         // console.log(controlador);

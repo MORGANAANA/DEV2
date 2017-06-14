@@ -1,0 +1,1 @@
+db.simulado.find({usuario: 'mathias'}, {_id: false, usuario: false, universidade: false}).limit(3);

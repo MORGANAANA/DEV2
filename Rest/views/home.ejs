@@ -2,12 +2,37 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <title>API REST</title>
+
+    <style>
+        /**
+            Configuração de css retirado do bootstrap.
+         */
+        .alert {
+
+            /*border: 10px;*/
+            margin-top: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+
+        .nav-wrapper{
+            background-color:#000;
+        }
+    </style>
+
 </head>
 <body>
 <ul id="dropdown1" class="dropdown-content">
@@ -31,9 +56,9 @@
                     <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Rotas</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="/workshops/mongodb">Livro(s)</a></li>
-                                <li><a href="/workshops">Questão(ões)</a></li>
-                                <li><a href="/workshops">Tópico(s)</a></li>
+                                <li><a href="#">Livro(s)</a></li>
+                                <li><a href="#">Questão(ões)</a></li>
+                                <li><a href="#">Tópico(s)</a></li>
                             </ul>
                         </div>
                     </li>
@@ -43,16 +68,16 @@
     </div>
 </nav>
 <div class="row">
-    <div class="col s8 offset-s2"><div class="alert alert-success" role="alert">
+    <div class="col s12"><div class="alert alert-success" role="alert" style="text-align: center;">
             Seja Bem-Vindo(a) a Página Rest Mais lindona do Mundo! :D
         </div></div>
-    <div class="col s8 offset-s2"><div class="alert alert-warn" role="alert" style="background-color: #C56D6D;">
-            Documentação ainda incompleta!
+    <div class="col s12"><div class="alert alert-warn" role="alert" style=" background-color: #C56D6D;">
+            <div style="color: #8e0f0f; text-align: center">Documentação ainda incompleta!</div>
         </div></div>
 
     <!--documentação para Rotas de Livros-->
 
-    <div class="col s8 offset-s2">
+    <div class="col s12">
         <h4>Operações Para Usuário(s):</h4>
         <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -73,7 +98,7 @@
         </ul>
     </div>
 
-    <div class="col s8 offset-s2">
+    <div class="col s12">
         <h4>Operações Para Livro(s):</h4>
         <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -85,7 +110,7 @@
                                 idade: 21
                             }
                         </pre>
-                    </div>
+                </div>
             </li>
             <li>
                 <div class="collapsible-header"><span class="new badge" data-badge-caption="">DELETE</span>/livro/:id</div>
@@ -110,7 +135,7 @@
 
     <!--documentação para Rotas de Questões-->
 
-    <div class="col s8 offset-s2">
+    <div class="col s12">
         <h4>Operações Para Questão(ões):</h4>
         <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -148,7 +173,7 @@
         </ul>
     </div>
 
-    <div class="col s8 offset-s2">
+    <div class="col s12">
         <h4>Operações Para Simulado(s)</h4>
         <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -169,7 +194,7 @@
         </ul>
     </div>
 
-    <div class="col s8 offset-s2">
+    <div class="col s12">
         <h4>Operações Para Tópico(s):</h4>
         <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -223,25 +248,5 @@
         }); // end of document ready
     })(jQuery); // end of jQuery name space
 </script>
-<style>
-    .alert {
-
-        /*border: 10px;*/
-        margin-top: 10px;
-        padding: 15px;
-        margin-bottom: 20px;
-        border: 1px solid transparent;
-        border-radius: 4px;
-    }
-    .alert-success {
-        color: #3c763d;
-        background-color: #dff0d8;
-        border-color: #d6e9c6;
-    }
-
-    .nav-wrapper{
-        background-color:#000;
-    }
-</style>
 </body>
 </html>

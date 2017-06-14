@@ -1,20 +1,20 @@
 /**
  * Created by mathias on 04/05/17.
  */
-var winston = require('winston');
-var fs = require('fs');
-//var ip = require('os').networkInterfaces().lo[0].address;
-var ip = "localhost";
+let winston = require('winston');
+let fs = require('fs');
+let ip = "localhost";
 
 
-module.exports = function (winston) {
-    var logger = new (winston.Logger)({
+module.exports = (winston) => {
+
+    let logger = new (winston.Logger)({
         transports: [
             new (winston.transports.File)({ filename: 'somefile.log' })
         ]
     });
 
-    var dadosLog ={
+    let dadosLog ={
         data: new Date(),
         computer: require('os').hostname(),
         ipComputer: ip
