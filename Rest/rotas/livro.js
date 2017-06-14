@@ -152,23 +152,6 @@ module.exports = (app) => {
                         res.status(500).send('Erro de busca: ' + 'Nenhum resultado encontrado');
                     }
 
-                    // let arrayTest = new Array();
-
-                    // let controlador = 0;
-
-                    // for(let i = 0; i< docs.length; i++){
-                    //     let numero = i;
-                    //     db.collection('livro').findOne({'titulo': {'$regex' : '^'+ docs[i]._id +'$', '$options' : 'i'} }, function (err, resultado) {
-                    //         // controlador++;
-                    //         // console.log(controlador);
-                    //         if(resultado != null){
-                    //             docs[numero].livro = resultado;
-                    //
-                    //             // if(resultado == (docs.length -1))
-                    //                 res.status(201).json(docs);
-                    //         }
-                    //     });
-                    // }
                     res.status(201).json(docs);
 
 

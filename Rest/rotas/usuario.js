@@ -9,9 +9,6 @@ let jwt = require('jsonwebtoken');
 let objectId = require('mongodb').ObjectID;
 let NodeMailer = require('../servicos/NodeMailer/NodeMailer');
 
-// let templateAtiveConta = require('../views/email/ative.ejs');
-let nodemailerTransporter = require('../servicos/nodemailer');
-
 module.exports = (app) => {
 
     app.get('/usuario/ativar/:id', (req, res) =>{
@@ -31,21 +28,6 @@ module.exports = (app) => {
                     if(erro){
                         res.status(500).send(' Ocorreu um erro de conexão: ' + err);
                     } else {
-
-                        // let mailOptions = {
-                        //     from: '"Aplicativo Liberep" <aplicativoliberep@gmail.com>',
-                        //     to: query.email,
-                        //     subject: 'Conta Ativada :D',
-                        //     html: ejs.render( fs.readFileSync('./views/email/bem-vindo.ejs', 'utf-8') ,
-                        //         {nome: query.nome})
-                        // };
-                        //
-                        // nodemailerTransporter.sendMail(mailOptions, (error, info) => {
-                        //     if (error) {
-                        //         return console.log(error);
-                        //     }
-                        //     console.log('Message %s sent: %s', info.messageId, info.response);
-                        // });
 
                         const mailer = new NodeMailer();
                         mailer.setTemplate('./servicos/NodeMailer/bem-vindo.ejs');
@@ -137,21 +119,6 @@ module.exports = (app) => {
                                 winston.error('ocorreu um erro de insercao', {erro: erro});
                                 res.status(500).send('usuario já existe');
                             } else{
-
-                                // let mailOptions = {
-                                //     from: '"Aplicativo Liberep" <aplicativoliberep@gmail.com>',
-                                //     to: query.email,
-                                //     subject: 'Ative sua Conta',
-                                //     html: ejs.render( fs.readFileSync('./views/email/ative.ejs', 'utf-8') ,
-                                //         {url: '45.76.8.32/usuario/ativar/' + query._id})
-                                // };
-                                //
-                                // nodemailerTransporter.sendMail(mailOptions, (error, info) => {
-                                //     if (error) {
-                                //         return console.log(error);
-                                //     }
-                                //     console.log('Message %s sent: %s', info.messageId, info.response);
-                                // });
 
                                 const mailer = new NodeMailer();
                                 mailer.setTemplate('./servicos/NodeMailer/e-mail.ejs');
