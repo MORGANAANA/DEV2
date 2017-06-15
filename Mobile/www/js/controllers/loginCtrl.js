@@ -8,7 +8,7 @@ angular.module('loginCtrl', [])
       $scope.senha = "";
 
       $scope.login = function(){
-        if($scope.email.length || $scope.senha.length < 3){
+        if($scope.email.length < 3 || $scope.senha.length < 3){
           alert("Os campos usuario ou senha devem ter no minimo 4 digitos");
         }
         loginService.login($scope.email,$scope.senha,function(result){
