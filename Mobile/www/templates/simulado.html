@@ -1,9 +1,5 @@
 <ion-view title="Simulado" id="page14" style="background-color:#10454d">
 
-  \\class="item_selecionado"
-  \\class="item_errado"
-  \\class="item_correto"
-
     <ion-content padding="true" class="has-header" ng-controller="simuladoCtrl" style="background: url(img/bg_simulado.jpg) no-repeat center;background-size:cover;" class="has-header">
 
       <div>
@@ -19,12 +15,12 @@
           <div class="spacer" style="width: 300px; height: 18px;"></div>
 
           <ion-item class="simulado_enunciado_item">
-            <h3 class ="simulado_enunciado_font">{{simulado.questao}}</h3>
+            <h3 class ="simulado_enunciado_font">{{$index+1+") "}}{{simulado.questao}}</h3>
           </ion-item>
 
           <ion-radio class="simulado_item" ng-repeat="alternativa in simulado.alternativas" id="gerarSimulado-radio5"
                      name="simulado_num_questoes" ng-click="setSimuladoResposta(simulado._id,alternativa)">
-            {{alternativa}}
+            {{simuladoAlternativa[$index]}}{{alternativa}}
           </ion-radio>
 
         </form>
