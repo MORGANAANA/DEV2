@@ -1,13 +1,13 @@
 angular.module('livroCtrl', [])
 
-  .controller ('livroCtrl', ['$scope', '$http','livroService',
-    function ($scope, $http,livroService) {
+  .controller ('livroCtrl', ['$scope', '$http','livroService','config',
+    function ($scope, $http,livroService,config) {
 
 
 
 
 
-      var urlServer = '45.76.8.32:80';
+      var urlServer = config.url;
 
       $scope.service = livroService;
 

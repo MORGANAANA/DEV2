@@ -1,13 +1,13 @@
 angular.module('questoesCtrl', [])
 
 // controle referente as questoes
-  .controller('questoesCtrl', ['$scope', '$http','questaoService',
-    function ($scope, $http, questaoService) {
+  .controller('questoesCtrl', ['$scope', '$http','questaoService','config',
+    function ($scope, $http, questaoService,config) {
 
 
 
 
-      var urlServer = '45.76.8.32:80';
+      var urlServer = config.url;
 
       $scope.service = questaoService;
 

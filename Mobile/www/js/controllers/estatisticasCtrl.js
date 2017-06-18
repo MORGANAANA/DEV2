@@ -9,9 +9,9 @@ angular.module('estatisticasCtrl',['zingchart-angularjs'])
 
   }])
 
-.controller('estatisticasCtrl',['$http','$scope','estatisticaService','$location',function($http,$scope,estatisticaService,$location){
+.controller('estatisticasCtrl',['$http','$scope','estatisticaService','$location','config',function($http,$scope,estatisticaService,$location,config){
 
-  var urlServer = '45.76.8.32:80';
+  var urlServer = config.url;
 
   $scope.estatisticasUsuario = function(){
 

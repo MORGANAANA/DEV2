@@ -1,14 +1,14 @@
 angular.module('simuladoCtrl', [])
 
 
-  .controller('simuladoCtrl', ['$scope', '$http','simuladoService', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('simuladoCtrl', ['$scope', '$http','simuladoService','config', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-    function ($scope,$http,simuladoService) {
+    function ($scope,$http,simuladoService,config) {
 
       $scope.simuladoAlternativa = ["A) ","B) ","C) ","D) ","E) "];
 
-      var urlServer = '45.76.8.32:80';
+      var urlServer = config.url;
 
       $scope.showSelectValue = function (mySelect) {
         $scope.universidade = mySelect;

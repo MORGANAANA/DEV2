@@ -1,9 +1,9 @@
 angular.module('criarTopicoCtrl', [])
 
-  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService','criarTopicoService',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService','criarTopicoService','config',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 
-    function ($scope, $http, livroService, criarTopicoService) {
-      var urlServer = "45.76.8.32:80";
+    function ($scope, $http, livroService, criarTopicoService,config) {
+      var urlServer = config.url;
 
       $scope.service = criarTopicoService;
 

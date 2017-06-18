@@ -215,12 +215,12 @@ angular.module('app.services', [])
 
   }])
 
-  .service('loginService',['$http',function($http){
+  .service('loginService',['$http','config',function($http,config){
 
     //função para logar o usuario.
     this.login = function(email,senha,callback){
 
-      var urlServer = '45.76.8.32:80';
+      var urlServer = config.url;
 
       //post com email e senha.
       $http.post('http://'+urlServer+'/usuario/login',{nome:email,senha:senha})
@@ -265,9 +265,9 @@ angular.module('app.services', [])
 
   }])
 
-  .service('cadastroService',['$http',function($http){
+  .service('cadastroService',['$http','config',function($http,config){
 
-          var urlServer = '45.76.8.32:80';
+          var urlServer = config.url;
 
           this.cadastrar = function(usuario,senha,telefone){
 
