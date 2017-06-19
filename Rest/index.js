@@ -14,7 +14,7 @@ let jwt    = require('jsonwebtoken');
 // let logger = require('./config/logger_config')(winston);
 let express = require('./config/express_config')(app);
 
-
+//
 // let options = {
 //     key  : fs.readFileSync('./chaves/liberep.key'),
 //     cert : fs.readFileSync('./chaves/8b521c56e11f0512.crt'),
@@ -27,7 +27,12 @@ let express = require('./config/express_config')(app);
 
 
 // rotas não protegidas
+
 app.get('/', (req, res) => {
+    res.render('../views/index.ejs');
+});
+
+app.get('/api', (req, res) => {
     res.render('../views/home.ejs');
 });
 
@@ -49,17 +54,19 @@ app.use( (req, res, next) => {
 
         jwt.verify(token, 'Nao sei o que colocar aqui', (err, decoded) => {
             if (err) {
-                return res.json({ success: false, message: 'Falha na Autenticação do Token' });
+                // return res.json({ success: false, message: 'Falha na Autenticação do Token' });
+                return res.redirect('/#erro');
             } else {
                 req.decoded = decoded;
                 next();
             }
         });
     } else {
-        return res.status(403).send({
-            success: false,
-            message: 'Você precisa prover um token!'
-        });
+        // return res.status(403).send({
+        //     success: false,
+        //     message: 'Você precisa prover um token!'
+        // });
+        return res.redirect('/#erro');
     }
 });
 

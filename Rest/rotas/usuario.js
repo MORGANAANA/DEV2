@@ -34,7 +34,7 @@ module.exports = (app) => {
                         mailer.setSubject('Conta Ativada o/');
                         mailer.enviarEmail();
 
-                        res.status(201).json({"valor":"ok. usuario ativado"});
+                        res.redirect('/#ativo');
                     }
                 });
             }
@@ -123,8 +123,9 @@ module.exports = (app) => {
                                 const mailer = new NodeMailer();
                                 mailer.setTemplate('./servicos/NodeMailer/e-mail.ejs');
                                 mailer.setSubject('Ative sua Conta');
+                                mailer.setTo(login);
                                 mailer.setMensagens({
-                                    mensagem: '45.76.8.32/usuario/ativar/' + query._id
+                                    mensagem: 'https://www.liberep.com/usuario/ativar/' + query._id
                                 });
                                 mailer.enviarEmail();
 
