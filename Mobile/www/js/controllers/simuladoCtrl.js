@@ -1,10 +1,10 @@
 angular.module('simuladoCtrl', [])
 
 
-  .controller('simuladoCtrl', ['$scope', '$http','simuladoService','config', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('simuladoCtrl', ['$scope', '$http','simuladoService','config','$location', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-    function ($scope,$http,simuladoService,config) {
+    function ($scope,$http,simuladoService,config,$location) {
 
       $scope.simuladoAlternativa = ["A) ","B) ","C) ","D) ","E) "];
 
@@ -111,16 +111,20 @@ angular.module('simuladoCtrl', [])
         if (porcentagen == 100) {
           alert("Parabens você acertou todas as questões");
         } else if (porcentagen >= 75 && porcentagen < 100) {
-          alert("Você esta muito bem!! Parabens, acertou " + porcentagen + "% das questões");
+          alert("Você acertou " + porcentagen + "% das questões");
         } else if (porcentagen >= 50 && porcentagen < 75) {
-          alert("Você precisa melhorar mais, acertou " + porcentagen + "% das questões");
+          alert("Você acertou " + porcentagen + "% das questões");
         } else if (porcentagen >= 25 && porcentagen < 50) {
-          alert("Você está mau, estude mais, acertou " + porcentagen + "% das questões")
+          alert("Você acertou " + porcentagen + "% das questões")
         } else if (porcentagen > 0 && porcentagen < 25) {
-          alert("Você foi péssimo, acertou quase nada, acertou " + porcentagen + "% das questões");
+          alert("Você acertou " + porcentagen + "% das questões");
         } else if (porcentagen == 0) {
-          alert("Você não acertou nenhuma");
+          alert("Você não acertou nenhuma questao");
         }
+
+        $location.path('/menu/inicial');
+
+
       }
 
       $scope.fazerSimulado = function () {
