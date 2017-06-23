@@ -1,22 +1,31 @@
 <ion-view title="Login" id="page12">
-  <ion-content padding="true" style="background: url(img/bg_login.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="loginCtrl">
+   <ion-content padding="true" style="background: url(img/bg_library2.jpg) no-repeat center;background-size:cover;" class="has-header" ng-controller="loginCtrl">
+
+
     <div class="spacer" style="height: 100px;"></div>
+
+
+    <div class="logo_login">
+      <img src="img/m_ARREDONDADO-livro-pizza e texto.png">
+    </div>
+
+
     <form id="login-form11" class="list">
       <ion-list id="login-list10">
-
-        <label class="item item-input" id="login-input12">
-          <span class="input-label">E-mail</span>
-          <input required type="text" ng-model="email" placeholder="Digite o E-mail">
-        </label>
-        <label class="item item-input" id="login-input13">
+          <label class="item item-input" id="login-input12">
+            <span class="input-label">E-mail</span>
+            <input required type="text" ng-model="email" placeholder="Digite o E-mail">
+          </label>
+          <label class="item item-input" id="login-input13">
           <span class="input-label">Senha</span>
           <input required type="password" ng-model="senha" placeholder="Digite sua Senha">
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <a id="login-button20" ng-click="login()" class="button button-energized  button-block">Entrar</a>
+      <a id="login-button20" ng-click="login()" class="button button-preto  button-block">Entrar</a>
       <!--<button id="login-button21" style="border-radius:0px 0px 0px 0px;" class="button button-positive  button-block icon-left ion-social-facebook">Entrar com Facebook</button>-->
-      <a ui-sref="cadastro" id="login-button22" class="button button-energized  button-block button-clear">Crie uma conta</a>
+      <a ui-sref="cadastro" id="login-button22" class="button button-energized  button-block button-clear" style="color:#000">Crie uma conta</a>
     </form>
+
   </ion-content>
 </ion-view>

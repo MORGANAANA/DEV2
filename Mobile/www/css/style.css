@@ -8,9 +8,14 @@
 }
 
 
-.lst_questoes_simulado{
-
+.logo_login{
+  margin-top: -30%;
+  margin-bottom: 10%;
+  display: block;
+  text-align: center;
 }
+
+
 .simulado_txt_alternativa {
   color:#202320;
   white-space: initial !important;
