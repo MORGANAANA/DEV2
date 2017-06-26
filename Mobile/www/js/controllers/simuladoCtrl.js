@@ -122,7 +122,7 @@ angular.module('simuladoCtrl', [])
           alert("Você não acertou nenhuma questao");
         }
 
-        $location.path('/menu/inicial');
+        $location.path('../inicial');
 
 
       }

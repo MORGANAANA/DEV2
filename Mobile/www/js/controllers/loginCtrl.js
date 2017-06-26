@@ -1,7 +1,7 @@
 angular.module('loginCtrl', [])
 
-  .controller('loginCtrl', ['$scope','cadastroService','loginService','$location',
-    function ($scope,cadastroService,loginService,$location) {
+  .controller('loginCtrl', ['$scope','cadastroService','loginService','$location','$http',
+    function ($scope,cadastroService,loginService,$location,$http) {
 
       $scope.email = "";
 
@@ -39,6 +39,8 @@ angular.module('loginCtrl', [])
           alert("As senhas nao condizem");
         }
       }
+
+
 
     }])
 

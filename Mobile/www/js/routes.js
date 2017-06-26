@@ -142,8 +142,22 @@ angular.module('app.routes', [])
 
 
 
- $urlRouterProvider.otherwise('login')
+ //$urlRouterProvider.otherwise('login')
 
+})
 
+.run(function($location,$http){
 
-});
+  let user = window.localStorage.getItem('usuarioLogadoLiberep');
+
+  if(user){
+
+    $http.defaults.headers.common.Authorization = user;
+
+    $location.path('/menu/inicial');
+
+  } else {
+    $location.path('/login');
+  }
+
+})
