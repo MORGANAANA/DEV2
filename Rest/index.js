@@ -8,9 +8,13 @@ let winston = require('winston');
 let cors = require('cors');
 let fs = require('fs');
 let argv = require('yargs').argv;
-let porta = argv.porta ? argv.porta : 7001;
+let porta = argv.porta ? argv.porta : 7004;
 let portaHTTPS = argv.portaHTTPS ? argv.portaHTTTS : 443;
 let jwt    = require('jsonwebtoken');
+
+let objectId = require('mongodb').ObjectID;
+let mongoClient = require('mongodb').MongoClient;
+
 // let logger = require('./config/logger_config')(winston);
 let express = require('./config/express_config')(app);
 
@@ -38,6 +42,35 @@ app.get('/api', (req, res) => {
 
 app.get('/.well-known/pki-validation/*', function (req, res) {
     res.send('65qja5baiiau06v0t1m97ied34');
+});
+
+//Pegar uma questão por ID
+app.get('/xquestao/id/:id',  (req, res) => {
+    console.log('ooiiiii');
+    let id = new objectId(req.params.id);
+
+    mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db)  => {
+        if(err){
+            res.status(500).send('ocorreu um erro de conexão: ' + err);
+            winston.error('ocorreu um erro de conexão', {erro: err});
+        }
+        else{
+            db.collection('questao').findOne({'_id':id}, (err, resultado) => {
+                if(err){
+                    winston.error('ocorreu um erro de busca', {erro: err});
+                    res.status(500).send('erro de busca' + err);
+                }
+                if(resultado == null)
+                    res.status(500).send('Erro de busca, nenhum dado encontrado.');
+                else{
+                    console.log(resultado.questao);
+                    // res.send('<html>' + resultado.questao.replace(/\n/g, '</br>') + '</html>');
+                    res.send(resultado.questao)
+                }
+
+            });
+        }
+    });
 });
 
 require('./rotas/usuario')(app);

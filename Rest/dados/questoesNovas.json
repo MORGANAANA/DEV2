@@ -1,0 +1,212 @@
+[
+//
+//{
+//  "questao": "Leia o segmento abaixo, do terceiro capítulo de O cortiço, de Aluísio Azevedo. Daí a pouco, em volta das bicas era um zunzum crescente; uma aglomeração tumultuosa de machos e fêmeas. (...) O rumor crescia, condensando-se; o zunzum de todos os dias acentuava-se; já se não destacavam vozes dispersas, mas um só ruído compacto que enchia todo o cortiço. Começavam a fazer compras na venda; ensarilhavam-se discussões e rezingas; ouviam-se gargalhadas e pragas; já se não falava, gritava-se. Sentia-se naquela fermentação sanguínea, naquela gula viçosa de plantas rasteiras que mergulham os pés vigorosos na lama preta e nutriente da vida, o prazer animal de existir, a triunfante satisfação de respirar sobre a terra. Assinale com V (verdadeiro) ou F (falso) as seguintes afirmações sobre o segmento. \n ( ) O segmento apresenta a descrição do cortiço sem destacar um personagem, com ênfase nacoletividade para ações triviais de homens, mulheres e crianças. \n ( ) O despertar, matéria cotidiana, é figurado como fato rotineiro de pessoas executando seushábitos higiênicos matinais. \n ( ) A linguagem do narrador, preocupado em mostrar a dimensão natural presente nas ações humanas, evidencia-se em expressões como ?prazer animal de existir?. \n ( ) O objetivo, nesse segmento, é apresentar o cortiço e a venda como empreendimentos comerciais usados no enriquecimento de João Romão. \n A sequência correta de preenchimento dos parênteses, de cima para baixo, é ",
+//  "alternativas": [
+//    "V , V , F , F.",
+//    "V , V , V , V.",
+//    "V , F , F , V.",
+//    "F , F , F , V.",
+//    "V , V , V , F."
+//  ],
+//  "resposta": "V , V , V , F.",
+//  "livro":"O cortiço",
+//  "universidade":"UFRGS"
+//},
+{
+  "questao": "Leia o capítulo abaixo, retirado de Dom Casmurro, de Machado de Assis. \n CAPÍTULO VIII - É TEMPO \n Mas é tempo de tornar àquela tarde de novembro, uma tarde clara e fresca, sossegada como a nossa casa e o trecho da rua em que morávamos. Verdadeiramente foi o princípio da minha vida; tudo o que sucedera antes foi como o pintar e vestir das pessoas que tinham de entrar em cena, o acender das luzes, o preparo das rabecas, a sinfonia... Agora é que eu ia começar a minha ópera. \"A vida é uma ópera\", dizia-me um velho tenor italiano que aqui viveu e morreu... E explicou-me um dia a definição, em tal maneira que me fez crer nela. Talvez valha a pena dá-la; é só um capítulo. Considere as afirmações abaixo, sobre o capítulo. \n I - O narrador refere-se ao momento em que descobriu sua vocação para a vida religiosa. \n II - O narrador recorda saudosamente as tardes familiares e a fala de José Dias saudando seus amores com a vizinha, Capitu. \n III- O narrador diz que sua vida começou, quando ouviu José Dias denunciar seus amores com Capitu. \n Quais estão corretas? \n ",
+  "alternativas": [
+    "Apenas I.",
+    "Apenas II.",
+    "Apenas III.",
+    "Apenas I e II.",
+    "I, II e III."
+  ],
+  "resposta": "Apenas III.",
+  "livro":"Dom Casmurro",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "No Brasil novecentista, uma sociedade escravocrata e patriarcal, o espaço de atuação das mulheres era restrito. Elas aparecem representadas em Dom Casmurro, de Machado de Assis, e O cortiço, de Aluísio Azevedo. ........ escolhe ficar com o homem que desperta seu desejo, sem a necessidade de casar. Paira sobre ........ a desconfiança sobre sua motivação para casar com o vizinho. Por sua vez, ........ casa e descarta o marido, em busca de uma vida livre do domínio masculino. Assinale a alternativa que preenche corretamente as lacunas do segmento acima, na ordem em que aparecem. ",
+  "alternativas": [
+    "Rita Baiana , Capitu , Pombinha",
+    "Capitu , Rita Baiana , Pombinha",
+    "Pombinha , Capitu , Rita Baiana",
+    "Pombinha , Rita Baiana , Capitu",
+    "Rita Baiana , Pombinha , Capitu"
+  ],
+  "resposta": "Rita Baiana , Capitu , Pombinha",
+  "livro":"O Cortiço",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Leia o poema abaixo, de Fernado Pessoa. \n Pobre velha música! \n Pobre velha música! \n Não sei porque agrado, \n Enche-se de lágrimas \n Meu olhar parado. \n Recordo outro ouvir-te. \n Não sei se te ouvi \n Nessa minha infância \n Que me lembra em ti. \n Com que ânsia tão raiva \n Quero aquele outrora! \n E eu era feliz? Não sei: \n Fui-o outrora agora. \n Considere as seguintes afirmações sobre o poema. \n I - O sujeito-lírico elege a pobre velha música para expressar o desejo de recuperar a infância. \n II - O verso final indica que a felicidade passada pode ser uma memória vivida no presente. \n III- A musicalidade do poema, de métrica tradicional, traduz uma luta contra a poesia moderna, através da nostalgia presente em outros heterônimos. \n Quais estão corretas?",
+  "alternativas": [
+    "Apenas I",
+    "Apenas III.",
+    "Apenas I e II.",
+    "Apenas II e III.",
+    "I, II e III. "
+  ],
+  "resposta": "Apenas I e II.",
+  "livro":"Coletânea",
+  "universidade":"UFRGS"
+},
+//{
+//  "questao": "Assinale a alternativa correta sobre o Sermão do bom sucesso das armas e o Sermão de Santo Antônio, do padre Antônio Vieira.",
+//  "alternativas": [
+//    "Mensagem traz as marcas da vanguarda sensacionista, na medida em que busca articular a história de Portugal ao mito, em um mesmo poema.",
+//    "A imagem do mar expressa simbolicamente a busca do infinito, que poderia apaziguar as almas atormentadas de Fernando Pessoa e de seus heterônimos.",
+//    "Fernando Pessoa, nessa obra publicada em vida, deu voz a seus heterônimos para expor uma visão poética e múltipla sobre a história portuguesa.",
+//    "Dom Sebastião é uma figura central para compreender Mensagem e a expectativa de uma possível redenção de Portugal.",
+//    "Os heróis da navegação portuguesa, símbolos do processo civilizacional, cristão, levado aos povos colonizados, são euforicamente celebrados em Mensagem."
+//  ],
+//  "resposta": "Dom Sebastião é uma figura central para compreender Mensagem e a expectativa de uma possível redenção de Portugal.",
+//  "livro":"Indefinido",
+//  "universidade":"UFRGS"
+//},
+{
+  "questao": "Sobre O continente, de Erico Verissimo, associe adequadamente o bloco inferior ao superior, levando em consideração o contexto histórico que subjaz a cada capítulo do romance. \n 1 - A fonte \n 2 - Ana Terra \n 3 - Um certo capitão Rodrigo \n 4 - A guerra \n 5 - Ismália Caré \n ( ) Emergência e apogeu dos gaudérios, Revolução Farroupilha e chegada dos primeiros imigrantes alemães. \n ( ) Surgimento da oposição republicana e abolicionista e criação do PRR (Partido Republicano Riograndense). \n ( ) Últimos anos das Missões Jesuíticas, os Sete Povos das Missões. \n ( ) Conquista do território sul-rio-grandense por famílias paulistas e criação dos primeiros povoados. \n A sequência correta de preenchimento dos parênteses, de cima para baixo, é ",
+  "alternativas": [
+    "3 , 4 , 2 , 1.",
+    "3 , 5 , 1 , 2.",
+    "1 , 5 , 4 , 3.",
+    "5 , 3 , 1 , 2.",
+    "4 , 2 , 3 , 1."
+  ],
+  "resposta": "3 , 5 , 1 , 2.",
+  "livro":"O Continente",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Sobre O continente, de Erico Verissimo, Assinale com V (verdadeiro) ou F (falso) as seguintes afirmações sobre o capítulo A Teiniaguá. \n ( ) Aguinaldo Silva vem do Norte e chega a Santa Fé depois de muitas andanças pelo Brasil, emprestando dinheiro a juro alto. \n ( ) Luzia, neta adotiva de Aguinaldo Silva, vem da Corte para Santa Fé e torna-se a ?senhora do Sobrado. \n ( ) Luzia escolhe Bolívar Cambará para casar, apaixonada por seu jeito sofisticado e urbano. \n ( ) Dr. Carl Winter frequenta o Sobrado e nutre grande admiração por Luzia, a quem compara com Melpômene, musa da tragédia. \n A sequência correta de preenchimento dos parênteses, de cima para baixo, é ",
+  "alternativas": [
+    "F , V , V , F.",
+    "V , F , F , V.",
+    "V , V , V , F.",
+    "F , F , F , V.",
+    "V , V , F , V."
+  ],
+  "resposta": "V , V , F , V.",
+  "livro":"O Continente",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Assinale a alternativa correta sobre o álbum Tropicalia ou panis et circenses.",
+  "alternativas": [
+    "A incorporação de sons e ruídos, tal como a conversa em uma refeição em panis et circencis, revela um defeito de composição do álbum.",
+    "A escuta do conjunto das canções revela projeto homogêneo, recuperação e valorização da tradição musical brasileira.",
+    "O refrão ê bumba-iê-iê-boi?, de Geleia Geral, sinaliza um aspecto relevante do álbum, a mistura entre a tradição popular brasileira e a música pop.",
+    "A escuta das canções obscurece o potencial crítico das letras pela excessiva variedade de ritmos, de paródias, e pelo humor agressivo, presentes nas interpretações.",
+    "A presença de canções como Coração Materno, de Vicente Celestino, sinaliza uma reverência respeitosa que destoa do humor do álbum."
+  ],
+  "resposta": "O refrão ê bumba-iê-iê-boi?, de Geleia Geral, sinaliza um aspecto relevante do álbum, a mistura entre a tradição popular brasileira e a música pop.",
+  "livro":"Tropicalia",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Sobre à peça Gota d'água, de Chico Buarque e Paulo Pontes, Assinale a alternativa correta sobre a peça.",
+  "alternativas": [
+    "O ponto de partida do enredo é o mito de Édipo da mitologia grega.",
+    "Joana é uma personagem recriada na peça, tal como aparece na tragédia grega homônima.",
+    "Creonte representa a figura do pai amoroso e protetor, que estabelece seu poder pelo respeito mútuo.",
+    "A peça, na condição de tragédia moderna, adapta vários aspectos do mito grego,  como a profissão de algumas personagens.",
+    "Joana aceita a oferta de Creonte e de Jasão e retira-se da comunidade pacificamente."
+  ],
+  "resposta": "A peça, na condição de tragédia moderna, adapta vários aspectos do mito grego, como a profissão de algumas personagens.",
+  "livro":"Gota d?Água",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Sobre à peça Gota d'Água, de Chico Buarque e Paulo Pontes, Assinale com V (verdadeiro) ou F (falso) as seguintes afirmações sobre a peça. \n ( ) Joana ajudou Jasão a tornar-se um compositor de sucesso, e é a quem ele demonstra, a todo instante, sua gratidão. \n ( ) Joana é quatorze anos mais velha do que Jasão. \n ( ) A cantoria dos vizinhos tem o papel do coro da tragédia grega. \n ( ) Creonte escolhe Jasão para sua sucessão no poder, visando ao bem-estar da comunidade. \n A sequência correta de preenchimento dos parênteses, de cima para baixo, é ",
+  "alternativas": [
+    "F , V , V , F.",
+    "V , F , V , V.",
+    "V , V , F , F.",
+    "F , F , V , F.",
+    "V , V , F , V."
+  ],
+  "resposta": "F , V , V , F.",
+  "livro":"Gota d?Água",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Assinale a alternativa correta sobre a obra, A hora da estrela, de Clarice Lispector.",
+  "alternativas": [
+    "Um dos aspectos mais marcantes de A hora da estrela é o caráter metaficcional da narrativa.",
+    "Rodrigo S.M. sente-se à vontade para narrar a história de Macabéa.",
+    "Macabéa tem laços fortes de amizade e companheirismo com todos que a cercam.",
+    "Macabéa é a típica moradora da zona sul do Rio de Janeiro, com seu jeito indolente e descontraído.",
+    "Macabéa transforma-se em uma cantora promissora, que se apresenta na Rádio Minuto."
+  ],
+  "resposta": "Um dos aspectos mais marcantes de A hora da estrela é o caráter metaficcional da narrativa.",
+  "livro":"A Hora da Estrela",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Considere as seguintes afirmações sobre o livro Morangos mofados, de Caio Fernando Abreu. \n I - Os contos apresentam as características marcantes da prosa de Caio Fernando Abreu: tom confessional, linguagem coloquial e perspectiva intimista. \n II - Os contos trazem referências explícitas à geração da década de 1970 e ao contexto histórico brasileiro. \n III- A estrutura do livro é dividida em duas partes, O mofo e Os morangos, justificando, pois, seu título. \n Quais estão corretas? ",
+  "alternativas": [
+    "Apenas I.",
+    "Apenas III.",
+    "Apenas I e II.",
+    "Apenas II e III.",
+    "I, II e III."
+  ],
+  "resposta": "Apenas I e II.",
+  "livro":"Morangos Mofados",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Assinale a alternativa correta sobre o conto Caixinha de música, do livro Morangos mofados, de Caio Fernando Abreu.",
+  "alternativas": [
+    "O protagonista, na primeira pessoa, conta o desfecho trágico de sua história de amor.",
+    "O protagonista, na primeira pessoa, conta o final feliz de sua história de amor.",
+    "O narrador, na primeira pessoa, conta uma história de amor com final feliz.",
+    "Uma história de amor com desfecho trágico é narrada na terceira pessoa.",
+    "Uma história de amor com final feliz é narrada na terceira pessoa."
+  ],
+  "resposta": "Uma história de amor com desfecho trágico é narrada na terceira pessoa.",
+  "livro":"Morangos Mofados",
+  "universidade":"UFRGS"
+},
+{
+  "questao": "Assinale a alternativa correta sobre Dançar tango em Porto Alegre, de Sérgio Faraco.",
+  "alternativas": [
+    "Em Travessia, o narrador,em terceira pessoa, conta a história do menino que acompanha seu Tio Joca em uma pescaria noturna, em que, pela primeira vez, pesca muitos peixes.",
+    "Em Noite de matar um homem, o narrador relembra a noite em que descobriu que, entre o sonho e a verdade, a vida cobrava um preço muito salgado.",
+    "Em A língua do cão chinês, uma criança sente-se abandonada, porque os pais saíram e não quiseram brincar com ela.",
+    "Em Guerras greco-pérsicas, um adolescente resiste àatração sexual para ensinar história grega a sua colega.",
+    "Em Conto de inverno, o escritor-personagem narra o gesto cruel de levar uma mulher para casa, no meio da noite."
+  ],
+  "resposta": "Em Noite de matar um homem, o narrador relembra a noite em que descobriu que, entre o sonho e a verdade, a vida cobrava um preço muito salgado.",
+  "livro":"Dançar Tango em Porto Alegre",
+  "universidade":"UFRGS"
+}
+,
+  {
+    "questao": "Leia as seguintes afirmações sobre Amor de Pedro por João, de Tabajara Ruas. \n I- Hermes, desfigurado e magro, depois de muito sofrimento, reencontra Mara na embaixada, acompanhada de Marcelo. \n II- Josias, quando volta a ser preso, lamenta ouvir a revelação do policial de que seu filho Sepé era um traidor. \n III- O romance abre com a queda do governo Allende e termina com a partida dos brasileiros exilados no Chile para a Europa. \n Quais estão corretas?",
+    "alternativas": [
+      "Apenas I.",
+      "Apenas II.",
+      "Apenas III.",
+      "Apenas I e III.",
+      "I, II e III."
+    ],
+    "resposta": "Apenas III.",
+    "livro":"O Amor de Pedro por João",
+    "universidade":"UFRGS"
+  },
+  {
+    "questao": "Assinale a alternativa correta sobre o romance A noite das mulheres cantoras, de Lídia Jorge.",
+    "alternativas": [
+      "ApósCalipso é um grupo de teatro com atores performáticos, cantores e dançarinos.",
+      "Gisela Batista é a líder do grupo, sempre exigindo das colegas correção moral e cuidados com a aparência",
+      "Madalena Micaia, the African Lady, submete-se a todas as ordens de Gisela Batista, abrindo mão do próprio filho.",
+      "Gisela Batista não se importa que Madalena Micaia fique além do peso, pois ela é a \"voz de veludo\".",
+      "A volta da banda ApósCalipso, no Epílogo do romance, produz um momento de felicidade e de euforia"
+    ],
+    "resposta": "Gisela Batista é a líder do grupo, sempre exigindo das colegas correção moral e cuidados com a aparência",
+    "livro":"A Noite das Mulheres Cantoras",
+    "universidade":"UFRGS"
+  }
+]

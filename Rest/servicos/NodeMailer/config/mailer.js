@@ -3,7 +3,7 @@
  */
 const optionsMail = {
     from: '"Aplicativo Liberep" <aplicativoliberep@gmail.com>',
-    to: 'mathiasgheno@gmail.com',
+    to: '',
     subject: 'Teste Templete ✔',
     html: '<html>oi</html>'
 };

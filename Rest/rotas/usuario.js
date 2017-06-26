@@ -24,16 +24,17 @@ module.exports = (app) => {
             if(err){
                 res.status(500).send(' Ocorreu um erro de conexão: ' + err);
             } else {
-                db.collection('usuario').updateOne({_id: id}, query, (erro, result)=>{
+                db.collection('usuario').findOneAndUpdate({_id: id}, query, (erro, result)=>{
                     if(erro){
                         res.status(500).send(' Ocorreu um erro de conexão: ' + err);
                     } else {
-
-                        const mailer = new NodeMailer();
-                        mailer.setTemplate('./servicos/NodeMailer/bem-vindo.ejs');
-                        mailer.setSubject('Conta Ativada o/');
-                        mailer.enviarEmail();
-
+                        db.collection('usuario').findOne({_id: id}, function (err, usuario) {
+                            const mailer = new NodeMailer();
+                            mailer.setTemplate('./views/email/bem-vindo.ejs');
+                            mailer.setTo(usuario.login);
+                            mailer.setSubject('Conta Ativada o/');
+                            mailer.enviarEmail();
+                        });
                         res.redirect('/#ativo');
                     }
                 });
@@ -121,11 +122,11 @@ module.exports = (app) => {
                             } else{
 
                                 const mailer = new NodeMailer();
-                                mailer.setTemplate('./servicos/NodeMailer/e-mail.ejs');
+                                mailer.setTemplate('./views/email/ative.ejs');
                                 mailer.setSubject('Ative sua Conta');
-                                mailer.setTo(login);
+                                mailer.setTo(query.login);
                                 mailer.setMensagens({
-                                    mensagem: 'https://www.liberep.com/usuario/ativar/' + query._id
+                                    url: 'https://www.liberep.com/usuario/ativar/' + query._id
                                 });
                                 mailer.enviarEmail();
 
