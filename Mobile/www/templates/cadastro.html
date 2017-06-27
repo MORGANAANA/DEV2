@@ -6,12 +6,15 @@
   </ion-nav-bar>
   <ion-nav-view></ion-nav-view>
 
-  <ion-content padding="true" style="background: url(img/bg_tela_cadastro.jpg) no-repeat center;background-size:cover;" class="has-header" ng-controller="loginCtrl">
-    <form id="cadastro-form9" class="list">
-      <div class="spacer" style="width: 300px; height: 47px;"></div>
-      <ion-list id="cadastro-list2">
+  <ion-content padding="true" style="background: url(img/bg_cad1.jpg) no-repeat center;background-size:cover;" class="has-header" ng-controller="loginCtrl">
 
-        <label class="item item-input" id="cadastro-input9">
+    <div class="logo_cadastro">
+      <img src="img/m_ARREDONDADO-livro-pizza e texto.png">
+    </div>
+
+    <form id="cadastro-form9" class="list">
+        <ion-list id="cadastro-list2">
+        <label class="item item-input" >
           <span class="input-label">Email</span>
           <input type="text"  ng-model="cp_email" required>
         </label>
@@ -23,26 +26,25 @@
           <input type="text" ng-model="cp_telefone" required>
         </label>
 -->
-        <div class="spacer" style="width: 300px; height: 18px;"></div>
+        <div class="spacer" style="width: 300px; height: 8px;"></div>
 
         <label class="item item-input" id="cadastro-input11">
           <span class="input-label">Senha</span>
           <input type="password"  ng-model="cp_senha" required>
         </label>
 
-        <div class="spacer" style="width: 300px; height: 18px;"></div>
+        <div class="spacer" style="width: 300px; height: 8px;"></div>
 
         <label class="item item-input" id="cadastro-input12">
           <span class="input-label">Confirme a senha</span>
           <input type="password"  ng-model="cp_confirmeSenha" required>
         </label>
-
       </ion-list>
 
-      <div class="spacer" style="height: 100px;"></div>
+      <div class="spacer" style="height: 50px;"></div>
 
 
-      <a id="cadastro-button8" ng-click="cadastrar()" class="button button-dark  button-block">Cadastrar</a>
+        <a id="cadastro-button8" ng-click="cadastrar()" class="button button-preto  button-block">Confirmar Cadastro via E-mail</a>
     </form>
   </ion-content>
 </ion-view>
