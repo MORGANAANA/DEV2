@@ -1,29 +1,4 @@
-
-<ion-view title="Lista de tópicos" id="page5" style="background-color:#B3B38B;">
-  <ion-content padding="true" style="background: url(img/bg_lista_topicos.png) no-repeat center;background-size:cover;" class="has-header" ng-controller="criarTopicoCtrl">
-
-    <div class="spacer" style="width: 300px; height: 20px;"></div>
-
-    <ion-list ng-repeat="topico in service.listaTopico" id="listaDeLivros-list5">
-
-      <ion-item  class="item-thumbnail-left" id="listaDeTopicos-list-item6" ui-sref="menu.comentarTopico" >
-        <!-- -<img src="{{livros.imagem}}">-->
-
-        <h2>{{topico.titulo}}</h2>
-        <p>{{topico.descricao}}</p>
-
-      </ion-item>
-
-      <div class="spacer" style="width: 300px; height: 166px;"></div>
-
-    </ion-list>
-
-
-  </ion-content>
-</ion-view>
-
-<!--
-<ion-view title="Criar Tópico de Discussão" id="page85" style="background-color:#54146D;">
+﻿<ion-view title="Criar Tópico de Discussão" id="page85" style="background-color:#54146D;">
   <ion-content ng-controller="criarTopicoCtrl" padding="true" style="background: url(img/bg_lista_topicos.png) no-repeat center;background-size:cover;" class="has-header">
     <div class="spacer" style="width: 300px; height: 20px;"></div>
 
@@ -33,26 +8,13 @@
 
     <ion-list ng-repeat="topico in service.listaTopico" class="lst_topicos">
       <ion-item class="item-icon-left dark item_topicos">
-        <i class="icon ion-chatboxes">  {{topico.titulo}}</i>
+        <i class="icon ion-chatboxes">    <h2>{{topico.titulo}}</h2>
+         </i>
       </ion-item>
     </ion-list>
-
-
-    <!-- <ion-list>
-      <ion-item class="item-icon-left dark" id="" ui-sref="listaDeLivros">
-        <i class="icon ion-university"> Assunto um
-      </ion-item>
-      <ion-item class="item-icon-left dark" id="" ui-sref="listaDeLivros">
-        <i class="icon ion-university"> Assunto dois
-      </ion-item>
-      <ion-item class="item-icon-left dark" id="" ui-sref="listaDeLivros">
-        <i class="icon ion-university"> Assunto tres
-      </ion-item>
-    </ion-list>   //aqui tava comentado
 
 
     <div class="spacer" style="width: 300px; height: 166px;"></div>
 
   </ion-content>
 </ion-view>
--->
