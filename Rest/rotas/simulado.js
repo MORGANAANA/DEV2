@@ -17,7 +17,7 @@ module.exports = (app) => {
         let universidade = req.params.universidade;
         let quantidade = parseInt(req.params.quantidade);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros',(err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros',(err, db) => {
             if (err) {
                 winston.error('ocorreu um erro de conexão ', {erro: err});
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
@@ -42,7 +42,7 @@ module.exports = (app) => {
 
         let resultado = req.body;
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros',  (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros',  (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -102,7 +102,7 @@ module.exports = (app) => {
             universidade: false
         };
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 winston.error('ocorreu um erro de conexão ', {erro:err});
                 res.status(500).send('ocorreu um erro de conexão: ' + err);

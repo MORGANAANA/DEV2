@@ -17,7 +17,7 @@ module.exports = (app) => {
     app.get('/livro/id/:id', (req, res) => {
         let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -41,7 +41,7 @@ module.exports = (app) => {
 
     // Pegar todos os livros
     app.get('/livros', (req, res) => {
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -62,7 +62,7 @@ module.exports = (app) => {
     app.delete('/livro/id/:id', (req, res) => {
         let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -91,7 +91,7 @@ module.exports = (app) => {
     app.post('/livro', (req, res) => {
         let meuLivro = req.body;
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -130,7 +130,7 @@ module.exports = (app) => {
 
     // Listagem de livros Por Universidade
     app.get('/livros/universidade/:universidade', (req, res) => {
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});

@@ -20,7 +20,7 @@ module.exports = (app) => {
             }
         };
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) =>{
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) =>{
             if(err){
                 res.status(500).send(' Ocorreu um erro de conexão: ' + err);
             } else {
@@ -55,7 +55,7 @@ module.exports = (app) => {
         let senha = req.body.senha ||
             req.body.password;
 
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
@@ -96,7 +96,7 @@ module.exports = (app) => {
 
     app.post('/usuario/registro', (req, res) => {
         let dados = req.body;
-        mongoClient.connect('mongodb://localhost:27017/app_livros', (err, db) => {
+        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
                 winston.error('ocorreu um erro de conexão', {erro: err});
