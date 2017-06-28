@@ -26,7 +26,6 @@ angular.module('criarTopicoCtrl', [])
           $http.post(url, conteudo)
             .success(function () {
               console.log("Topico criado com sucesso");
-              //criarTopicoService.setTopico(data);
             })
             .error(function () {
               console.log("Erro ao criar o topico");
@@ -35,21 +34,6 @@ angular.module('criarTopicoCtrl', [])
           alert("O campo titulo deve ter no minimo 10 letras\nO campo descrição deve ter mais de 20 caracters")
           $location.path('/menu/criarTopico');
         }
-      }
-
-      $scope.deletarTopico = function () {
-
-        var url = 'http://' + urlServer + '/topico/id/' + id;
-
-        $http.delete(url)
-
-          .success(function () {
-            console.log("Topico deletado com sucesso");
-          })
-
-          .error(function () {
-            console.log("erro ao deletar o topico");
-          })
       }
 
       //Listar topico
@@ -71,12 +55,12 @@ angular.module('criarTopicoCtrl', [])
 
       //comentar topico
       $scope.comentarTopico = function (contexto, id) {
-        var url = 'http://' + urlServer + '/topico/id/:id/comentario/' + id;
-        $http.post(url)
+        var comentar = $scope.comentar;
+        var url = 'http://' + urlServer + '/topico/id'+ id +'/comentario/';
+        $http.post(url, comentar)
           .success(function (data) {
             console.log("Comentado com sucesso");
             $scope.comentar = data;
-            comentarTopicoService.setComentar(data);
           })
           .error(function (data) {
             console.log("Erro ao fazer o comentario");
