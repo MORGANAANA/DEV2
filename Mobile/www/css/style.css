@@ -7,6 +7,24 @@
   color:#000;
 }
 
+.inicial1{
+}
+.inicial-bv{
+  opacity: 20pt;
+  height: auto;
+  width: auto;
+
+}
+
+.inicial{
+  margin: 10% 0% 0% 5%;
+
+}
+
+.icons_Iniciais{
+  border-radius: 5px;
+
+}
 
 .logo_login{
   margin-top: -30%;
