@@ -118,7 +118,7 @@ angular.module('simuladoCtrl', [])
         var numeroQuestoes = $scope.nQuestoes;
 
         if(universidade ==  false || numeroQuestoes == false){
-          alert("o campo universidade deve ser preenchido");
+          alert("o campo universidade e questões deve ser preenchido");
           $location.path('/menu/gerarSimulado');
           $l
         }else{
