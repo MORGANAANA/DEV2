@@ -60,71 +60,89 @@ module.exports = (app) => {
 
     // Deletar um arquivo pelo ID
     app.delete('/livro/id/:id', (req, res) => {
-        let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
-            if(err){
-                res.status(500).send('ocorreu um erro de conexão: ' + err);
-                winston.error('ocorreu um erro de conexão', {erro: err});
-            }
-            else{
-                db.collection('livro').deleteOne({'_id':id}, (err, resultado) => {
-                    if(err){
-                        winston.error('ocorreu um erro de busca', {erro: err});
-                        res.status(500).send('erro de busca' + err);
-                    }
-                    if(resultado == null)
-                        res.status(500).send('Erro de exclusao, seu dado nao foi encontrado.');
-                    else{
-                        let resposta = {
-                            "_id":id,
-                            "situacao":"removido"
-                        };
-                        res.status(201).json(resposta);
-                    }
-                });
-            }
-        });
+        if(req.decoded.admin){
+
+            let id = new objectId(req.params.id);
+
+            mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
+                if(err){
+                    res.status(500).send('ocorreu um erro de conexão: ' + err);
+                    winston.error('ocorreu um erro de conexão', {erro: err});
+                }
+                else{
+                    db.collection('livro').deleteOne({'_id':id}, (err, resultado) => {
+                        if(err){
+                            winston.error('ocorreu um erro de busca', {erro: err});
+                            res.status(500).send('erro de busca' + err);
+                        }
+                        if(resultado == null)
+                            res.status(500).send('Erro de exclusao, seu dado nao foi encontrado.');
+                        else{
+                            let resposta = {
+                                "_id":id,
+                                "situacao":"removido"
+                            };
+                            res.status(201).json(resposta);
+                        }
+                    });
+                }
+            });
+        } else {
+            winston.error('Acesso nao autorizado a rota delete de livro');
+            res.status(401).send('Acesso não autorizado');
+        }
+
+
     });
 
     // Adicionar um livro no banco, Body Raw JSON!
     app.post('/livro', (req, res) => {
-        let meuLivro = req.body;
 
-        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
-            if(err){
-                res.status(500).send('ocorreu um erro de conexão: ' + err);
-                winston.error('ocorreu um erro de conexão', {erro: err});
-            }
-            else{
-                db.collection('livro').insertOne(meuLivro, (err) => {
-                    if(err){
-                        winston.error('ocorreu um erro de insercao', {erro: err});
-                        res.status(500).send('erro de busca' + err);
-                    }
-                    else{
+        if(req.decoded.admin){
 
-                        let response = {
-                            dados_inseridos: meuLivro,
-                            links: [
-                                {
-                                    href:'http://' + ip + ':'+ porta +'/livro/id/' + meuLivro._id,
-                                    rel: 'DADOS',
-                                    method: 'GET'
-                                },
-                                {
-                                    href:'http://' + ip + ':'+ porta +'/livro/id/' + meuLivro._id,
-                                    rel: 'EXCLUIR',
-                                    method: 'DELETE'
-                                }
-                            ]
-                        };
+            let meuLivro = req.body;
 
-                        res.status(201).json(response);
-                    }
-                });
-            }
-        });
+            mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
+                if(err){
+                    res.status(500).send('ocorreu um erro de conexão: ' + err);
+                    winston.error('ocorreu um erro de conexão', {erro: err});
+                }
+                else{
+                    db.collection('livro').insertOne(meuLivro, (err) => {
+                        if(err){
+                            winston.error('ocorreu um erro de insercao', {erro: err});
+                            res.status(500).send('erro de busca' + err);
+                        }
+                        else{
+
+                            let response = {
+                                dados_inseridos: meuLivro,
+                                links: [
+                                    {
+                                        href:'http://' + ip + ':'+ porta +'/livro/id/' + meuLivro._id,
+                                        rel: 'DADOS',
+                                        method: 'GET'
+                                    },
+                                    {
+                                        href:'http://' + ip + ':'+ porta +'/livro/id/' + meuLivro._id,
+                                        rel: 'EXCLUIR',
+                                        method: 'DELETE'
+                                    }
+                                ]
+                            };
+
+                            res.status(201).json(response);
+                        }
+                    });
+                }
+            });
+        } else {
+            winston.error('Acesso nao autorizado a rota post de livro');
+            res.status(401).send('Acesso não autorizado');
+        }
+
+
 
     });
 

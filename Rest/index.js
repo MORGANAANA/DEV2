@@ -16,14 +16,14 @@ let onHttps = argv.onHttps ? argv.onHttps : "true";
 // let logger = require('./config/logger_config')(winston);
 let express = require('./config/express_config')(app);
 
-if(onHttps ==="true"){
-    app.use( (req, res, next) => {
-        if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
-            return res.redirect('https://' + req.get('host') + req.url);
-        }
-        next();
-    });
-}
+// if(onHttps ==="true"){
+//     app.use( (req, res, next) => {
+//         if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+//             return res.redirect('https://' + req.get('host') + req.url);
+//         }
+//         next();
+//     });
+// }
 
 app.get('/', (req, res) => {
     res.render('../views/index.ejs');
@@ -68,6 +68,15 @@ require('./rotas/livro')(app);
 require('./rotas/questao')(app);
 require('./rotas/simulado')(app);
 require('./rotas/topico')(app);
+
+app.get('/admin', (req, res) =>{
+    if(req.decoded.admin === true){
+        res.send('é admin')
+    } else {
+        res.send('não é admin');
+    }
+});
+
 
 http.createServer(app)
     .listen(porta, () =>{

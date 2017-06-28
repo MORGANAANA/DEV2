@@ -42,43 +42,49 @@ module.exports = (app) => {
 
     // Adicionar uma questao no banco
     app.post('/questao', (req, res) => {
-        // res.send('está funcionando');
 
-        let questao = req.body;
+        if(req.decoded.admin){
 
-        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
-            if(err){
-                res.status(500).send('ocorreu um erro de conexão: ' + err);
-                winston.error('ocorreu um erro de conexão', {erro: err});
-            }
-            else{
-                db.collection('questao').insertOne(questao, (err) => {
-                    if(err){
-                        winston.error('ocorreu um erro de insercao', {erro: err});
-                        res.status(500).send('erro de busca' + err);
-                    }
-                    else{
+            let questao = req.body;
 
-                        let response = {
-                            dados_inseridos: questao,
-                            links: [
-                                {
-                                    href:'http://' + ip + ':'+ porta +'/questao/id/' + questao._id,
-                                    rel: 'DADOS',
-                                    method: 'GET'
-                                },
-                                {
-                                    href:'http://' + ip + ':'+ porta +'/questao/id/' + questao._id,
-                                    rel: 'EXCLUIR',
-                                    method: 'DELETE'
-                                }
-                            ]
-                        };
-                        res.status(201).json(response);
-                    }
-                });
-            }
-        });
+            mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
+                if(err){
+                    res.status(500).send('ocorreu um erro de conexão: ' + err);
+                    winston.error('ocorreu um erro de conexão', {erro: err});
+                }
+                else{
+                    db.collection('questao').insertOne(questao, (err) => {
+                        if(err){
+                            winston.error('ocorreu um erro de insercao', {erro: err});
+                            res.status(500).send('erro de busca' + err);
+                        }
+                        else{
+
+                            let response = {
+                                dados_inseridos: questao,
+                                links: [
+                                    {
+                                        href:'http://' + ip + ':'+ porta +'/questao/id/' + questao._id,
+                                        rel: 'DADOS',
+                                        method: 'GET'
+                                    },
+                                    {
+                                        href:'http://' + ip + ':'+ porta +'/questao/id/' + questao._id,
+                                        rel: 'EXCLUIR',
+                                        method: 'DELETE'
+                                    }
+                                ]
+                            };
+                            res.status(201).json(response);
+                        }
+                    });
+                }
+            });
+
+        } else {
+            winston.error('Acesso nao autorizado a rota post de questao');
+            res.status(401).send('Acesso não autorizado');
+        }
     });
 
     //Pegar todos as questões
@@ -127,31 +133,39 @@ module.exports = (app) => {
 
     // Deletar um questão por ID
     app.delete('/questao/id/:id', (req, res) => {
-        let id = new objectId(req.params.id);
 
-        mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
-            if(err){
-                res.status(500).send('ocorreu um erro de conexão: ' + err);
-                winston.error('ocorreu um erro de conexão', {erro: err});
-            }
-            else{
-                db.collection('questao').deleteOne({'_id':id}, (err, resultado) => {
-                    if(err){
-                        winston.error('ocorreu um erro de busca', {erro: err});
-                        res.status(500).send('erro de busca' + err);
-                    }
-                    if(resultado == null)
-                        res.status(500).send('Erro de exclusao, seu dado nao foi encontrado.');
-                    else{
-                        let resposta = {
-                            "_id":id,
-                            "situacao":"removido"
-                        };
-                        res.status(201).json(resposta);
-                    }
-                });
-            }
-        });
+        if(req.decoded.admin){
+
+            let id = new objectId(req.params.id);
+
+            mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
+                if(err){
+                    res.status(500).send('ocorreu um erro de conexão: ' + err);
+                    winston.error('ocorreu um erro de conexão', {erro: err});
+                }
+                else{
+                    db.collection('questao').deleteOne({'_id':id}, (err, resultado) => {
+                        if(err){
+                            winston.error('ocorreu um erro de busca', {erro: err});
+                            res.status(500).send('erro de busca' + err);
+                        }
+                        if(resultado == null)
+                            res.status(500).send('Erro de exclusao, seu dado nao foi encontrado.');
+                        else{
+                            let resposta = {
+                                "_id":id,
+                                "situacao":"removido"
+                            };
+                            res.status(201).json(resposta);
+                        }
+                    });
+                }
+            });
+
+        } else {
+            winston.error('Acesso nao autorizado a rota delete de questao');
+            res.status(401).send('Acesso não autorizado');
+        }
     });
 
     // listagem de UNIVERSIDADES
