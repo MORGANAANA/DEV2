@@ -62,20 +62,6 @@ angular.module('simuladoCtrl', [])
         var nAcerto = 0;
         var nQuestoes = 0;
 
-        /* //filtra a resposta usuario para manter apenas a ultima alternativa marcada.
-         for(var I2=0;I2<respostaUsuario.length;I2++){
-         for(var I=0;I<I2;I++){
-         if(respostaUsuario[I].idQuestao == respostaUsuario[I2].idQuestao && I2!=I){
-         respostaUsuario.splice(I);
-         I2--;
-         }
-         }
-         }
-         */
-        //atualiza o resposta usuario apensa com valores validos.
-        //simuladoService.respostasSimulado = respostaUsuario;
-
-
         //verifica se o usuario acertou a resposta e marca na variavel estado.
         for (var I = 0; I < respostaUsuario.length; I++) {
           nQuestoes = 0;
@@ -126,27 +112,22 @@ angular.module('simuladoCtrl', [])
 
 
       }
-
       $scope.fazerSimulado = function () {
-
         var universidade = $scope.universidade;
-
-        console.log(universidade);
-
         var numeroQuestoes = $scope.nQuestoes;
 
-        $scope.buscarSimulado(universidade, numeroQuestoes);
-        console.log("universidade: " + universidade + "   n questoes:  " + numeroQuestoes);
-
-/*
-        if(universidade.value != null || numeroQuestoes.value != null){
+        if(universidade ==  false){
+          alert("o campo universidade deve ser preenchido");
+          $location.path('/menu/gerarSimulado');
+          $l
+        }else{
+          $location.path('/menu/simulado');
           $scope.buscarSimulado(universidade, numeroQuestoes);
           console.log("universidade: " + universidade + "   n questoes:  " + numeroQuestoes);
-        }else {
-          alert("selecione uma universidade e o numero de questões")
-        }
-*/
+          }
       }
+
+
       //envia resultado do banco para a nalisar.
       $scope.enviaResultado = function (resultado) {
 
@@ -176,6 +157,5 @@ angular.module('simuladoCtrl', [])
           .error(function () {
             console.log("Erro ao buscar simulado");
           })
-
       }
-    }])
+  }])

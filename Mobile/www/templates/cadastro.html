@@ -14,10 +14,13 @@
 
     <form id="cadastro-form9" class="list">
         <ion-list id="cadastro-list2">
-        <label class="item item-input" >
-          <span class="input-label">Email</span>
-          <input type="text"  ng-model="cp_email" required>
-        </label>
+
+          <div>
+            <font color="orange">Email:</font>
+            <label class="item item-input" >
+              <input type="text"  ng-model="cp_email" required>
+            </label>
+          </div>
 <!--
         <div class="spacer" style="width: 300px; height: 18px;"></div>
 
@@ -28,17 +31,21 @@
 -->
         <div class="spacer" style="width: 300px; height: 8px;"></div>
 
-        <label class="item item-input" id="cadastro-input11">
-          <span class="input-label">Senha</span>
-          <input type="password"  ng-model="cp_senha" required>
-        </label>
+          <div>
+            <font color="red">Senha:</font>
+            <label class="item item-input" id="cadastro-input11">
+              <input type="password"  ng-model="cp_senha" required>
+            </label>
+          </div>
 
         <div class="spacer" style="width: 300px; height: 8px;"></div>
 
-        <label class="item item-input" id="cadastro-input12">
-          <span class="input-label">Confirme a senha</span>
-          <input type="password"  ng-model="cp_confirmeSenha" required>
-        </label>
+        <div>
+          <font color="purple">Confirmar Senha:</font>
+          <label class="item item-input" id="cadastro-input12">
+            <input type="password"  ng-model="cp_confirmeSenha" required>
+          </label>
+        </div>
       </ion-list>
 
       <div class="spacer" style="height: 50px;"></div>

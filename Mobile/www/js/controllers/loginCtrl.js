@@ -8,7 +8,7 @@ angular.module('loginCtrl', [])
       $scope.senha = "";
 
       $scope.login = function(){
-        if($scope.email.length < 3 || $scope.senha.length < 3){
+        if($scope.email.length < 3 || $scope.senha.length < 5){
           alert("Os campos usuario ou senha devem ter no minimo 4 digitos");
         }
         loginService.login($scope.email,$scope.senha,function(result){
@@ -17,7 +17,7 @@ angular.module('loginCtrl', [])
           }else{
             $location.path('/login');
             console.log("Erro ao logar");
-            alert("Erro ao realizar o login\n campo usuario ou senha incorreto");
+            alert("Erro ao realizar o login \ncampo usuario ou senha incorreto");
           }
         })
       }
@@ -31,16 +31,17 @@ angular.module('loginCtrl', [])
         var senha = $scope.cp_senha;
         var confirmaSenha = $scope.cp_confirmeSenha;
 
-        if(senha==confirmaSenha){
-          cadastroService.cadastrar($scope.cp_email,$scope.cp_senha,$scope.cp_telefone);
-          alert("Usuario cadastrado com sucesso, aguarde confirmação de email");
-          $location.path('/login');
+        if(senha.length > 5) {
+          if (senha == confirmaSenha) {
+            cadastroService.cadastrar($scope.cp_email, $scope.cp_senha, $scope.cp_telefone);
+            alert("Usuario cadastrado com sucesso, aguarde confirmação de email");
+            $location.path('/login');
+          } else {
+            alert("As senhas nao condizem");
+          }
         }else{
-          alert("As senhas nao condizem");
+          alert("o campo senha deve conter 5 caracteres");
         }
       }
-
-
-
     }])
 

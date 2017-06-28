@@ -1,8 +1,8 @@
 angular.module('criarTopicoCtrl', [])
 
-  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService','criarTopicoService','config',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('criarTopicoCtrl', ['$scope', '$http', 'livroService','criarTopicoService','config', '$location',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 
-    function ($scope, $http, livroService, criarTopicoService,config) {
+    function ($scope, $http, livroService, criarTopicoService,config, $location) {
       var urlServer = config.url;
 
       $scope.service = criarTopicoService;
@@ -21,19 +21,19 @@ angular.module('criarTopicoCtrl', [])
 
         }
         if($scope.titulo.length > 10 || $scope.descricao.length > 20){
+          $location.path('/menu/listaDeTopicos');
           console.log(window.localStorage.getItem('usuarioLogado').nome);
           $http.post(url, conteudo)
             .success(function () {
               console.log("Topico criado com sucesso");
               //criarTopicoService.setTopico(data);
             })
-
             .error(function () {
               console.log("Erro ao criar o topico");
-
             })
         }else{
           alert("O campo titulo deve ter no minimo 10 letras\nO campo descrição deve ter mais de 20 caracters")
+          $location.path('/menu/criarTopico');
         }
       }
 
@@ -57,13 +57,13 @@ angular.module('criarTopicoCtrl', [])
         var url = 'http://' +urlServer+ '/topicos';
         $http.get(url)
 
-        .success(function (data) {
+          .success(function (data) {
             $scope.topico = data;
             criarTopicoService.listaTopico = data;
 
             console.log("Topico Pego com sucesso")
 
-        })
+          })
           .error(function () {
             console.log("Erro ao listar")
           })
