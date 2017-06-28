@@ -8,6 +8,7 @@ let fs = require('fs');
 let jwt = require('jsonwebtoken');
 let objectId = require('mongodb').ObjectID;
 let NodeMailer = require('../servicos/NodeMailer/NodeMailer');
+let validacaoUsuario = require('../validacoes/usuario');
 
 module.exports = (app) => {
 
@@ -95,7 +96,19 @@ module.exports = (app) => {
     });
 
     app.post('/usuario/registro', (req, res) => {
+
         let dados = req.body;
+        let retornoValidacao = validacaoUsuario(dados);
+
+        if (!retornoValidacao.valido){
+            res.json(400, {
+                sucesso: false,
+                mensagem: retornoValidacao.mensagem
+            });
+            return;
+        }
+
+
         mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
             if(err){
                 res.status(500).send('ocorreu um erro de conexão: ' + err);
@@ -108,7 +121,7 @@ module.exports = (app) => {
                     ativado: false,
                     email: dados.email
                 };
-                console.log(query);
+
                 db.collection('usuario').findOne({login: query.login}, function (erroFind, dadosFind) {
                     if(erroFind){
                         console.log("Erro: " + erroFind);

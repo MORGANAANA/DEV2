@@ -26,6 +26,6 @@ let topico =
                 "likes": 0
             }
         ]
-    }
+    };
 
 module.exports = topico;
