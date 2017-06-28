@@ -108,10 +108,11 @@ angular.module('simuladoCtrl', [])
           alert("Você não acertou nenhuma questao");
         }
 
-        $location.path('../inicial');
+        //$location.path('/menu/inicial');
 
 
       }
+
       $scope.fazerSimulado = function () {
         var universidade = $scope.universidade;
         var numeroQuestoes = $scope.nQuestoes;

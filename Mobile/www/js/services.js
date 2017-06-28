@@ -12,6 +12,13 @@ angular.module('app.services', [])
     //função para logar o usuario.
     this.login = function(email,senha,callback){
 
+
+      //let email = CryptoJS.SHA1(emaild);
+     // let senha = CryptoJS.SHA1(senhad);
+
+      //console.log("email: "+emaild+"   Email criptografado: "+email);
+      //console.log("senha: "+senhad+"   Senha criptografada: "+senha);
+
       var urlServer = config.url;
 
       //post com email e senha.
