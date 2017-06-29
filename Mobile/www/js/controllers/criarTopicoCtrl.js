@@ -74,6 +74,7 @@
       $scope.comentarTopico = function (contexto, id) {
         var comentar = criarTopicoService.comentar;
         var url = 'http://' + urlServer + '/topico/id'+ id +'/comentario/';
+        console.log(comentar);
         $http.post(url, comentar)
           .success(function (data) {
             console.log("Comentado com sucesso");
