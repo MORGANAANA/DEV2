@@ -1,4 +1,4 @@
-<ion-view title="Análise dos Personagens" id="page8" style="background-color:#2E7A8B;">
+﻿<ion-view title="Análise dos Personagens" id="page8" style="background-color:#2E7A8B;">
   <ion-content padding="true" style="background: url(img/bg_forum.jpg) no-repeat center;background-size:cover;" class="has-header" ng-controller="criarTopicoCtrl">
 
     <div class="list card forum-descricao" id="forum-desricao" >
@@ -8,29 +8,24 @@
 
     <div class="spacer" style="height: 80px;"></div>
 
+    <ion-list ng-repeat="comentario in service.listaComentario" class="lst_comentario">
+      <ion-item class="item-icon-left dark item_topicos">
+        <i class="icon ion-chatboxes">
+          <h2>{{comentario.comentar}}</h2>
+        </i>
+      </ion-item>
+    </ion-list>
+
     <label class="item item-input opiniao-txt-area" style="height: 100px;">
-      <textarea placeholder="Digite sua opinião"></textarea></label>
+      <textarea placeholder="Digite sua opinião" ng-model="opiniao"></textarea></label>
 
 
     <div class="div-txtArea-comentar-forum">
       <form id="anLiseDosPersonagens-form15" class="list">
-        <button id="anLiseDosPersonagens-button11" style="font-weight:100;" class="button button-preto button-large button-block icon-right ion-android-send">Enviar</button>
+        <button id="anLiseDosPersonagens-button11" ng-click="comentarTopico()" style="font-weight:100;" class="button button-preto button-large button-block icon-right ion-android-send" ui-sref="menu.comentarTopico">Enviar</button>
         <div class="spacer" style="height: 100px;"></div>
       </form>
     </div>
 
   </ion-content>
 </ion-view>
-
-
-<!--<div class="list card forum-balao-de-conversa" id="card-comentar-forum">-->
-<!--<ion-item class="item-icon item-icon-left">-->
-<!--<i class="icon ion-chatbox" style="color:green"></i>-->
-<!--<h2 class="forum-username">Nome do Usuário</h2>-->
-<!--<p class="forum-dataHora"> 22/06/2017 12:00</p>-->
-<!--</ion-item>-->
-
-<!--<div id="forum-card-comentario" class="show-list-numbers-and-dots ">-->
-<!--<p class="forum-font-comentario">Achei a Macabeia um ser apático, mesmo tendo sonhos e desejos, os mesmos não sao transmitidos para o leitor, eu só sofri</p>-->
-<!--</div>-->
-<!--</div>-->
