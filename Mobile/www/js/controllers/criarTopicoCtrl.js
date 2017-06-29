@@ -72,7 +72,7 @@
 
       //comentar topico
       $scope.comentarTopico = function (contexto, id) {
-        var comentar = $scope.comentar;
+        var comentar = criarTopicoService.comentar;
         var url = 'http://' + urlServer + '/topico/id'+ id +'/comentario/';
         $http.post(url, comentar)
           .success(function (data) {
