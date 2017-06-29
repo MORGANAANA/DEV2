@@ -154,6 +154,7 @@ angular.module('app.services', [])
     this.topico = "";
     this.listaTopico = "";
     this.comentar = "";
+    this.listaComentario = "";
 
     this.setTopico = function(top){
       this.topico = top;

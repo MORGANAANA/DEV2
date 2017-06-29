@@ -8,19 +8,28 @@
 
     <div class="spacer" style="height: 80px;"></div>
 
+    <ion-list ng-repeat="comentario in service.listaComentario" class="lst_comentario">
+      <ion-item class="item-icon-left dark item_topicos" ui-sref="menu.comentarTopico"  ng-click="comentario_id">
+        <i class="icon ion-chatboxes">
+          <h2>{{comentario.comentar}}</h2>
+        </i>
+      </ion-item>
+    </ion-list>
+
     <label class="item item-input opiniao-txt-area" style="height: 100px;">
-      <textarea placeholder="Digite sua opinião"></textarea></label>
+      <textarea placeholder="Digite sua opinião" ng-model="opiniao"></textarea></label>
 
 
     <div class="div-txtArea-comentar-forum">
       <form id="anLiseDosPersonagens-form15" class="list">
-        <button id="anLiseDosPersonagens-button11" style="font-weight:100;" class="button button-preto button-large button-block icon-right ion-android-send">Enviar</button>
+        <button id="anLiseDosPersonagens-button11" ng-click="comentarTopico()" style="font-weight:100;" class="button button-preto button-large button-block icon-right ion-android-send" ui-sref="menu.comentarTopico">Enviar</button>
         <div class="spacer" style="height: 100px;"></div>
       </form>
     </div>
 
   </ion-content>
 </ion-view>
+
 
 
 <!--<div class="list card forum-balao-de-conversa" id="card-comentar-forum">-->

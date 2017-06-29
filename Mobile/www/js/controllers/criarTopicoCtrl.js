@@ -53,6 +53,23 @@ angular.module('criarTopicoCtrl', [])
           })
       }
 
+      $scope.listaComent = function (){
+        var url = 'http://' + urlServer + '/topico/comentario/'
+        $http.get(url)
+
+          .success(function (data) {
+            $scope.comentar = data;
+            criarTopicoService.listaComentario = data;
+
+            console.log("Comentario Pego com sucesso")
+
+          })
+          .error(function () {
+            console.log("Erro ao listar")
+          })
+      }
+
+
       //comentar topico
       $scope.comentarTopico = function (contexto, id) {
         var comentar = $scope.comentar;
@@ -61,6 +78,7 @@ angular.module('criarTopicoCtrl', [])
           .success(function (data) {
             console.log("Comentado com sucesso");
             $scope.comentar = data;
+            $scope.listaComent();
           })
           .error(function (data) {
             console.log("Erro ao fazer o comentario");
