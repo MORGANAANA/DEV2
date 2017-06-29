@@ -2,9 +2,9 @@
   <ion-content padding="true" class="has-header">
     <div class="list card" id="questEs-card26">
       <div class="item item-body" id="questEs-list-item-container9" ng-controller="questoesCtrl">
-        <div id="questEs-markdown15" class="show-list-numbers-and-dots" ng-repeat="questao in service.listaQuestoes">
+        <div id="questEs-markdown15" class="show-list-numbers-and-dots" ng-repeat="questao in questoesUniversidade.questoes">
           <p style="margin-top:0px;color:#000000;">
-            <strong>{{questao.questao}}</strong>
+            <strong>{{$index+1+") "}}{{questao.questao}}</strong>
           </p>
 
           <p style="color:#000000;">

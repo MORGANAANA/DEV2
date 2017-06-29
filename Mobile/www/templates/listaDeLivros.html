@@ -10,7 +10,7 @@
     <div class="spacer" style="width: 300px; height: 44px;"></div>
     <ion-list ng-repeat="livros in service.listaLivros track by $index" id="listaDeLivros-list5">
 
-      <ion-item  class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="menu.horaEstrela" ng-click="buscaLivro(livros._id)" >
+      <ion-item  class="item-thumbnail-left" id="listaDeLivros-list-item6" ui-sref="menu.horaEstrela" ng-click="buscaLivro(livros._id);buscaLivroUniversidade(livros.titulo)" >
         <img src="{{livros.imagem}}">
 
         <h2>{{livros.titulo}}</h2>
