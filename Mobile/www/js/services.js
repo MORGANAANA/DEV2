@@ -134,8 +134,8 @@ angular.module('app.services', [])
 
     this.livro = "";
     this.listaLivros = "";
-
-
+    this.universidadeLivros = "";
+    this.universidade = "";
 
     this.setLivro = function(liv){
       this.livro = liv;

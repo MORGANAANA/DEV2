@@ -1,10 +1,10 @@
-<ion-view title="Livro" id="page6" style="background-color:#2E7A8B;">
+<ion-view title="Livro" id="page6" ng-app="app.controllers" style="background-color:#2E7A8B;">
 
-  <ion-content padding="true" class="has-header" ng-app="app.controllers">
+  <ion-content padding="true" class="has-header" ng-controller ="livroCtrl">
 
     <h1 class="titulo-livro">{{tituloLivro}}</h1>
 
-    <div class="list card" id="aHoraDaEstrela-card22"  ng-controller ="livroCtrl">
+    <div class="list card" id="aHoraDaEstrela-card22"  >
       <ion-item class="item-icon-left dark" id="aHoraDaEstrela-list-item14">
         <i class="icon ion-ios-bookmarks"></i>{{service.livro.titulo}}</ion-item>
       <div class=" item item-image">
@@ -37,25 +37,13 @@
     <div class="item item-body" id="aHoraDaEstrela-list-item-container5">
       <h1 id="aHoraDaEstrela-heading3" style="color:#F36868;font-weight:600;text-align:center;" class="titulo_forun">Questões</h1>
 
+      <ion-list id="aHoraDaEstrela-list8" ng-repeat="universidade in service.universidadeLivros">
+        <ion-item ui-sref="menu.questoes" ng-click="setUniversidade(universidade)" class="item-icon-right assertive" id="aHoraDaEstrela-list-item21" >{{universidade._id}}
+          <span class="item-note">{{universidade.qtdd_Questoes}}</span>
+          <i class="icon ion-ios-compose-outline"></i>
+        </ion-item>
+      </ion-list>
 
-      <!--
-      <ion-list id="aHoraDaEstrela-list8">
-        <ion-item class="item-icon-right assertive" id="aHoraDaEstrela-list-item21" >Enem
-          <span class="item-note">5 Questões</span>
-          <i class="icon ion-ios-compose-outline"></i>
-        </ion-item>
-        <ion-item class="item-icon-right assertive" id="aHoraDaEstrela-list-item16" >UFRGS
-          <span class="item-note">15 Questões</span>
-          <i class="icon ion-ios-compose-outline"></i>
-        </ion-item>
-      </ion-list>
-      <ion-list id="aHoraDaEstrela-list15">
-        <ion-item class="item-icon-right assertive" id="aHoraDaEstrela-list-item35" >Todas
-          <span class="item-note">120 Questões</span>
-          <i class="icon ion-ios-compose-outline"></i>
-        </ion-item>
-      </ion-list>
-      -->
       <a ng-controller="questoesCtrl" ng-click="buscaListaUniversidades()" ui-sref="menu.gerarSimulado" id="aHoraDaEstrela-button34" class="button button-assertive  button-block icon-right ion-play">Fazer Simulado</a>
     </div>
 

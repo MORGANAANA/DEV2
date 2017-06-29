@@ -7,6 +7,7 @@ let winston = require('winston');
 let ip = "localhost";
 let argv = require('yargs').argv;
 let porta = argv.porta ? argv.porta : 7001;
+let validacaoQuestao = require('../validacoes/questao');
 
 module.exports = (app) => {
 
@@ -46,6 +47,16 @@ module.exports = (app) => {
         if(req.decoded.admin){
 
             let questao = req.body;
+
+            let retornoValidacao = validacaoQuestao(questao);
+
+            if(!retornoValidacao.valido){
+                res.json(400, {
+                    sucesso: false,
+                    mensagem: retornoValidacao.mensagem
+                });
+                return;
+            }
 
             mongoClient.connect('mongodb://administrador:123_node@localhost:27017/app_livros', (err, db) => {
                 if(err){

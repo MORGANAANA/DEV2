@@ -9,6 +9,7 @@ let jwt = require('jsonwebtoken');
 let objectId = require('mongodb').ObjectID;
 let NodeMailer = require('../servicos/NodeMailer/NodeMailer');
 let validacaoUsuario = require('../validacoes/usuario');
+let crypto = require('bcrypt');
 
 module.exports = (app) => {
 
@@ -74,7 +75,7 @@ module.exports = (app) => {
                         }
 
                         // check if password matches
-                        if (user.senha != senha) {
+                        if (!crypto.compareSync(senha, user.senha)) {
                             res.json({ success: false, message: 'Autenticação falhou. Senha incorreta' });
                         } else {
 
@@ -117,7 +118,7 @@ module.exports = (app) => {
 
                 let query = {
                     login: dados.nome || dados.login || dados.usuario || dados.email,
-                    senha: dados.senha,
+                    senha: crypto.hashSync(dados.senha, 5),
                     ativado: false,
                     email: dados.email
                 };

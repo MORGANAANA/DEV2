@@ -1,11 +1,11 @@
 angular.module('questoesCtrl', [])
 
 // controle referente as questoes
-  .controller('questoesCtrl', ['$scope', '$http','questaoService','config',
-    function ($scope, $http, questaoService,config) {
+  .controller('questoesCtrl', ['$scope', '$http','questaoService','livroService','config',
+    function ($scope, $http, questaoService,livroService,config) {
 
 
-
+      $scope.questoesUniversidade = livroService.universidade;
 
       var urlServer = config.url;
 

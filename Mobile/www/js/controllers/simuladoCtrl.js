@@ -153,6 +153,12 @@ angular.module('simuladoCtrl', [])
         $http.get(url)
           .success(function (data) {
             console.log("Simulado pego com sucesso");
+
+            for(let I=0;I<data.length;I++){
+              data[I].questao = data[I].questao.replace('LF','<br/>');
+            }
+
+            console.log(data[0].questao);
             simuladoService.simulado = data;
           })
           .error(function () {

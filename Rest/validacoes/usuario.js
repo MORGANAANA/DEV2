@@ -11,7 +11,7 @@ function validacaoUsuario(usuario) {
     let valido = true;
     let erro = "";
 
-    if(!usuario.email || !usuario.senha){
+    if(!usuario.email || !usuario.senha || usuario.admin){
         valido= false;
         erro = "Preencha todos os campos";
     } else if (!isEmailValid(usuario.email)) {

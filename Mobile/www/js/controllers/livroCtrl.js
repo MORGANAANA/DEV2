@@ -11,6 +11,7 @@ angular.module('livroCtrl', [])
 
       $scope.service = livroService;
 
+
       // ao executar buscaLivro(idDoLivro) preenche esta variavel com o livro.
       $scope.livro = "";
 
@@ -25,14 +26,34 @@ angular.module('livroCtrl', [])
       //}
 
 
+      $scope.setUniversidade = (universidade) =>{
+        livroService.universidade = universidade;
+      }
+
       // busca o livro referente ao id no banco e preenche a variavel indicada.
       $scope.buscaLivro = function(id){
         var url = 'http://'+urlServer+'/livro/id/'+id;
         $http.get(url)
           .success(function(data){
-            console.log('funcionou');
+            console.log('Livro buscado com sucesso');
             $scope.livro = data;
             livroService.setLivro(data);
+          })
+
+          .error(function(data){
+            console.log('nao funcionou');
+            $scope.livro = data;
+          })
+      };
+
+      $scope.buscaLivroUniversidade = function(livro){
+        //var url = 'http://'+urlServer+'/livro/id/'+id;
+        var url = 'http://'+urlServer+'/questoes/livro/'+livro;
+        $http.get(url)
+          .success(function(data){
+            console.log('Universidades por Livro buscado com sucesso');
+            $scope.livro = data;
+            livroService.universidadeLivros = data;
           })
 
           .error(function(data){
